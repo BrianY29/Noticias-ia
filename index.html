@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Pequeños ajustes para imitar el color exacto de la imagen */
+        body { background-color: #0f172a; }
+        .card-bg { background-color: #1e293b; }
+    </style>
+</head>
+<body class="text-slate-300 font-sans antialiased min-h-screen pb-12">
+
+    <nav class="flex justify-between items-center p-6 border-b border-slate-800">
+        <div class="text-xl font-bold text-white flex items-center gap-2">
+            Mercado IA 🤖
+        </div>
+        <div class="text-sm text-slate-400 flex gap-6">
+            <a href="#" class="hover:text-white transition">Noticias</a>
+            <a href="#" class="hover:text-white transition">Contacto</a>
+        </div>
+    </nav>
+
+    <header class="text-center mt-12 mb-10 px-4">
+        <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 mb-4">
+            El mercado al instante
+        </h1>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+            Las noticias financieras más relevantes del mercado de capitales argentino, leídas, analizadas y resumidas por Inteligencia Artificial en tiempo real.
+        </p>
+    </header>
+
+    <div class="flex flex-wrap justify-center gap-3 mb-12 px-4">
+        <button class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium">Todas</button>
+        <button class="bg-slate-800 hover:bg-slate-700 px-5 py-2 rounded-full text-sm font-medium transition">Dólar</button>
+        <button class="bg-slate-800 hover:bg-slate-700 px-5 py-2 rounded-full text-sm font-medium transition">Acciones Locales</button>
+        <button class="bg-slate-800 hover:bg-slate-700 px-5 py-2 rounded-full text-sm font-medium transition">Bonos</button>
+        <button class="bg-slate-800 hover:bg-slate-700 px-5 py-2 rounded-full text-sm font-medium transition">Wall Street</button>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <article class="card-bg rounded-2xl p-6 border border-slate-700 flex flex-col hover:border-slate-500 transition">
+            <div class="flex justify-between items-center mb-4 text-xs font-semibold">
+                <div class="flex gap-2">
+                    <span class="bg-slate-700 text-slate-300 px-2 py-1 rounded">ÁMBITO</span>
+                    <span class="bg-blue-900/50 text-blue-400 px-2 py-1 rounded">MERCADO LOCAL</span>
+                </div>
+                <span class="text-slate-500">Hace 15 min</span>
+            </div>
+            <h2 class="text-xl font-bold text-white mb-3 leading-tight">
+                Fuerte volumen en acciones energéticas tras anuncios tarifarios
+            </h2>
+            <p class="text-slate-400 text-sm mb-6 flex-grow">
+                El panel líder muestra un marcado optimismo en el sector energético. Papeles como Metrogas ($METR) e YPF concentran el volumen de operaciones de la jornada, impulsados por las expectativas de distribución de dividendos y ajustes en los cuadros tarifarios para el próximo trimestre.
+            </p>
+            <a href="#" class="text-blue-400 text-sm font-medium hover:text-blue-300 flex justify-end items-center gap-1 mt-auto border-t border-slate-700 pt-4">
+                Leer nota original <span aria-hidden="true">&rarr;</span>
+            </a>
+        </article>
+
+        <article class="card-bg rounded-2xl p-6 border border-slate-700 flex flex-col hover:border-slate-500 transition">
+            <div class="flex justify-between items-center mb-4 text-xs font-semibold">
+                <div class="flex gap-2">
+                    <span class="bg-slate-700 text-slate-300 px-2 py-1 rounded">EL CRONISTA</span>
+                    <span class="bg-yellow-900/50 text-yellow-400 px-2 py-1 rounded">DÓLAR</span>
+                </div>
+                <span class="text-slate-500">Hace 42 min</span>
+            </div>
+            <h2 class="text-xl font-bold text-white mb-3 leading-tight">
+                El dólar financiero perfora un nuevo piso y reduce la brecha
+            </h2>
+            <p class="text-slate-400 text-sm mb-6 flex-grow">
+                Las cotizaciones de los dólares financieros (MEP y CCL) mantienen la tendencia a la baja debido a una mayor liquidación de divisas del sector agroexportador. El mercado busca un nuevo equilibrio ante la absorción de pesos por parte del Tesoro, acercando la brecha cambiaria a mínimos anuales.
+            </p>
+            <a href="#" class="text-blue-400 text-sm font-medium hover:text-blue-300 flex justify-end items-center gap-1 mt-auto border-t border-slate-700 pt-4">
+                Leer nota original <span aria-hidden="true">&rarr;</span>
+            </a>
+        </article>
+
+        <article class="card-bg rounded-2xl p-6 border border-slate-700 flex flex-col hover:border-slate-500 transition">
+            <div class="flex justify-between items-center mb-4 text-xs font-semibold">
+                <div class="flex gap-2">
+                    <span class="bg-slate-700 text-slate-300 px-2 py-1 rounded">REUTERS</span>
+                    <span class="bg-emerald-900/50 text-emerald-400 px-2 py-1 rounded">BONOS</span>
+                </div>
+                <span class="text-slate-500">Hace 1 h</span>
+            </div>
+            <h2 class="text-xl font-bold text-white mb-3 leading-tight">
+                Riesgo país en picada: los bonos soberanos rebotan con fuerza en Wall Street
+            </h2>
+            <p class="text-slate-400 text-sm mb-6 flex-grow">
+                Los títulos de deuda soberana en dólares extienden su racha positiva en Nueva York, marcando subas promedio del 2%. Este movimiento comprime el riesgo país a niveles no vistos en los últimos cuatro años, reflejando un renovado interés institucional por los activos emergentes.
+            </p>
+            <a href="#" class="text-blue-400 text-sm font-medium hover:text-blue-300 flex justify-end items-center gap-1 mt-auto border-t border-slate-700 pt-4">
+                Leer nota original <span aria-hidden="true">&rarr;</span>
+            </a>
+        </article>
+
+    </main>
+
+</body>
+</html>
