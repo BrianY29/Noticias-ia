@@ -4,13 +4,13 @@ from google import genai
 import os
 import time
 import random
-from datetime import datetime, timedelta # <-- NUEVO: Para manejar la hora de las noticias
+from datetime import datetime, timedelta
 
 # --- 1. CONFIGURACIÓN DE LA IA ---
 API_KEY = os.environ.get("LLAVESECRETABRAI")
 client = genai.Client(api_key=API_KEY)
 
-# --- 2. EL RECOLECTOR MULTI-FUENTE (Nuevas fuentes financieras) ---
+# --- 2. EL RECOLECTOR MULTI-FUENTE (Batería completa de 10 diarios) ---
 fuentes = [
     {"nombre": "ÁMBITO", "url": "https://www.ambito.com/", "base": "https://www.ambito.com"},
     {"nombre": "INFOBAE", "url": "https://www.infobae.com/", "base": "https://www.infobae.com"},
@@ -18,7 +18,10 @@ fuentes = [
     {"nombre": "OLÉ", "url": "https://www.ole.com.ar/", "base": "https://www.ole.com.ar"},
     {"nombre": "CRONISTA", "url": "https://www.cronista.com/", "base": "https://www.cronista.com"},
     {"nombre": "IPROFESIONAL", "url": "https://www.iprofesional.com/", "base": "https://www.iprofesional.com"},
-    {"nombre": "YAHOO FINANZAS", "url": "https://es.finance.yahoo.com/", "base": "https://es.finance.yahoo.com"}
+    {"nombre": "YAHOO FINANZAS", "url": "https://es.finance.yahoo.com/", "base": "https://es.finance.yahoo.com"},
+    {"nombre": "BAE NEGOCIOS", "url": "https://www.baenegocios.com/", "base": "https://www.baenegocios.com"},
+    {"nombre": "LA NACION", "url": "https://www.lanacion.com.ar/", "base": "https://www.lanacion.com.ar"},
+    {"nombre": "FORBES", "url": "https://www.forbesargentina.com/", "base": "https://www.forbesargentina.com"}
 ]
 
 encabezados = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
@@ -43,13 +46,13 @@ for fuente in fuentes:
                     if len(texto_limpio) > 25: 
                         noticias_extraidas.append({"fuente": fuente["nombre"], "titulo": texto_limpio, "link": link})
                         contador += 1
-                        if contador >= 4: # 4 noticias por cada uno de los 7 diarios
+                        if contador >= 3: 
                             break
     except Exception as e:
         pass
 
 random.shuffle(noticias_extraidas)
-noticias_finales = noticias_extraidas[:14] # ¡Aumentamos a 14 noticias por ronda!
+noticias_finales = noticias_extraidas[:15] # Buscamos hasta 15 noticias
 
 texto_para_ia = ""
 for i, noticia in enumerate(noticias_finales):
@@ -104,7 +107,6 @@ if exito:
                 resumen = partes[3].strip()
                 link = partes[4].strip()
                 
-                # --- NUEVOS COLORES ESTÉTICOS ---
                 if categoria == "MERCADOS":
                     borde, pill = "border-emerald-500", "bg-emerald-900/40 text-emerald-400"
                 elif categoria == "ECONOMÍA":
@@ -115,10 +117,9 @@ if exito:
                     borde, pill = "border-indigo-500", "bg-indigo-900/40 text-indigo-400"
                 elif categoria == "TECNOLOGÍA":
                     borde, pill = "border-violet-500", "bg-violet-900/40 text-violet-400"
-                else: # Sociedad y General
+                else: 
                     borde, pill = "border-teal-500", "bg-teal-900/40 text-teal-400"
                 
-                # Simular un tiempo realista de publicación (entre 1 min y 3 horas atrás)
                 minutos_restar = random.randint(1, 180)
                 tiempo_simulado = datetime.now() - timedelta(minutes=minutos_restar)
                 timestamp_iso = tiempo_simulado.isoformat()
@@ -132,11 +133,15 @@ if exito:
                         </div>
                         <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="{timestamp_iso}">Reciente</span>
                     </div>
-                    <h2 class="text-xl font-bold text-white mb-3 leading-tight">{titulo}</h2>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">{resumen}</p>
-                    <a href="{link}" target="_blank" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 hover:underline flex justify-start items-center gap-1 mt-auto">
-                        Leer nota completa &rarr;
+                    
+                    <a href="{link}" target="_blank" class="group block mb-3">
+                        <h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+                            <span>{titulo}</span>
+                            <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </h2>
                     </a>
+                    
+                    <p class="text-gray-400 text-sm flex-grow leading-relaxed">{resumen}</p>
                 </article>
                 """
     
@@ -151,7 +156,7 @@ if exito:
     with open("historial.txt", "w", encoding="utf-8") as f:
         f.write(historial_actualizado)
         
-    # --- PLANTILLA HTML (Nuevo Diseño y Reloj JS) ---
+    # --- PLANTILLA HTML (Diseño Final) ---
     html_completo = f"""<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -195,13 +200,14 @@ if exito:
     <section id="contacto" class="max-w-5xl mx-auto px-4 mt-20 border-t border-[#1f2937] pt-16">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div class="flex flex-col gap-4 justify-center">
-                <a href="#" class="bg-[#111827] border border-[#1f2937] hover:border-cyan-500/50 rounded-xl p-5 flex items-center gap-4 transition group">
+                <a href="https://www.linkedin.com/in/brian-yapura-061522156/" target="_blank" class="bg-[#111827] border border-[#1f2937] hover:border-cyan-500/50 rounded-xl p-5 flex items-center gap-4 transition group">
                     <div class="bg-cyan-500 text-black p-2 rounded text-xl font-black group-hover:scale-110 transition">in</div>
-                    <span class="text-white font-semibold">Conectá conmigo en LinkedIn</span>
+                    <span class="text-white font-semibold">Conectá con Brian Hernan Yapura en LinkedIn</span>
                 </a>
-                <a href="mailto:tu-email@ejemplo.com" class="bg-[#111827] border border-[#1f2937] hover:border-cyan-500/50 rounded-xl p-5 flex items-center gap-4 transition group">
+                
+                <a href="mailto:brianhernan1993@gmail.com" class="bg-[#111827] border border-[#1f2937] hover:border-cyan-500/50 rounded-xl p-5 flex items-center gap-4 transition group">
                     <div class="text-cyan-500 text-2xl group-hover:scale-110 transition">✉</div>
-                    <span class="text-white font-semibold">tu-email@ejemplo.com</span>
+                    <span class="text-white font-semibold">TU_CORREO_REAL_AQUI@gmail.com</span>
                 </a>
             </div>
             
@@ -228,7 +234,6 @@ if exito:
     </section>
 
     <script>
-        // Lógica de Filtros
         const botones = document.querySelectorAll('.btn-filtro');
         const articulos = document.querySelectorAll('.tarjeta-noticia');
 
@@ -248,11 +253,10 @@ if exito:
             }});
         }});
 
-        // Lógica del Reloj en Vivo (hace 2 min, hace 3 h)
         function actualizarTiempos() {{
             document.querySelectorAll('.tiempo-noticia').forEach(el => {{
                 const timestampStr = el.getAttribute('data-timestamp');
-                if(!timestampStr) return; // Si es una tarjeta vieja sin fecha, la ignora
+                if(!timestampStr) return; 
                 
                 const fechaNoticia = new Date(timestampStr);
                 const ahora = new Date();
@@ -269,7 +273,6 @@ if exito:
             }});
         }}
         
-        // Ejecuta el reloj ni bien carga la página y luego lo actualiza cada minuto
         actualizarTiempos();
         setInterval(actualizarTiempos, 60000);
     </script>
