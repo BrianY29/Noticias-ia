@@ -1,4 +1,215 @@
 
+                <article data-categoria="DEPORTES" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-orange-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+                        <div class="flex gap-2">
+                            <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">TN</span>
+                            <span class="bg-orange-900/40 text-orange-400 px-2.5 py-1 rounded-md">DEPORTES</span>
+                        </div>
+                        <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T01:59:20.222024">Reciente</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-3 leading-tight">Radiografía de un examen superado: las conclusiones que dejó el triunfo ante Austria sobre el verdadero techo de la Selección argentina</h2>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">El artículo analiza en profundidad la victoria de la Selección argentina ante Austria, extrayendo conclusiones clave sobre el potencial y el "techo" real del equipo. Examina aspectos tácticos, rendimientos individuales y la proyección del conjunto en el Mundial, ofreciendo una perspectiva estratégica sobre su futuro desempeño.</p>
+                    <a href="https://tn.com.ar/deportes/mundial/2026/2026/06/22/radiografia-de-un-examen-superado-las-conclusiones-que-dejo-el-triunfo-ante-austria-sobre-el-verdadero-techo-de-la-seleccion/" target="_blank" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 hover:underline flex justify-start items-center gap-1 mt-auto">
+                        Leer nota completa &rarr;
+                    </a>
+                </article>
+                
+                <article data-categoria="MERCADOS" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+                        <div class="flex gap-2">
+                            <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">IPROFESIONAL</span>
+                            <span class="bg-emerald-900/40 text-emerald-400 px-2.5 py-1 rounded-md">MERCADOS</span>
+                        </div>
+                        <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T01:06:20.222046">Reciente</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-3 leading-tight">Por primera vez en el año, el dólar corre por encima de la inflación: ¿pasajero o cambio de tendencia?</h2>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">El artículo destaca que el dólar ha superado la inflación por primera vez en el año, un fenómeno crucial para la economía argentina. Analiza si esta situación es transitoria o representa un cambio estructural en la tendencia monetaria, explorando sus posibles impactos en el mercado financiero y las decisiones de inversión.</p>
+                    <a href="https://www.iprofesional.com/economia/457976-por-primera-vez-en-el-ano-el-dolar-corre-mas-que-la-inflacion-pasajero-o-cambio-de-tendencia" target="_blank" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 hover:underline flex justify-start items-center gap-1 mt-auto">
+                        Leer nota completa &rarr;
+                    </a>
+                </article>
+                
+                <article data-categoria="ECONOMÍA" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+                        <div class="flex gap-2">
+                            <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">ÁMBITO</span>
+                            <span class="bg-blue-900/40 text-blue-400 px-2.5 py-1 rounded-md">ECONOMÍA</span>
+                        </div>
+                        <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T02:55:20.222057">Reciente</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-3 leading-tight">Mapa de las exportaciones récord argentinas: los destinos y productos que sorprendieron detrás del salto comercial</h2>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">Este informe detalla el mapa de exportaciones récord de Argentina, identificando los destinos y productos clave que impulsaron este notable salto comercial. Se profundiza en los factores que contribuyeron a este crecimiento, sus implicaciones económicas y las oportunidades futuras para el comercio exterior del país.</p>
+                    <a href="https://www.ambito.com/economia/mapa-las-exportaciones-record-argentinas-los-destinos-y-productos-que-sorprendieron-detras-del-salto-comercial-n6291648" target="_blank" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 hover:underline flex justify-start items-center gap-1 mt-auto">
+                        Leer nota completa &rarr;
+                    </a>
+                </article>
+                
+                <article data-categoria="DEPORTES" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-orange-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+                        <div class="flex gap-2">
+                            <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">TN</span>
+                            <span class="bg-orange-900/40 text-orange-400 px-2.5 py-1 rounded-md">DEPORTES</span>
+                        </div>
+                        <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T02:26:20.222064">Reciente</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-3 leading-tight">Con los dos goles y el triunfo ante Austria, Lionel Messi rompió cuatro récords Guinness y reescribe la historia del fútbol</h2>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">Lionel Messi, tras marcar dos goles y liderar el triunfo argentino ante Austria, rompió cuatro récords Guinness, consolidando aún más su leyenda. La noticia detalla estos logros históricos, subrayando cómo el astro argentino continúa reescribiendo la historia del fútbol mundial con cada actuación, asombrando a aficionados.</p>
+                    <a href="https://tn.com.ar/internacional/2026/06/22/con-los-dos-goles-y-el-triunfo-ante-austria-lionel-messi-rompio-cuatro-records-guinness-y-reescribe-la-historia-del-futbol/" target="_blank" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 hover:underline flex justify-start items-center gap-1 mt-auto">
+                        Leer nota completa &rarr;
+                    </a>
+                </article>
+                
+                <article data-categoria="DEPORTES" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-orange-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+                        <div class="flex gap-2">
+                            <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">TN</span>
+                            <span class="bg-orange-900/40 text-orange-400 px-2.5 py-1 rounded-md">DEPORTES</span>
+                        </div>
+                        <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T00:50:20.222072">Reciente</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-3 leading-tight">Lo que viene después de Austria: el plan de Lionel Scaloni para el cierre de la fase de grupos</h2>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">El artículo explora el plan estratégico de Lionel Scaloni para la Selección argentina de cara al cierre de la fase de grupos del Mundial, tras la victoria ante Austria. Detalla las posibles rotaciones, ajustes tácticos y los objetivos principales del entrenador para asegurar el mejor posicionamiento del equipo.</p>
+                    <a href="https://tn.com.ar/deportes/mundial/2026/2026/06/22/lo-que-viene-despues-de-austria-el-plan-de-la-seleccion-argentina-para-el-cierre-de-la-fase-de-grupos/" target="_blank" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 hover:underline flex justify-start items-center gap-1 mt-auto">
+                        Leer nota completa &rarr;
+                    </a>
+                </article>
+                
+                <article data-categoria="MERCADOS" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+                        <div class="flex gap-2">
+                            <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">ÁMBITO</span>
+                            <span class="bg-emerald-900/40 text-emerald-400 px-2.5 py-1 rounded-md">MERCADOS</span>
+                        </div>
+                        <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T00:17:20.222079">Reciente</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-3 leading-tight">Deuda: Caputo buscará esta semana completar el cupo de u$s2.000 millones del Bonar 2028</h2>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">El Ministro de Economía, Luis Caputo, intentará esta semana completar la colocación de 2.000 millones de dólares del Bonar 2028. La nota detalla esta operación clave para la gestión de la deuda pública, analizando las expectativas del mercado, la estrategia financiera del gobierno y sus implicancias futuras.</p>
+                    <a href="https://www.ambito.com/finanzas/deuda-luis-caputo-buscara-esta-semana-completar-el-cupo-us2000-millones-bonar-2028-n6291428" target="_blank" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 hover:underline flex justify-start items-center gap-1 mt-auto">
+                        Leer nota completa &rarr;
+                    </a>
+                </article>
+                
+                <article data-categoria="POLÍTICA" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+                        <div class="flex gap-2">
+                            <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">ÁMBITO</span>
+                            <span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
+                        </div>
+                        <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T03:10:20.222086">Reciente</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-3 leading-tight">Milei presenta a Ravier y relanza su estrategia de comunicación antes de una nueva gira internacional</h2>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">Javier Milei ha presentado a Adrián Ravier como parte de un relanzamiento estratégico de su comunicación, previo a una importante gira internacional. La decisión busca consolidar el mensaje del gobierno y mejorar su imagen pública, crucial para los desafíos diplomáticos y la percepción interna de su gestión.</p>
+                    <a href="https://www.ambito.com/politica/javier-milei-presenta-adrian-ravier-y-relanza-su-estrategia-comunicacion-antes-una-nueva-gira-n6291653" target="_blank" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 hover:underline flex justify-start items-center gap-1 mt-auto">
+                        Leer nota completa &rarr;
+                    </a>
+                </article>
+                
+                <article data-categoria="SOCIEDAD" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-teal-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+                        <div class="flex gap-2">
+                            <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">TN</span>
+                            <span class="bg-teal-900/40 text-teal-400 px-2.5 py-1 rounded-md">SOCIEDAD</span>
+                        </div>
+                        <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T01:12:20.222093">Reciente</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-3 leading-tight">Llegaron hasta la puerta del estadio y no pudieron entrar: historias de hinchas argentinos que se quedaron afuera ante Austria</h2>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">El artículo narra las frustrantes experiencias de hinchas argentinos que, pese a viajar y tener entradas, no pudieron ingresar al estadio para ver el partido contra Austria. Se relatan historias personales de desilusión y problemas logísticos, evidenciando los desafíos y contratiempos que a veces enfrentan los aficionados en eventos deportivos.</p>
+                    <a href="https://tn.com.ar/deportes/mundial/2026/2026/06/22/llegaron-hasta-la-puerta-del-estadio-y-no-pudieron-entrar-historias-de-hinchas-argentinos-que-se-quedaron-afuera-ante-austria/" target="_blank" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 hover:underline flex justify-start items-center gap-1 mt-auto">
+                        Leer nota completa &rarr;
+                    </a>
+                </article>
+                
+                <article data-categoria="SOCIEDAD" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-teal-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+                        <div class="flex gap-2">
+                            <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">CRONISTA</span>
+                            <span class="bg-teal-900/40 text-teal-400 px-2.5 py-1 rounded-md">SOCIEDAD</span>
+                        </div>
+                        <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T00:35:20.222100">Reciente</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-3 leading-tight">Permisos y registros. Las reglas para conducir en Estados Unidos: trámites, licencias y requisitos estatales</h2>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">Este informe exhaustivo detalla las reglas para conducir en Estados Unidos, abarcando los trámites necesarios, los tipos de licencias y los requisitos específicos de cada estado. Ofrece una guía práctica para residentes y visitantes, facilitando la comprensión de la compleja normativa vial del país.</p>
+                    <a href="https://www.cronista.com/usa/trending/las-reglas-para-conducir-en-estados-unidos-tramites-licencias-y-requisitos-estatales/" target="_blank" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 hover:underline flex justify-start items-center gap-1 mt-auto">
+                        Leer nota completa &rarr;
+                    </a>
+                </article>
+                
+                <article data-categoria="ECONOMÍA" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+                        <div class="flex gap-2">
+                            <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">IPROFESIONAL</span>
+                            <span class="bg-blue-900/40 text-blue-400 px-2.5 py-1 rounded-md">ECONOMÍA</span>
+                        </div>
+                        <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T02:11:20.222106">Reciente</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-3 leading-tight">Líder de la industria del pollo negocia megadeuda de u$s350 millones y enfrenta una ola de pedidos de quiebra</h2>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">Un gigante de la industria avícola argentina negocia una megadeuda de 350 millones de dólares mientras enfrenta una avalancha de solicitudes de quiebra. El artículo analiza la crítica situación financiera de la empresa, las posibles reestructuraciones y las implicaciones para el sector, reflejando tensiones económicas.</p>
+                    <a href="https://www.iprofesional.com/negocios/457983-lider-del-negocio-del-pollo-negocia-colosal-deuda-y-enfrenta-ola-de-pedidos-de-quiebra" target="_blank" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 hover:underline flex justify-start items-center gap-1 mt-auto">
+                        Leer nota completa &rarr;
+                    </a>
+                </article>
+                
+                <article data-categoria="DEPORTES" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-orange-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+                        <div class="flex gap-2">
+                            <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">ÁMBITO</span>
+                            <span class="bg-orange-900/40 text-orange-400 px-2.5 py-1 rounded-md">DEPORTES</span>
+                        </div>
+                        <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T01:14:20.222113">Reciente</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-3 leading-tight">Argentina superó a Austria y se clasificó gracias a un Messi imparable</h2>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">Argentina logró su clasificación al superar a Austria, con una actuación estelar de Lionel Messi, quien marcó un doblete decisivo. La victoria asegura el pase del equipo y subraya la trascendencia del capitán, quien, además, rompió récords históricos en Mundiales, consolidando su legado.</p>
+                    <a href="https://www.ambito.com/deportes/argentina-supero-austria-y-se-clasifico-gracias-un-messi-imparable-doblete-del-10-y-record-historico-mundiales-n6291578" target="_blank" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 hover:underline flex justify-start items-center gap-1 mt-auto">
+                        Leer nota completa &rarr;
+                    </a>
+                </article>
+                
+                <article data-categoria="ECONOMÍA" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+                        <div class="flex gap-2">
+                            <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">CRONISTA</span>
+                            <span class="bg-blue-900/40 text-blue-400 px-2.5 py-1 rounded-md">ECONOMÍA</span>
+                        </div>
+                        <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T00:49:20.222119">Reciente</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-3 leading-tight">Último minuto. Murió Alan Greenspan, expresidente de la Reserva Federal, a los 100 años: qué hizo y por qué fue tan importante</h2>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">Alan Greenspan, el influyente expresidente de la Reserva Federal de EE.UU., ha fallecido a los 100 años. El artículo repasa su extensa trayectoria, destacando sus decisiones clave y el impacto duradero que tuvo en la política monetaria global y la estabilidad económica durante décadas.</p>
+                    <a href="https://www.cronista.com/usa/trending/murio-alan-greenspan-expresidente-de-la-reserva-federal-a-los-100-anos-que-hizo-y-por-que-fue-tan-importante/" target="_blank" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 hover:underline flex justify-start items-center gap-1 mt-auto">
+                        Leer nota completa &rarr;
+                    </a>
+                </article>
+                
+                <article data-categoria="ECONOMÍA" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+                        <div class="flex gap-2">
+                            <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">CRONISTA</span>
+                            <span class="bg-blue-900/40 text-blue-400 px-2.5 py-1 rounded-md">ECONOMÍA</span>
+                        </div>
+                        <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T02:33:20.222125">Reciente</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-3 leading-tight">Impuestos EE.UU. Créditos y deducciones fiscales del IRS: cuáles existen, quiénes califican y cómo reclamarlos</h2>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">Esta guía detallada explica los créditos y deducciones fiscales disponibles del IRS en Estados Unidos, incluyendo quiénes califican y el proceso para reclamarlos. Ofrece información crucial para los contribuyentes que buscan optimizar sus declaraciones y reducir su carga impositiva, abarcando diversos escenarios fiscales.</p>
+                    <a href="https://www.cronista.com/usa/economia-y-finanzas/creditos-y-deducciones-fiscales-del-irs-cuales-existen-quienes-califican-y-como-reclamarlos/" target="_blank" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 hover:underline flex justify-start items-center gap-1 mt-auto">
+                        Leer nota completa &rarr;
+                    </a>
+                </article>
+                
+                <article data-categoria="ECONOMÍA" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50">
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+                        <div class="flex gap-2">
+                            <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">IPROFESIONAL</span>
+                            <span class="bg-blue-900/40 text-blue-400 px-2.5 py-1 rounded-md">ECONOMÍA</span>
+                        </div>
+                        <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T02:34:20.222131">Reciente</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-3 leading-tight">Chevrolet apuesta al segmento de los SUV compactos con el nuevo Sonic: cuánto cuesta y qué ofrece</h2>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">Chevrolet introduce el nuevo Sonic, un SUV compacto con el que busca competir fuertemente en el segmento. El artículo detalla sus características principales, equipamiento, opciones de motorización y precios, analizando su posicionamiento en el mercado automotriz y el valor que ofrece a los consumidores potenciales.</p>
+                    <a href="https://www.iprofesional.com/autos/456420-cuanto-cuesta-y-que-ofrece-el-nuevo-autos-suv-compacto-chevrolet-sonic" target="_blank" class="text-cyan-400 text-sm font-semibold hover:text-cyan-300 hover:underline flex justify-start items-center gap-1 mt-auto">
+                        Leer nota completa &rarr;
+                    </a>
+                </article>
+                
+
                 <article data-categoria="DEPORTES" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg">
                     <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
                         <div class="flex gap-2">
