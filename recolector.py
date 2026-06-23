@@ -4,13 +4,13 @@ from google import genai
 import os
 import time
 import random
-from datetime import datetime, timedelta
+from datetime import datetime
 
 # --- 1. CONFIGURACIÓN DE LA IA ---
 API_KEY = os.environ.get("LLAVESECRETABRAI")
 client = genai.Client(api_key=API_KEY)
 
-# --- 2. EL RECOLECTOR MULTI-FUENTE (Batería completa de 10 diarios) ---
+# --- 2. EL RECOLECTOR MULTI-FUENTE ---
 fuentes = [
     {"nombre": "ÁMBITO", "url": "https://www.ambito.com/", "base": "https://www.ambito.com"},
     {"nombre": "INFOBAE", "url": "https://www.infobae.com/", "base": "https://www.infobae.com"},
@@ -52,7 +52,29 @@ for fuente in fuentes:
         pass
 
 random.shuffle(noticias_extraidas)
-noticias_finales = noticias_extraidas[:15] # Buscamos hasta 15 noticias
+noticias_finales = noticias_extraidas[:15]
+
+# --- NUEVO: MOTOR DE EXTRACCIÓN DE HORA EXACTA ---
+print("Entrando a las notas para buscar la hora exacta...")
+tiempos_reales = {}
+for noticia in noticias_finales:
+    link_nota = noticia['link']
+    # Por defecto, ponemos la hora actual por si el diario esconde muy bien su fecha
+    tiempos_reales[link_nota] = datetime.now().isoformat() 
+    try:
+        resp_nota = requests.get(link_nota, headers=encabezados, timeout=5)
+        if resp_nota.status_code == 200:
+            sopa_nota = BeautifulSoup(resp_nota.text, 'html.parser')
+            # Buscamos la etiqueta estándar mundial de noticias
+            meta_time = sopa_nota.find('meta', property='article:published_time')
+            if not meta_time:
+                # Alternativa usada por algunos diarios
+                meta_time = sopa_nota.find('meta', itemprop='datePublished')
+                
+            if meta_time and meta_time.get('content'):
+                tiempos_reales[link_nota] = meta_time['content']
+    except:
+        pass
 
 texto_para_ia = ""
 for i, noticia in enumerate(noticias_finales):
@@ -120,9 +142,8 @@ if exito:
                 else: 
                     borde, pill = "border-teal-500", "bg-teal-900/40 text-teal-400"
                 
-                minutos_restar = random.randint(1, 180)
-                tiempo_simulado = datetime.now() - timedelta(minutes=minutos_restar)
-                timestamp_iso = tiempo_simulado.isoformat()
+                # Rescatamos la hora exacta que extrajimos al principio usando el link
+                timestamp_iso = tiempos_reales.get(link, datetime.now().isoformat())
                 
                 tarjetas_html += f"""
                 <article data-categoria="{categoria}" class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 {borde} hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50">
@@ -145,7 +166,6 @@ if exito:
                 </article>
                 """
     
-    # --- LA MAGIA DEL HISTORIAL ---
     historial_viejo = ""
     if os.path.exists("historial.txt"):
         with open("historial.txt", "r", encoding="utf-8") as f:
@@ -156,7 +176,6 @@ if exito:
     with open("historial.txt", "w", encoding="utf-8") as f:
         f.write(historial_actualizado)
         
-    # --- PLANTILLA HTML (Diseño Final) ---
     html_completo = f"""<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -200,12 +219,12 @@ if exito:
     <section id="contacto" class="max-w-5xl mx-auto px-4 mt-20 border-t border-[#1f2937] pt-16">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div class="flex flex-col gap-4 justify-center">
-                <a href="https://www.linkedin.com/in/brian-yapura-061522156/" target="_blank" class="bg-[#111827] border border-[#1f2937] hover:border-cyan-500/50 rounded-xl p-5 flex items-center gap-4 transition group">
+                <a href="TU_LINK_DE_LINKEDIN_AQUI" target="_blank" class="bg-[#111827] border border-[#1f2937] hover:border-cyan-500/50 rounded-xl p-5 flex items-center gap-4 transition group">
                     <div class="bg-cyan-500 text-black p-2 rounded text-xl font-black group-hover:scale-110 transition">in</div>
                     <span class="text-white font-semibold">Conectá con Brian Hernan Yapura en LinkedIn</span>
                 </a>
                 
-                <a href="mailto:brianhernan1993@gmail.com" class="bg-[#111827] border border-[#1f2937] hover:border-cyan-500/50 rounded-xl p-5 flex items-center gap-4 transition group">
+                <a href="mailto:TU_CORREO_REAL_AQUI@gmail.com" class="bg-[#111827] border border-[#1f2937] hover:border-cyan-500/50 rounded-xl p-5 flex items-center gap-4 transition group">
                     <div class="text-cyan-500 text-2xl group-hover:scale-110 transition">✉</div>
                     <span class="text-white font-semibold">TU_CORREO_REAL_AQUI@gmail.com</span>
                 </a>
