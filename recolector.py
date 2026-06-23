@@ -17,12 +17,10 @@ fuentes = [
     {"nombre": "INFOBAE", "url": "https://www.infobae.com/", "base": "https://www.infobae.com"},
     {"nombre": "TN", "url": "https://tn.com.ar/", "base": "https://tn.com.ar"},
     {"nombre": "OLÉ", "url": "https://www.ole.com.ar/", "base": "https://www.ole.com.ar"},
-    {"nombre": "CRONISTA", "url": "https://www.cronista.com/", "base": "https://www.cronista.com"},
     {"nombre": "IPROFESIONAL", "url": "https://www.iprofesional.com/", "base": "https://www.iprofesional.com"},
     {"nombre": "YAHOO FINANZAS", "url": "https://es.finance.yahoo.com/", "base": "https://es.finance.yahoo.com"},
     {"nombre": "BAE NEGOCIOS", "url": "https://www.baenegocios.com/", "base": "https://www.baenegocios.com"},
-    {"nombre": "LA NACION", "url": "https://www.lanacion.com.ar/", "base": "https://www.lanacion.com.ar"},
-    {"nombre": "FORBES", "url": "https://www.forbesargentina.com/", "base": "https://www.forbesargentina.com"}
+    {"nombre": "LA NACION", "url": "https://www.lanacion.com.ar/", "base": "https://www.lanacion.com.ar"}
 ]
 
 encabezados = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
@@ -53,21 +51,19 @@ for fuente in fuentes:
         pass
 
 random.shuffle(noticias_extraidas)
-noticias_finales = noticias_extraidas[:15]
+noticias_finales = noticias_extraidas[:12] 
 
-# --- NUEVO: MOTOR FORENSE DE EXTRACCIÓN DE HORA ---
+# --- MOTOR FORENSE DE EXTRACCIÓN DE HORA ---
 print("Extrayendo metadatos de tiempo...")
 tiempos_reales = {}
 
 def extraer_fecha_exacta(sopa):
-    # 1. Etiquetas clásicas (Facebook/Twitter metadata)
     metas = ['article:published_time', 'article:modified_time', 'datePublished', 'pubdate']
     for m in metas:
         tag = sopa.find('meta', property=m) or sopa.find('meta', itemprop=m) or sopa.find('meta', attrs={'name': m})
         if tag and tag.get('content'):
             return tag['content']
     
-    # 2. Bloques de código ocultos JSON-LD (El estándar de Google News)
     scripts = sopa.find_all('script', type='application/ld+json')
     for script in scripts:
         try:
@@ -85,7 +81,6 @@ def extraer_fecha_exacta(sopa):
 
 for noticia in noticias_finales:
     link_nota = noticia['link']
-    # Hora UTC absoluta por si el diario no tiene fecha (evita el bug de zona horaria)
     hora_fallback = datetime.now(timezone.utc).isoformat()
     tiempos_reales[link_nota] = hora_fallback 
     
@@ -165,7 +160,6 @@ if exito:
                 else: 
                     borde, pill = "border-teal-500", "bg-teal-900/40 text-teal-400"
                 
-                # Rescatamos la hora exacta
                 timestamp_iso = tiempos_reales.get(link, datetime.now(timezone.utc).isoformat())
                 
                 tarjetas_html += f"""
@@ -189,16 +183,33 @@ if exito:
                 </article>
                 """
     
+    # --- LA MAGIA DEL HISTORIAL CON LIMPIEZA AUTOMÁTICA ---
     historial_viejo = ""
     if os.path.exists("historial.txt"):
         with open("historial.txt", "r", encoding="utf-8") as f:
             historial_viejo = f.read()
             
-    historial_actualizado = tarjetas_html + "\n" + historial_viejo
+    # Unimos las noticias nuevas con el historial viejo
+    historial_completo = tarjetas_html + "\n" + historial_viejo
     
+    # Cortamos el historial usando la etiqueta de cierre del artículo
+    articulos = historial_completo.split('</article>')
+    articulos_validos = [art for art in articulos if '<article' in art]
+    
+    # AQUÍ DEFINES EL LÍMITE DE NOTICIAS (Ahora está en 36)
+    max_noticias = 36
+    
+    # Nos quedamos solo con las tarjetas más recientes
+    if articulos_validos:
+        historial_recortado = '</article>\n'.join(articulos_validos[:max_noticias]) + '</article>\n'
+    else:
+        historial_recortado = ""
+    
+    # Guardamos el archivo ya limpio y recortado
     with open("historial.txt", "w", encoding="utf-8") as f:
-        f.write(historial_actualizado)
+        f.write(historial_recortado)
         
+    # --- PLANTILLA HTML ---
     html_completo = f"""<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -236,7 +247,7 @@ if exito:
     </div>
 
     <main class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-        {historial_actualizado}
+        {historial_recortado}
     </main>
 
     <section id="contacto" class="max-w-5xl mx-auto px-4 mt-20 border-t border-[#1f2937] pt-16">
