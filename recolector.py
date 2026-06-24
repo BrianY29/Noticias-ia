@@ -315,7 +315,7 @@ if exito:
     <meta name="description" content="Portal de noticias financieras, mercado de capitales y actualidad argentina en tiempo real, analizadas a fondo por Inteligencia Artificial.">
     <meta property="og:title" content="Noticias IA | Mercados & Actualidad">
     <meta property="og:description" content="Portal de noticias financieras y actualidad en tiempo real, analizadas a fondo por Inteligencia Artificial.">
-    <meta property="og:image" content="TU_IMAGEN_DE_PORTADA.jpg"> <meta property="og:url" content="https://noticiasia.github.io/">
+    <meta property="og:image" content="https://itu.uncuyo.edu.ar/cache/16c63c321040ab4da2010172ba336d67_732_1296.jpg"> <meta property="og:url" content="https://noticiasia.github.io/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     
@@ -358,7 +358,7 @@ if exito:
 
     <footer class="mt-auto border-t border-[#1f2937] pt-12 pb-6">
         <div class="max-w-md mx-auto px-4 flex justify-center">
-            <a href="TU_LINK_DE_LINKEDIN_AQUI" target="_blank" class="bg-[#111827] border border-[#1f2937] hover:border-cyan-500/50 rounded-xl p-4 flex items-center gap-4 transition shadow-lg hover:shadow-cyan-500/10">
+            <a href="https://www.linkedin.com/in/brian-yapura-061522156/" target="_blank" class="bg-[#111827] border border-[#1f2937] hover:border-cyan-500/50 rounded-xl p-4 flex items-center gap-4 transition shadow-lg hover:shadow-cyan-500/10">
                 <div class="bg-cyan-500 text-black px-2 py-1 rounded text-xl font-bold">in</div>
                 <span class="text-white font-semibold">Conectá con Brian Hernan Yapura</span>
             </a>
