@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Noticias IA | Mercados & Actualidad</title>
+    <meta name="description" content="Portal de noticias financieras, mercado de capitales y actualidad argentina en tiempo real, analizadas a fondo por Inteligencia Artificial.">
+    <meta property="og:title" content="Noticias IA | Mercados & Actualidad">
+    <meta property="og:description" content="Portal de noticias financieras y actualidad en tiempo real, analizadas a fondo por Inteligencia Artificial.">
+    <meta property="og:image" content="TU_IMAGEN_DE_PORTADA.jpg"> <meta property="og:url" content="https://noticiasia.github.io/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>body { background-color: #0b0f19; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }</style>
 </head>
-<body class="text-gray-300 antialiased min-h-screen pb-12">
+<body class="text-gray-300 antialiased min-h-screen pb-12 flex flex-col">
     
     <nav class="flex justify-between items-center px-8 py-5 border-b border-[#1f2937] bg-[#0b0f19]/90 backdrop-blur-md sticky top-0 z-50">
         <div class="text-2xl font-black text-white flex items-center gap-2">Noticias IA 🤖</div>
-        <div class="hidden md:flex gap-6 text-sm font-semibold text-gray-400">
-            <a href="#" class="hover:text-cyan-400 transition">Noticias</a>
-            <a href="#contacto" class="hover:text-cyan-400 transition">Contacto</a>
-        </div>
     </nav>
     
     <header class="text-center mt-16 mb-10 px-4">
@@ -56,7 +60,7 @@
     </div>
     
 
-    <div class="max-w-2xl mx-auto px-4 mb-8 mt-4">
+    <div class="max-w-2xl mx-auto px-4 mb-8 mt-4 w-full">
         <div class="relative">
             <input type="text" id="buscador" placeholder="Buscar por palabra clave, acción o dólar..." class="w-full bg-[#111827] border border-[#1f2937] rounded-full px-6 py-4 text-white focus:outline-none focus:border-cyan-500 transition shadow-lg pl-14 placeholder-gray-500">
             <svg class="w-6 h-6 text-gray-500 absolute left-5 top-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
@@ -71,7 +75,7 @@
         <button data-filter="DEPORTES" class="btn-filtro bg-[#1f2937] text-gray-300 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-gray-700 transition border border-gray-700 hover:border-cyan-500/50">Deportes</button>
     </div>
 
-    <main class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20" id="contenedor-noticias">
+    <main class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20 flex-grow" id="contenedor-noticias">
         <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
 <div class="flex gap-2">
@@ -86,7 +90,7 @@
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">El partido PRO intensificó su presión sobre el Gobierno, declarando públicamente que "Manuel Adorni no puede seguir en el cargo". Este pronunciamiento redobla la apuesta de la oposición, señalando una profunda crítica a la gestión del portavoz presidencial y exigiendo cambios en el Gabinete.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El partido PRO intensificó su presión sobre el gobierno al declarar públicamente que Manuel Adorni, actual vocero presidencial, no debería continuar en su cargo. Esta postura evidencia una creciente grieta política y un desafío directo a la administración, forzando una redefinición de alianzas y evidenciando el descontento de un sector importante de la oposición o de sus exaliados.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -102,7 +106,7 @@
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">El senador Marco Rubio advirtió contundentemente que Irán no puede imponer tarifas en el estratégico Estrecho de Ormuz, exigiendo el cese de los ataques perpetrados por grupos aliados a Teherán. Su declaración subraya la creciente preocupación internacional por la estabilidad en la región.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Marco Rubio, senador estadounidense, lanzó una advertencia clara a Irán, señalando que la nación no tiene derecho a imponer tarifas en el estratégico Estrecho de Ormuz. Además, el funcionario instó a detener los ataques perpetrados por grupos aliados de Teherán en la región, subrayando la preocupación por la escalada de tensiones geopolíticas y la seguridad marítima internacional.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -134,7 +138,7 @@
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">El consumo masivo en Argentina mostró una moderación en su caída durante mayo, pero acumuló una baja del 3% en los primeros cinco meses del año. Esta tendencia refleja la persistente falta de demanda ante la caída generalizada de los ingresos de los consumidores, impactando la economía real.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El consumo masivo en Argentina mostró una moderación en su caída durante mayo, aunque el acumulado de los primeros cinco meses del año registra una disminución del 3%. Esta tendencia se atribuye principalmente a la falta de demanda, impulsada por la contracción de los ingresos de los hogares. El panorama indica un desafío persistente para la recuperación económica del país.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -182,7 +186,7 @@
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">El presidente Javier Milei presentó al nuevo vocero Adrián Ravier en un evento de la Fundación Faro, donde también celebró una mejora en el PBI. El mandatario destacó los logros de su gestión en un marco político, reforzando la imagen de su equipo y los resultados económicos que atribuye a sus políticas.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El presidente Javier Milei participó en un evento de la Fundación Faro donde oficializó la presentación de su nuevo vocero, Adrián Ravier. Durante su intervención, Milei destacó y celebró una mejora en el Producto Bruto Interno (PBI), utilizando este dato económico para respaldar la gestión de su gobierno y proyectar un panorama optimista en la esfera política nacional.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -230,7 +234,7 @@
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">Una fuerte polémica sacude el Mundial 2026 luego de que un jugador de Inglaterra se negara a saludar a un rival procesado por abuso sexual. Este gesto de repudio generó un gran revuelo mediático y ético dentro y fuera del campo, poniendo en debate los valores en el deporte y la conducta de los atletas.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Durante el Mundial, se desató una polémica cuando un futbolista de la selección inglesa se negó públicamente a saludar a un jugador rival que enfrenta un proceso judicial por abuso sexual. Este gesto generó un intenso debate sobre ética deportiva y los valores en el fútbol profesional, poniendo en el centro de atención la postura de los atletas frente a situaciones sensibles.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="MERCADOS">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -246,7 +250,7 @@
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">Los mercados globales experimentaron una fuerte caída, impactando negativamente a los ADRs con bajas de hasta 4,4%. Paralelamente, el riesgo país argentino registró su mayor suba diaria en mes y medio, reflejando una creciente preocupación inversora y la volatilidad financiera internacional.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Los mercados financieros globales experimentaron una fuerte contracción, con los ADRs argentinos registrando caídas de hasta el 4,4%. Simultáneamente, el riesgo país argentino sufrió su mayor incremento diario en el último mes y medio, superando los 430 puntos básicos. Esta situación refleja la preocupación de inversores ante la inestabilidad económica global y local.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="MERCADOS">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -262,7 +266,7 @@
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">Arthur Hayes, una figura prominente en el espacio cripto, proyecta que Bitcoin (BTC) podría alcanzar un "fondo" o soporte mínimo en los $40,000 en los próximos seis meses. Esta predicción se basa en análisis de mercado y podría influir significativamente en las estrategias de trading y la confianza de los inversores en el futuro cercano de la principal criptomoneda.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Arthur Hayes, una figura influyente en el sector cripto, proyecta que el valor de Bitcoin (BTC) podría alcanzar los 40,000 dólares en el transcurso de los próximos seis meses. Su predicción se basa en análisis de mercado y tendencias actuales, sugiriendo una recuperación significativa o un impulso alcista para la criptomoneda líder en el corto plazo, atrayendo la atención de inversores.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-orange-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="DEPORTES">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -296,11 +300,11 @@
 </a>
 <p class="text-gray-400 text-sm flex-grow leading-relaxed">Se profundiza la contradicción entre Manuel Adorni y Bullrich respecto a la comparecencia del ministro en el Senado. Mientras un acuerdo para posponer el informe de gestión parece avanzar, las declaraciones cruzadas alimentan la especulación sobre si Adorni intenta "esquivar" al Congreso, evidenciando las tensiones internas y la estrategia gubernamental frente al escrutinio legislativo.</p>
 </article>
-<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="MERCADOS">
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="ECONOMÍA">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
 <div class="flex gap-2">
 <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">ÁMBITO</span>
-<span class="bg-emerald-900/40 text-emerald-400 px-2.5 py-1 rounded-md">MERCADOS</span>
+<span class="bg-blue-900/40 text-blue-400 px-2.5 py-1 rounded-md">ECONOMÍA</span>
 </div>
 <span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T18:50:00-03:00">Reciente</span>
 </div>
@@ -310,7 +314,7 @@
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">El Banco Central de la República Argentina (BCRA) registró su menor compra de dólares en casi cuatro meses, adquiriendo apenas el 3% del volumen total del mercado. Esta marcada desaceleración en la acumulación de reservas preocupa a los analistas, señalando una posible disminución en la liquidación de divisas y un desafío para la estrategia cambiaria del gobierno.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El Banco Central de la República Argentina (BCRA) experimentó una notable desaceleración en su intervención cambiaria, registrando su menor compra de dólares en casi cuatro meses. La entidad apenas logró adquirir el 3% del volumen total del mercado. Esta situación refleja una posible menor oferta de divisas o un cambio en la estrategia monetaria, impactando la estabilidad económica.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -342,7 +346,7 @@
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">La interna gubernamental quedó expuesta nuevamente tras la suspensión anunciada por Bullrich del informe de gestión de Adorni en el Senado, a lo que el ministro contradijo públicamente. El incidente revela fisuras entre ambos funcionarios, pese a los intentos previos por "blindar" al jefe de Gabinete.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Patricia Bullrich anunció la suspensión del informe de gestión de Manuel Adorni en el Senado, pero el propio ministro de Gabinete la desmintió, revelando una profunda interna dentro del gobierno. Esta contradicción expone las tensiones existentes entre figuras clave, generando incertidumbre sobre la coordinación política y la estabilidad de acuerdos previamente alcanzados con bloques legislativos dialoguistas.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="ECONOMÍA">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -374,7 +378,7 @@
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">Cuarenta años después de la misteriosa desaparición de una persona que dejó una película en su videocasetera, la policía ha relanzado la investigación. Las autoridades ofrecen una recompensa significativa para obtener información que ayude a resolver el enigma y esclarecer este antiguo caso sin resolver.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Cuarenta años después de la misteriosa desaparición de una persona que dejó una película en su videocasetera, la policía ha relanzado la investigación ofreciendo una recompensa. Este caso sin resolver busca ser esclarecido mediante la colaboración ciudadana, en un esfuerzo por desentrañar un enigma que ha perdurado por décadas y llevar justicia a la familia afectada.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-orange-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="DEPORTES">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -406,7 +410,7 @@
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">Mark Zuckerberg busca introducir a Meta en los controvertidos mercados de predicción, una estrategia que podría abrir nuevas vías de ingresos y valorización para la compañía. Este movimiento representa una ambiciosa apuesta financiera del fundador, que busca expandir la influencia de Meta más allá de las redes sociales, potencialmente consolidando su posición como billonario en un nuevo sector.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Mark Zuckerberg, CEO de Meta, ha expresado su interés en que la compañía incursione en los mercados de predicción. Esta estrategia busca diversificar las fuentes de ingresos de Meta y podría representar una nueva vía para la acumulación de riqueza personal para Zuckerberg. La iniciativa señala una expansión significativa de Meta más allá de sus operaciones tradicionales de redes sociales.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -455,6 +459,22 @@
 </h2>
 </a>
 <p class="text-gray-400 text-sm flex-grow leading-relaxed">MSCI omitió a Argentina en su último reporte, lo que implica que el país seguirá siendo considerado un mercado "no confiable" para inversores globales. Esta decisión refuerza la percepción de que Argentina no está en consideración inmediata para una reclasificación, afectando negativamente las perspectivas de inversión extranjera y el acceso a capitales en los mercados financieros internacionales.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">LA NACION</span>
+<span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T20:10:26.448Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.lanacion.com.ar/politica/milei-aparece-en-un-evento-con-los-dos-nuevos-funcionarios-del-gobierno-y-con-el-hijo-de-milton-nid23062026/" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Fundación Faro. Milei se mostró con los dos nuevos funcionarios que buscarán reactivar la comunicación del GobiernoPor Paula Rossi</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El presidente Javier Milei apareció en un evento de la Fundación Faro junto a dos nuevos funcionarios clave. Su objetivo es reactivar y fortalecer la estrategia de comunicación del Gobierno. Esta presentación marca un intento por consolidar el mensaje oficial y mejorar la imagen pública de la administración, en un contexto político donde la narrativa es fundamental.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -982,7 +1002,7 @@
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">En la segunda fecha del Grupo L del Mundial, Inglaterra no logró imponerse ante Ghana. El resultado complica las aspiraciones de ambos equipos de avanzar en el torneo, dejando abierta la definición de la fase de grupos para los próximos encuentros.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">La selección de Inglaterra no logró imponerse ante Ghana en su enfrentamiento por la segunda jornada del Grupo L del Mundial 2026. Este resultado inesperado complica las aspiraciones de Inglaterra en la fase de grupos, obligándolos a buscar un mejor desempeño en los próximos partidos para avanzar en el torneo de fútbol más importante.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-orange-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="DEPORTES">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -998,7 +1018,7 @@
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">Las selecciones de Panamá y Croacia se enfrentan para completar la segunda fecha del Grupo L en el Mundial de 2026. Ambos equipos buscan sumar puntos cruciales para sus aspiraciones de clasificación a la siguiente ronda, en un partido determinante para definir posiciones en el grupo.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Las selecciones de Panamá y Croacia se enfrentaron para cerrar la segunda jornada de partidos en el Grupo L del Mundial 2026. Este encuentro es crucial para definir las posiciones y las posibilidades de clasificación de ambos equipos a la siguiente fase del torneo, tras los resultados obtenidos por los demás integrantes del grupo.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -1018,42 +1038,15 @@
 </article>
     </main>
 
-    <section id="contacto" class="max-w-5xl mx-auto px-4 mt-20 border-t border-[#1f2937] pt-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div class="flex flex-col gap-4 justify-center">
-                <a href="TU_LINK_DE_LINKEDIN_AQUI" target="_blank" class="bg-[#111827] border border-[#1f2937] rounded-xl p-5 flex items-center gap-4 transition hover:bg-[#1a2333]">
-                    <div class="bg-yellow-500 text-black px-2 py-1 rounded text-lg font-bold">in</div>
-                    <span class="text-white font-semibold">Conectá conmigo en LinkedIn</span>
-                </a>
-                
-                <a href="mailto:tu-correo@gmail.com" class="bg-[#111827] border border-[#1f2937] rounded-xl p-5 flex items-center gap-4 transition hover:bg-[#1a2333]">
-                    <div class="text-yellow-500 text-2xl">✉</div>
-                    <span class="text-white font-semibold">tu-correo@gmail.com</span>
-                </a>
-            </div>
-            
-            <div class="bg-[#111827] border border-[#1f2937] rounded-2xl p-8">
-                <form class="flex flex-col gap-5">
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-400 mb-2">Nombre</label>
-                        <input type="text" placeholder="Tu nombre" class="w-full bg-[#1a2333] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-400 mb-2">Email</label>
-                        <input type="email" placeholder="tu@email.com" class="w-full bg-[#1a2333] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-400 mb-2">Mensaje</label>
-                        <textarea rows="4" placeholder="¿En qué puedo ayudarte?" class="w-full bg-[#1a2333] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition resize-none"></textarea>
-                    </div>
-                    <button type="button" class="w-full bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-3 px-4 rounded-lg flex justify-center items-center gap-2 transition mt-2">
-                        Enviar Mensaje
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
-                    </button>
-                </form>
-            </div>
+    <footer class="mt-auto border-t border-[#1f2937] pt-12 pb-6">
+        <div class="max-w-md mx-auto px-4 flex justify-center">
+            <a href="TU_LINK_DE_LINKEDIN_AQUI" target="_blank" class="bg-[#111827] border border-[#1f2937] hover:border-cyan-500/50 rounded-xl p-4 flex items-center gap-4 transition shadow-lg hover:shadow-cyan-500/10">
+                <div class="bg-cyan-500 text-black px-2 py-1 rounded text-xl font-bold">in</div>
+                <span class="text-white font-semibold">Conectá con Brian Hernan Yapura</span>
+            </a>
         </div>
-    </section>
+        <p class="text-center text-gray-600 text-xs mt-8">Generado automáticamente. Las noticias pertenecen a sus respectivos autores.</p>
+    </footer>
 
     <script>
         const botones = document.querySelectorAll('.btn-filtro');
