@@ -1,3 +1,163 @@
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">YAHOO FINANZAS</span>
+<span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-24T15:00:12.000Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://es.finance.yahoo.com/noticias/trump-cancela-firma-proyecto-ley-150012358.html" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Trump cancela la firma de un proyecto de ley bipartidista sobre vivienda en EEUU</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Donald Trump suspendió la firma de un proyecto de ley bipartidista clave centrado en la vivienda en Estados Unidos. Esta inesperada decisión afecta el progreso legislativo y genera incertidumbre sobre futuras políticas de vivienda, evidenciando tensiones políticas y el impacto de la polarización en la capacidad de alcanzar consensos en Washington.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="MERCADOS">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">ÁMBITO</span>
+<span class="bg-emerald-900/40 text-emerald-400 px-2.5 py-1 rounded-md">MERCADOS</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-24T11:57:00-03:00">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.ambito.com/finanzas/la-bolsa-se-hunde-y-el-riesgo-pais-sube-la-decision-del-msci-y-el-mal-humor-internacional-n6292262" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Reacción negativa en la city La bolsa se hunde más de 3% y los ADRs pierden hasta 6% tras la decisión del MSCI</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">La bolsa argentina experimentó una fuerte caída, superando el 3%, con los ADRs perdiendo hasta un 6%, como reacción a la decisión de MSCI de mantener al país en su categoría de mercado de frontera. Esta noticia profundiza el riesgo país y genera un clima de pesimismo en la "city", afectando directamente la confianza de los inversores.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="MERCADOS">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">YAHOO FINANZAS</span>
+<span class="bg-emerald-900/40 text-emerald-400 px-2.5 py-1 rounded-md">MERCADOS</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-24T14:47:48.000Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://es.finance.yahoo.com/noticias/brent-baja-74-d%C3%B3lares-inicio-133216172.html" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>El Brent baja de 74 dólares por primera vez desde el inicio de la guerra de Irán</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El precio del petróleo Brent ha caído por debajo de los 74 dólares el barril, un nivel no visto desde el comienzo de la guerra en Irán. Esta disminución refleja preocupaciones sobre la demanda global y un aumento de la oferta, impactando directamente en los mercados energéticos y generando expectativas de posibles fluctuaciones económicas a nivel internacional.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-orange-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="DEPORTES">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">TN</span>
+<span class="bg-orange-900/40 text-orange-400 px-2.5 py-1 rounded-md">DEPORTES</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-24T14:38:06.350Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://tn.com.ar/deportes/mundial/2026/2026/06/24/buscan-a-un-argentino-de-57-anos-desaparecido-en-dallas-viajo-con-un-amigo-para-ver-a-la-seleccion/" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Apareció el hincha argentino de 57 años que era buscado en Dallas: había sido detenido por la policíaPor Daniela Lichinizer - Desde EE.UU.</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El hincha argentino de 57 años que había desaparecido en Dallas, mientras asistía a un partido de la Selección, fue localizado y se confirmó que estuvo detenido por la policía. Su aparición pone fin a la búsqueda y alivia la preocupación de familiares, destacando los imprevistos que pueden ocurrir durante eventos deportivos internacionales.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">ÁMBITO</span>
+<span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-24T11:31:00-03:00">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.ambito.com/politica/nunca-la-vi-tan-enojada-furia-patricia-bullrich-manuel-adorni-desautorizarla-publicamente-n6292206" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Arde La Libertad Avanza "Nunca la vi tan enojada": furia de Bullrich con Adorni tras desautorizarla públicamente Por Ezequiel Rudman</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Una fuerte interna sacude a La Libertad Avanza, con Patricia Bullrich expresando su furia hacia Manuel Adorni tras ser desautorizada públicamente. Este incidente subraya las tensiones dentro del oficialismo y la dificultad para mantener la cohesión interna, generando interrogantes sobre la estabilidad y coordinación de las figuras clave del gobierno.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="MERCADOS">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">IPROFESIONAL</span>
+<span class="bg-emerald-900/40 text-emerald-400 px-2.5 py-1 rounded-md">MERCADOS</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-24T11:30:00-03:00">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.iprofesional.com/finanzas/458094-las-maniobras-con-el-dolar-por-parte-del-bcra-que-despertaron-sospechas-en-la-city" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Maniobras con dólar despiertan sospechas en la City: ¿el BCRA salió a contener la cotización?Hubo un aumento fuerte en el volumen operado, y a los analistas les extraña cómo se "aplastó" la tasa de la cobertura. Sospechas de la mano del BCRAFinanzas/ El pulso del mercadoPor Fernando Gutiérrez</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Maniobras inusuales en el mercado cambiario han levantado sospechas en la City sobre una posible intervención del Banco Central para contener la cotización del dólar. El fuerte aumento en el volumen operado y la "aplastada" tasa de cobertura sugieren un intento del BCRA de estabilizar la divisa, generando debate entre los analistas financieros.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="ECONOMÍA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">YAHOO FINANZAS</span>
+<span class="bg-blue-900/40 text-blue-400 px-2.5 py-1 rounded-md">ECONOMÍA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-24T14:29:00.000Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://es.finance.yahoo.com/noticias/euro-digital-avanza-votaci%C3%B3n-parlamento-142900734.html" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>El euro digital avanza tras votación del Parlamento Europeo</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El proyecto del euro digital dio un paso significativo tras recibir la aprobación en una votación clave del Parlamento Europeo. Este avance marca un hito importante en la modernización monetaria de la eurozona, sentando las bases para una potencial implementación que transformaría el sistema de pagos y la política monetaria en la región.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">LA NACION</span>
+<span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-24T12:51:44.316Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.lanacion.com.ar/politica/la-visita-del-papa-leon-xiv-a-la-argentina-en-noviembre-durara-tres-dias-nid24062026/" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Gira. La visita del papa León XIV a la Argentina en noviembre durará tres díasEl viaje del pontífice por la región incluirá 10 días en Perú y uno y medio en Uruguay; resta el anuncio oficial del VaticanoPolíticaPor Elisabetta Piqué</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El Papa León XIV realizará una visita de tres días a Argentina en noviembre, como parte de una gira regional que también incluirá Perú y Uruguay. Aunque aún se espera el anuncio oficial del Vaticano, esta gira papal representa un importante evento diplomático y religioso, con implicaciones políticas y sociales significativas para la nación.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">TN</span>
+<span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-24T11:56:56.842Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://tn.com.ar/politica/2026/06/24/bajo-presion-por-el-caso-adorni-el-gobierno-busca-recuperar-la-iniciativa-en-diputados-con-la-sancion-de-dos-leyes-economicas/" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Tensión en el CongresoBajo presión por el caso Adorni, el Gobierno busca recuperar la iniciativa en Diputados con la media sanción de dos leyes económicasLa Libertad Avanza busca aprobar en la Cámara Baja el denominado super-RIGI y el acuerdo con los bonistas que no ingresaron al canje de deuda por el default del año 2001. La oposición insistirá con la interpelación al jefe de Gabinete.Por Fernando Fraquelli</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El gobierno enfrenta tensión en el Congreso por el "caso Adorni" y busca recuperar el impulso en Diputados con la aprobación de dos leyes económicas clave, incluyendo el "super-RIGI". Mientras la oposición insiste en la interpelación, La Libertad Avanza presiona para avanzar su agenda legislativa y consolidar su estrategia política en un escenario complejo.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="MERCADOS">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">LA NACION</span>
+<span class="bg-emerald-900/40 text-emerald-400 px-2.5 py-1 rounded-md">MERCADOS</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-24T11:36:15.184Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.lanacion.com.ar/economia/dolar/dolar-hoy-y-dolar-blue-en-vivo-a-cuanto-cotiza-el-oficial-y-cual-es-el-precio-del-paralelo-este-nid24062026/" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Dólar hoyHace 14 min</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El mercado cambiario argentino sigue de cerca la cotización del dólar, tanto oficial como el "dólar blue", en tiempo real. La fluctuación de estas divisas es un indicador crucial para la economía y los inversores, reflejando la incertidumbre y las expectativas sobre la estabilidad financiera del país a lo largo de la jornada.</p>
+</article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="ECONOMÍA">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
 <div class="flex gap-2">
@@ -40,11 +200,27 @@
 </div>
 <a class="group block mb-3" href="https://www.iprofesional.com/finanzas/458121-que-pasara-con-acciones-tras-decision-de-msci-de-mantener-a-argentina-en-la-peor-categoria" target="_blank">
 <h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
-<span>Qué pasará con acciones locales tras decisión de MSCI de dejar a la Argentina en la categoría más bajaLos analistas anticipan cómo seguirán las acciones de las empresas locales, luego de que MSCI confirmó que no mejorará la categoría de ArgentinaFinanzas/ MSCI castiga a ArgentinaPor José Carmona</span>
+<span>Qué pasará con acciones locales tras decisión de MSCI de dejar a la Argentina en la categoría más bajaLos analistas anticipan cómo seguirán las acciones de las empresas locales, luego de que MSCI confirmó que no mejorará la categoría de ArgentinaFinanzas / MSCI castiga a ArgentinaPor José Carmona</span>
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">La decisión de MSCI de mantener a Argentina en la categoría más baja del mercado ha generado preocupación entre los analistas, quienes anticipan un impacto en las acciones locales. Esta confirmación, que refleja la falta de mejoras en el entorno de inversión, influirá en la confianza de los inversores y el rendimiento bursátil argentino.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">La decisión de MSCI de mantener a Argentina en la categoría más baja de mercados emergentes ha generado una fuerte repercusión en el mercado local. Analistas anticipan un impacto negativo en las acciones de empresas argentinas, lo que podría desincentivar inversiones extranjeras y prolongar la incertidumbre sobre el futuro financiero del país.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="ECONOMÍA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">IPROFESIONAL</span>
+<span class="bg-blue-900/40 text-blue-400 px-2.5 py-1 rounded-md">ECONOMÍA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-24T07:00:00-03:00">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.iprofesional.com/management/458072-se-debate-en-diputados-puede-el-nuevo-super-rigi-mover-la-aguja-del-empleo-registrado" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Se debatirá en Diputados: ¿puede el nuevo Super RIGI mover la aguja del empleo registrado?Management / EmpleoPor Paula Krizanovic</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El "Super RIGI", un nuevo Régimen de Incentivo a Grandes Inversiones, se someterá a debate en la Cámara de Diputados. La discusión central gira en torno a su capacidad real para estimular el empleo registrado y reactivar la economía, siendo un instrumento clave en la agenda del gobierno para atraer capitales y fomentar el desarrollo productivo.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="ECONOMÍA">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -78,21 +254,21 @@
 </a>
 <p class="text-gray-400 text-sm flex-grow leading-relaxed">El Gobierno busca reducir la tensión con Patricia Bullrich, pese a los cortocircuitos con Adorni, aceptando la coexistencia de diferencias públicas. Simultáneamente, prepara el debut del nuevo vocero, Ravier, para reorientar la agenda hacia la gestión económica, proyectando una imagen de estabilidad gubernamental a pesar de las fricciones internas.</p>
 </article>
-<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-orange-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="DEPORTES">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
 <div class="flex gap-2">
 <span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">INFOBAE</span>
-<span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
+<span class="bg-orange-900/40 text-orange-400 px-2.5 py-1 rounded-md">DEPORTES</span>
 </div>
-<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-24T07:00:00Z">Reciente</span>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-24T05:00:00Z">Reciente</span>
 </div>
-<a class="group block mb-3" href="https://www.infobae.com/america/mundo/2026/06/24/qatar-afirmo-que-la-comunicacion-directa-entre-iran-y-estados-unidos-es-esencial-para-evitar-incidentes-en-el-estrecho-de-ormuz/" target="_blank">
+<a class="group block mb-3" href="https://www.infobae.com/tendencias/2026/06/24/lionel-messi-cumple-anos-los-detalles-que-repite-en-sus-looks-y-explican-su-naturalidad/" target="_blank">
 <h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
-<span>Qatar afirmó que la comunicación directa entre Irán y Estados Unidos es esencial para evitar incidentes en el estrecho de Ormuz</span>
+<span>Lionel Messi cumple años: los detalles que repite en sus looks y explican su naturalidad</span>
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">Qatar ha subrayado la necesidad crítica de una comunicación directa entre Irán y Estados Unidos para prevenir incidentes en el estratégico estrecho de Ormuz. Este llamado diplomático resalta la fragilidad geopolítica de la región y la importancia de establecer canales de diálogo para la desescalada, garantizando la seguridad marítima y la estabilidad internacional.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Lionel Messi celebra su cumpleaños, y el análisis se centra en los detalles de sus looks que reflejan su naturalidad y estilo personal. La noticia explora cómo el astro argentino, más allá de las canchas, mantiene una imagen auténtica, resaltando aspectos de su vida que captan el interés de sus seguidores y la moda.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -104,11 +280,11 @@
 </div>
 <a class="group block mb-3" href="https://www.lanacion.com.ar/politica/javier-milei-y-sus-medidas-en-vivo-la-situacion-judicial-de-adorni-y-un-nuevo-embate-de-patricia-nid24062026/" target="_blank">
 <h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
-<span>Medidas de MileiHace 18 min</span>
+<span>Medidas de MileiHace 20 min</span>
 <svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </h2>
 </a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">Este informe detalla las recientes medidas implementadas por el gobierno de Javier Milei. Aborda la situación judicial del portavoz Manuel Adorni y los nuevos embates políticos de Patricia (presumiblemente Bullrich), evidenciando las dinámicas y tensiones internas que marcan la agenda política del país y los desafíos de la administración actual.</p>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Un seguimiento en vivo detalla las últimas medidas del gobierno de Javier Milei y los desarrollos políticos recientes. Se destaca la situación judicial de Manuel Adorni y un nuevo conflicto con Patricia Bullrich, reflejando la dinámica interna del oficialismo y los desafíos que enfrenta la administración en un contexto político y judicial complejo.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-orange-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="DEPORTES">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -125,22 +301,6 @@
 </h2>
 </a>
 <p class="text-gray-400 text-sm flex-grow leading-relaxed">Los preparativos para el Mundial 2026 se intensifican, con las selecciones ajustando sus formaciones y estrategias de cara a encuentros cruciales, como el próximo partido contra Jordania. El evento también coincide con el 39º cumpleaños de un destacado futbolista, añadiendo un hito personal a la anticipación y emoción del fútbol global.</p>
-</article>
-<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-orange-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="DEPORTES">
-<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
-<div class="flex gap-2">
-<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">INFOBAE</span>
-<span class="bg-orange-900/40 text-orange-400 px-2.5 py-1 rounded-md">DEPORTES</span>
-</div>
-<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-24T05:00:00Z">Reciente</span>
-</div>
-<a class="group block mb-3" href="https://www.infobae.com/tendencias/2026/06/24/lionel-messi-cumple-anos-los-detalles-que-repite-en-sus-looks-y-explican-su-naturalidad/" target="_blank">
-<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
-<span>Lionel Messi cumple años: los detalles que repite en sus looks y explican su naturalidad</span>
-<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</h2>
-</a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">Con motivo del cumpleaños de Lionel Messi, un análisis profundiza en su distintivo estilo personal, destacando las elecciones de moda recurrentes que definen su imagen pública natural. Esta exploración revela cómo elementos sutiles en sus atuendos contribuyen a su auténtica personalidad, ofreciendo una visión de la faceta fuera de la cancha del legendario futbolista.</p>
 </article>
 <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
 <div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
@@ -797,164 +957,4 @@
 </h2>
 </a>
 <p class="text-gray-400 text-sm flex-grow leading-relaxed">El diputado José Luis Espert fue citado a indagatoria en una causa por lavado de dinero, en relación con la recepción de 200.000 dólares de Fred Machado. Este proceso judicial genera un nuevo frente de conflicto para el economista y político, afectando su imagen pública y la credibilidad de sus posturas. La investigación busca esclarecer la procedencia de los fondos.</p>
-</article>
-<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="ECONOMÍA">
-<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
-<div class="flex gap-2">
-<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">YAHOO FINANZAS</span>
-<span class="bg-blue-900/40 text-blue-400 px-2.5 py-1 rounded-md">ECONOMÍA</span>
-</div>
-<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T16:02:09.000Z">Reciente</span>
-</div>
-<a class="group block mb-3" href="https://es.finance.yahoo.com/noticias/importaciones-soja-2025-26-ue-160209070.html" target="_blank">
-<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
-<span>Importaciones de soja 2025/26 de la UE se reducen un 4% al 21 de junio</span>
-<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</h2>
-</a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">Las importaciones de soja por parte de la Unión Europea para la campaña 2025/26 han experimentado una reducción del 4% hasta el 21 de junio, reflejando posibles ajustes en la demanda o cambios en las cadenas de suministro. Esta disminución en un producto clave puede tener implicaciones para los mercados globales de commodities y para los agricultores de las regiones productoras.</p>
-</article>
-<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="ECONOMÍA">
-<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
-<div class="flex gap-2">
-<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">ÁMBITO</span>
-<span class="bg-blue-900/40 text-blue-400 px-2.5 py-1 rounded-md">ECONOMÍA</span>
-</div>
-<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T12:57:00-03:00">Reciente</span>
-</div>
-<a class="group block mb-3" href="https://www.ambito.com/economia/a-una-decada-del-brexit-la-del-reino-unido-profundizo-sus-problemas-estructurales-n6291849" target="_blank">
-<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
-<span>A una década del Brexit, la economía del Reino Unido profundizó sus problemas estructurales</span>
-<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</h2>
-</a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">Diez años después del Brexit, la economía del Reino Unido enfrenta una agudización de sus problemas estructurales, incluyendo desafíos en productividad y comercio. La salida de la Unión Europea ha generado complejidades adicionales, impactando negativamente en diversos sectores y limitando el crecimiento, lo que exige nuevas estrategias para afrontar un futuro económico incierto y reconfigurar sus relaciones comerciales.</p>
-</article>
-<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="MERCADOS">
-<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
-<div class="flex gap-2">
-<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">YAHOO FINANZAS</span>
-<span class="bg-emerald-900/40 text-emerald-400 px-2.5 py-1 rounded-md">MERCADOS</span>
-</div>
-<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T15:39:00.000Z">Reciente</span>
-</div>
-<a class="group block mb-3" href="https://es.finance.yahoo.com/noticias/ripple-obtiene-licencia-mica-preliminar-153900988.html" target="_blank">
-<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
-<span>Ripple obtiene licencia MiCA preliminar en Luxemburgo</span>
-<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</h2>
-</a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">Ripple, la empresa de tecnología blockchain, ha conseguido una licencia MiCA preliminar en Luxemburgo. Esta autorización es un paso crucial para expandir sus operaciones de criptoactivos dentro de la Unión Europea, adaptándose a la nueva regulación de Mercados de Criptoactivos (MiCA). La licencia refuerza la posición de Ripple en el ecosistema financiero global y su cumplimiento normativo.</p>
-</article>
-<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="MERCADOS">
-<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
-<div class="flex gap-2">
-<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">IPROFESIONAL</span>
-<span class="bg-emerald-900/40 text-emerald-400 px-2.5 py-1 rounded-md">MERCADOS</span>
-</div>
-<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T12:38:00-03:00">Reciente</span>
-</div>
-<a class="group block mb-3" href="https://www.iprofesional.com/finanzas/458061-como-cotizan-hoy-23-de-junio-el-merval-adrs-bonos-y-riesgo-pais" target="_blank">
-<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
-<span>Los activos argentinos no resisten: sube el riesgo país y se desploman los ADRs en Wall Street</span>
-<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</h2>
-</a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">Los activos argentinos experimentan una jornada de fuerte declive, con el riesgo país en ascenso y una significativa caída de los ADRs en Wall Street, reflejando la falta de resistencia del mercado local. Esta situación genera preocupación entre los inversores, quienes observan con atención la volatilidad y la depreciación de bonos y acciones argentinas en el contexto global.</p>
-</article>
-<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="MERCADOS">
-<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
-<div class="flex gap-2">
-<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">TN</span>
-<span class="bg-emerald-900/40 text-emerald-400 px-2.5 py-1 rounded-md">MERCADOS</span>
-</div>
-<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T15:26:36.455Z">Reciente</span>
-</div>
-<a class="group block mb-3" href="https://tn.com.ar/economia/2026/06/23/sube-el-riesgo-pais-y-bajan-las-acciones-argentinas-en-wall-street-en-un-dia-negativo-para-los-mercados-globales/" target="_blank">
-<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
-<span>Sube el riesgo país y bajan las acciones argentinas en Wall Street en un día negativo para los mercados globales</span>
-<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</h2>
-</a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">La jornada financiera se tiñe de rojo para Argentina, con un aumento significativo del riesgo país y una caída pronunciada de las acciones argentinas cotizadas en Wall Street. Este panorama negativo se enmarca en un día desfavorable para los mercados globales, exacerbando la vulnerabilidad de los activos locales y reflejando la incertidumbre económica.</p>
-</article>
-<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="ECONOMÍA">
-<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
-<div class="flex gap-2">
-<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">YAHOO FINANZAS</span>
-<span class="bg-blue-900/40 text-blue-400 px-2.5 py-1 rounded-md">ECONOMÍA</span>
-</div>
-<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T15:05:34.000Z">Reciente</span>
-</div>
-<a class="group block mb-3" href="https://es.finance.yahoo.com/noticias/temperaturas-r%C3%A9cord-ponen-peligro-cosecha-150534879.html" target="_blank">
-<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
-<span>Temperaturas récord ponen en peligro la cosecha de granos en Francia</span>
-<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</h2>
-</a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">Temperaturas récord en Francia están poniendo en grave riesgo la cosecha de granos de este año. La ola de calor extrema amenaza con reducir drásticamente la producción agrícola, generando preocupación por la seguridad alimentaria y potenciales impactos económicos en el sector primario y los mercados globales.</p>
-</article>
-<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
-<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
-<div class="flex gap-2">
-<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">YAHOO FINANZAS</span>
-<span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
-</div>
-<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T14:54:55.000Z">Reciente</span>
-</div>
-<a class="group block mb-3" href="https://es.finance.yahoo.com/noticias/corte-suprema-eeuu-impulso-demanda-145455527.html" target="_blank">
-<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
-<span>Corte Suprema EEUU da impulso a demanda de Exxon para obtener una indemnización de Cuba</span>
-<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</h2>
-</a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">La Corte Suprema de Estados Unidos ha dado un importante respaldo a la demanda de Exxon Mobil contra Cuba, permitiendo a la compañía petrolera buscar una indemnización por la nacionalización de sus propiedades tras la revolución cubana. Esta decisión podría sentar un precedente significativo para otras empresas afectadas y tensar aún más las relaciones económicas entre ambos países.</p>
-</article>
-<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="MERCADOS">
-<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
-<div class="flex gap-2">
-<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">ÁMBITO</span>
-<span class="bg-emerald-900/40 text-emerald-400 px-2.5 py-1 rounded-md">MERCADOS</span>
-</div>
-<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T11:45:00-03:00">Reciente</span>
-</div>
-<a class="group block mb-3" href="https://www.ambito.com/finanzas/el-dolar-extiende-su-racha-alcista-y-el-mayorista-ya-acumula-una-suba-mas-del-4-junio-n6291807" target="_blank">
-<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
-<span>El dólar oficial sube por sexta jornada consecutiva y acumula más de 4% en junio</span>
-<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</h2>
-</a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">El dólar oficial registra su sexta jornada consecutiva de alza, acumulando un incremento superior al 4% en el mes de junio. Esta persistente tendencia alcista genera preocupación en los mercados y en la economía general, impactando en los costos de importación y en la percepción de inflación. La dinámica sugiere una presión continua sobre el tipo de cambio oficial.</p>
-</article>
-<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-orange-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="DEPORTES">
-<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
-<div class="flex gap-2">
-<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">ÁMBITO</span>
-<span class="bg-orange-900/40 text-orange-400 px-2.5 py-1 rounded-md">DEPORTES</span>
-</div>
-<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T11:36:00-03:00">Reciente</span>
-</div>
-<a class="group block mb-3" href="https://www.ambito.com/deportes/seleccion-argentina-mundial-2026-en-vivo-kansas-lionel-scaloni-messi-noticias-minuto-a-minuto-en-vivo-23-junio" target="_blank">
-<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
-<span>La Selección argentina se entrena en Kansas y Scaloni prepara la rotación ante Jordania</span>
-<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</h2>
-</a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">La Selección argentina se prepara en Kansas para su próximo compromiso contra Jordania, con el director técnico Lionel Scaloni planificando una significativa rotación de jugadores. Esta estrategia busca dar descanso a figuras clave y evaluar nuevas opciones tácticas, manteniendo al equipo en óptimas condiciones para las fases decisivas del torneo venidero.</p>
-</article>
-<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="MERCADOS">
-<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
-<div class="flex gap-2">
-<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">IPROFESIONAL</span>
-<span class="bg-emerald-900/40 text-emerald-400 px-2.5 py-1 rounded-md">MERCADOS</span>
-</div>
-<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-23T11:30:00-03:00">Reciente</span>
-</div>
-<a class="group block mb-3" href="https://www.iprofesional.com/finanzas/458001-el-dolar-no-afloja-el-nuevo-precio-techo-y-piso-que-preven-operadores-para-la-divisa" target="_blank">
-<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
-<span>El dólar no afloja: cuál es el nuevo precio techo y piso que prevén operadores para la divisa</span>
-<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</h2>
-</a>
-<p class="text-gray-400 text-sm flex-grow leading-relaxed">El dólar continúa su tendencia alcista, llevando a los operadores del mercado a reajustar sus proyecciones sobre los valores techo y piso de la divisa. Esta volatilidad genera incertidumbre, con análisis técnicos y fundamentales que buscan prever los movimientos futuros y las implicaciones para la economía y los inversores ante un escenario de presión cambiaria.</p>
 </article>
