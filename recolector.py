@@ -271,7 +271,7 @@ if exito:
     with open("historial.txt", "w", encoding="utf-8") as f:
         f.write(historial_recortado)
 
-    # --- 4. EXTRACCIÓN DEL MERCADO BURSÁTIL (NUEVO) ---
+    # --- 4. EXTRACCIÓN DEL MERCADO BURSÁTIL ---
     print("Obteniendo cotizaciones del mercado...")
     cotizaciones_html = ""
     try:
@@ -304,24 +304,28 @@ if exito:
     </div>
     """
         
-    # --- PLANTILLA HTML DEFINITIVA CON EL PANEL BURSÁTIL ---
+    # --- PLANTILLA HTML DEFINITIVA (Con SEO y solo LinkedIn) ---
     html_completo = f"""<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Noticias IA | Mercados & Actualidad</title>
+    <meta name="description" content="Portal de noticias financieras, mercado de capitales y actualidad argentina en tiempo real, analizadas a fondo por Inteligencia Artificial.">
+    <meta property="og:title" content="Noticias IA | Mercados & Actualidad">
+    <meta property="og:description" content="Portal de noticias financieras y actualidad en tiempo real, analizadas a fondo por Inteligencia Artificial.">
+    <meta property="og:image" content="TU_IMAGEN_DE_PORTADA.jpg"> <meta property="og:url" content="https://noticiasia.github.io/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>body {{ background-color: #0b0f19; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }}</style>
 </head>
-<body class="text-gray-300 antialiased min-h-screen pb-12">
+<body class="text-gray-300 antialiased min-h-screen pb-12 flex flex-col">
     
     <nav class="flex justify-between items-center px-8 py-5 border-b border-[#1f2937] bg-[#0b0f19]/90 backdrop-blur-md sticky top-0 z-50">
         <div class="text-2xl font-black text-white flex items-center gap-2">Noticias IA 🤖</div>
-        <div class="hidden md:flex gap-6 text-sm font-semibold text-gray-400">
-            <a href="#" class="hover:text-cyan-400 transition">Noticias</a>
-            <a href="#contacto" class="hover:text-cyan-400 transition">Contacto</a>
-        </div>
     </nav>
     
     <header class="text-center mt-16 mb-10 px-4">
@@ -333,7 +337,7 @@ if exito:
 
     {panel_financiero}
 
-    <div class="max-w-2xl mx-auto px-4 mb-8 mt-4">
+    <div class="max-w-2xl mx-auto px-4 mb-8 mt-4 w-full">
         <div class="relative">
             <input type="text" id="buscador" placeholder="Buscar por palabra clave, acción o dólar..." class="w-full bg-[#111827] border border-[#1f2937] rounded-full px-6 py-4 text-white focus:outline-none focus:border-cyan-500 transition shadow-lg pl-14 placeholder-gray-500">
             <svg class="w-6 h-6 text-gray-500 absolute left-5 top-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
@@ -348,46 +352,19 @@ if exito:
         <button data-filter="DEPORTES" class="btn-filtro bg-[#1f2937] text-gray-300 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-gray-700 transition border border-gray-700 hover:border-cyan-500/50">Deportes</button>
     </div>
 
-    <main class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20" id="contenedor-noticias">
+    <main class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20 flex-grow" id="contenedor-noticias">
         {historial_recortado}
     </main>
 
-    <section id="contacto" class="max-w-5xl mx-auto px-4 mt-20 border-t border-[#1f2937] pt-16">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div class="flex flex-col gap-4 justify-center">
-                <a href="TU_LINK_DE_LINKEDIN_AQUI" target="_blank" class="bg-[#111827] border border-[#1f2937] rounded-xl p-5 flex items-center gap-4 transition hover:bg-[#1a2333]">
-                    <div class="bg-yellow-500 text-black px-2 py-1 rounded text-lg font-bold">in</div>
-                    <span class="text-white font-semibold">Conectá conmigo en LinkedIn</span>
-                </a>
-                
-                <a href="mailto:tu-correo@gmail.com" class="bg-[#111827] border border-[#1f2937] rounded-xl p-5 flex items-center gap-4 transition hover:bg-[#1a2333]">
-                    <div class="text-yellow-500 text-2xl">✉</div>
-                    <span class="text-white font-semibold">tu-correo@gmail.com</span>
-                </a>
-            </div>
-            
-            <div class="bg-[#111827] border border-[#1f2937] rounded-2xl p-8">
-                <form class="flex flex-col gap-5">
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-400 mb-2">Nombre</label>
-                        <input type="text" placeholder="Tu nombre" class="w-full bg-[#1a2333] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-400 mb-2">Email</label>
-                        <input type="email" placeholder="tu@email.com" class="w-full bg-[#1a2333] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-400 mb-2">Mensaje</label>
-                        <textarea rows="4" placeholder="¿En qué puedo ayudarte?" class="w-full bg-[#1a2333] border border-gray-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition resize-none"></textarea>
-                    </div>
-                    <button type="button" class="w-full bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-3 px-4 rounded-lg flex justify-center items-center gap-2 transition mt-2">
-                        Enviar Mensaje
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
-                    </button>
-                </form>
-            </div>
+    <footer class="mt-auto border-t border-[#1f2937] pt-12 pb-6">
+        <div class="max-w-md mx-auto px-4 flex justify-center">
+            <a href="TU_LINK_DE_LINKEDIN_AQUI" target="_blank" class="bg-[#111827] border border-[#1f2937] hover:border-cyan-500/50 rounded-xl p-4 flex items-center gap-4 transition shadow-lg hover:shadow-cyan-500/10">
+                <div class="bg-cyan-500 text-black px-2 py-1 rounded text-xl font-bold">in</div>
+                <span class="text-white font-semibold">Conectá con Brian Hernan Yapura</span>
+            </a>
         </div>
-    </section>
+        <p class="text-center text-gray-600 text-xs mt-8">Generado automáticamente. Las noticias pertenecen a sus respectivos autores.</p>
+    </footer>
 
     <script>
         const botones = document.querySelectorAll('.btn-filtro');
