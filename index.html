@@ -1,258 +1,358 @@
 <!DOCTYPE html>
-<html lang="es" class="w-full h-full m-0 p-0 overflow-x-hidden">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Terminal | Mercados & Actualidad</title>
-    <meta name="description" content="Terminal financiera y de actualidad argentina en tiempo real, analizada por Inteligencia Artificial.">
-    <meta property="og:title" content="Terminal IA | Mercados & Actualidad">
-    <meta property="og:description" content="Noticias financieras y actualidad en tiempo real, analizadas a fondo por Inteligencia Artificial.">
-    <meta property="og:image" content="https://itu.uncuyo.edu.ar/cache/16c63c321040ab4da2010172ba336d67_732_1296.jpg"> 
+    <title>Noticias IA | Mercados & Actualidad</title>
+    <meta name="description" content="Portal de noticias financieras, mercado de capitales y actualidad argentina en tiempo real, analizadas a fondo por Inteligencia Artificial.">
+    <meta property="og:title" content="Noticias IA | Mercados & Actualidad">
+    <meta property="og:description" content="Portal de noticias financieras y actualidad en tiempo real, analizadas a fondo por Inteligencia Artificial.">
+    <meta property="og:image" content="https://itu.uncuyo.edu.ar/cache/16c63c321040ab4da2010172ba336d67_732_1296.jpg"> <meta property="og:url" content="https://noticiasia.github.io/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop"> 
     <meta property="og:url" content="https://noticiasia.github.io/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { background-color: #020617; font-family: 'Inter', sans-serif; scroll-behavior: smooth; color: #f8fafc; overflow-x: hidden; width: 100%; }
-        @keyframes ticker { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100%); } }
-        .animate-ticker { display: inline-flex; white-space: nowrap; animation: ticker 35s linear infinite; }
-        .animate-ticker:hover { animation-play-state: paused; }
-        article b { color: #38bdf8; font-weight: 800; background: rgba(56, 189, 248, 0.12); padding: 0 4px; border-radius: 4px; border: 1px solid rgba(56,189,248,0.2);}
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #475569; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .break-words { overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; }
-        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-        
-        /* Efecto Atenuación Leídas (35% Opacidad) */
-        .tarjeta-leida { opacity: 0.35 !important; filter: grayscale(40%); border-top-color: #475569 !important; transition: all 0.3s ease; }
-    </style>
+    <style>body { background-color: #0b0f19; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }</style>
 </head>
-<body class="flex w-full min-h-screen m-0 p-0">
+<body class="text-gray-300 antialiased min-h-screen pb-12 flex flex-col">
+    
+    <nav class="flex justify-between items-center px-8 py-5 border-b border-[#1f2937] bg-[#0b0f19]/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="text-2xl font-black text-white flex items-center gap-2">Noticias IA 🤖</div>
+    </nav>
+    
+    <header class="text-center mt-16 mb-10 px-4">
+        <h1 class="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
+            La información al <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">instante</span>
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-8">Noticias y Mercados en tiempo real, analizadas a fondo por Inteligencia Artificial.</p>
+    </header>
 
-    <div id="progressBar" class="fixed top-0 left-0 h-1 bg-cyan-400 z-[100] transition-all duration-150 shadow-[0_0_10px_#22d3ee]" style="width: 0%;"></div>
-
-    <aside class="fixed w-64 h-screen bg-[#0b0f19] border-r border-gray-800/80 flex flex-col shadow-2xl z-40 hidden md:flex shrink-0">
-        <div class="p-6 border-b border-gray-800/80 bg-[#0f172a]/50">
-            <h1 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-tight">TERMINAL IA</h1>
-            <p class="text-[10px] text-gray-500 mt-1 font-mono tracking-widest">v26.0 - MASTER EDITION</p>
-        </div>
-        
-        <div class="p-6 flex-grow overflow-y-auto flex flex-col gap-6">
-            <div class="bg-[#0f172a]/70 border border-gray-800 rounded-xl p-4 text-center">
-                <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-2">Hora Argentina. Mercado desde 10:30hs a 17hs</p>
-                <div id="reloj-digital" class="text-4xl font-mono font-black text-gray-100 tracking-wider">00:00:00</div>
-                <div id="mercado-estado" class="mt-3 text-xs font-bold px-3 py-1 rounded-full inline-block animate-pulse">--</div>
-            </div>
-
-            <div>
-                <button id="btn-ver-leidas" class="w-full bg-gray-900 hover:bg-gray-800 text-cyan-400 border border-cyan-500/30 rounded-xl py-4 text-xs font-bold transition mb-4 tracking-wider uppercase cursor-pointer shadow-lg">👁️ Ver Noticias Leídas</button>
-                <button id="btn-reset-leidas" class="w-full bg-rose-950/20 hover:bg-rose-950/40 text-rose-400 border border-rose-500/30 rounded-xl py-4 text-xs font-bold transition tracking-wider uppercase cursor-pointer shadow-lg">🗑️ Resetear Historial</button>
-            </div>
-        </div>
-
-        <div class="p-6 border-t border-gray-800/80 bg-[#0f172a]/30">
-            <a href="https://www.linkedin.com/in/brian-yapura-061522156/" target="_blank" class="w-full bg-[#1e293b] hover:bg-[#334155] border border-gray-700/50 rounded-xl p-3 flex justify-center items-center gap-3 transition shadow-lg">
-                <div class="bg-[#0a66c2] text-white px-2 py-0.5 rounded text-sm font-bold">in</div>
-                <span class="text-gray-200 font-semibold text-xs tracking-wide">Conectar en LinkedIn</span>
-            </a>
-        </div>
-    </aside>
-
-    <div class="md:ml-64 w-full md:w-[calc(100vw-16rem)] flex flex-col min-h-screen overflow-x-hidden">
-        
-        <header class="sticky top-0 z-30 w-full bg-[#020617]/80 backdrop-blur-2xl border-b border-gray-800/80 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+    
+    <div class="max-w-4xl mx-auto px-4 mb-8">
+        <div class="flex flex-wrap gap-4 justify-between">
             
-            <div class="w-full bg-[#4c0519]/40 border-b border-rose-900/50 text-rose-200 text-base py-2 overflow-hidden font-mono tracking-wide">
-                <div class="animate-ticker w-full">
-                    <span class="mx-10 flex items-center gap-2 text-base md:text-lg"><span class="text-rose-500 animate-pulse">⚡</span> El mercado opera con cautela a la espera de nuevos datos macroeconómicos.</span><span class="mx-10 flex items-center gap-2 text-base md:text-lg"><span class="text-rose-500 animate-pulse">⚡</span> Jornada clave en la bolsa porteña.</span>
-                </div>
-            </div>
-
-            <div class="w-full p-6 md:p-8 flex flex-wrap gap-6 justify-around md:justify-between items-center max-w-7xl mx-auto">
-                
-                
-                <div class="bg-[#0f172a]/80 backdrop-blur-xl border border-gray-700/60 rounded-xl p-4 md:p-6 flex-1 min-w-[150px] md:min-w-[180px] shadow-[0_8px_30px_rgb(0,0,0,0.5)] flex flex-col justify-between">
-                    <span class="text-gray-400 text-xs md:text-sm font-black tracking-wider uppercase truncate">DÓLAR OFICIAL</span>
-                    <div class="text-3xl md:text-4xl font-mono font-black text-gray-100 mt-2 flex items-center justify-between gap-1">
-                        $1495 <span class="text-[10px] text-emerald-500 flex items-center font-bold">▼<span class="opacity-60 text-[8px]">-0.1%</span></span>
-                    </div>
-                    <div class="flex justify-between items-center mt-3 border-t border-gray-800/50 pt-3 gap-2 flex-wrap">
-                        <span class="text-xs md:text-sm text-gray-500 font-mono">C: $1445</span>
+                        <div class="bg-[#1f2937] border border-gray-700 rounded-xl p-4 flex-1 min-w-[140px] text-center shadow-lg hover:border-emerald-500/50 transition">
+                            <h3 class="text-gray-400 text-xs font-bold tracking-widest mb-1">DÓLAR OFICIAL</h3>
+                            <div class="text-2xl font-black text-emerald-400">$1495</div>
+                            <div class="text-[10px] text-gray-500 mt-1">Compra: $1445</div>
+                        </div>
                         
-                    </div>
-                </div>
-                
-                <div class="bg-[#0f172a]/80 backdrop-blur-xl border border-gray-700/60 rounded-xl p-4 md:p-6 flex-1 min-w-[150px] md:min-w-[180px] shadow-[0_8px_30px_rgb(0,0,0,0.5)] flex flex-col justify-between">
-                    <span class="text-gray-400 text-xs md:text-sm font-black tracking-wider uppercase truncate">DÓLAR BLUE</span>
-                    <div class="text-3xl md:text-4xl font-mono font-black text-gray-100 mt-2 flex items-center justify-between gap-1">
-                        $1515 <span class="text-[10px] text-rose-500 flex items-center font-bold">▲<span class="opacity-60 text-[8px]">+0.5%</span></span>
-                    </div>
-                    <div class="flex justify-between items-center mt-3 border-t border-gray-800/50 pt-3 gap-2 flex-wrap">
-                        <span class="text-xs md:text-sm text-gray-500 font-mono">C: $1495</span>
-                        <div class="text-[12px] md:text-[14px] text-cyan-400 font-mono mt-1 bg-cyan-950/30 rounded border border-cyan-500/30 px-2 py-0.5 w-max">Brecha: 1.3%</div>
-                    </div>
-                </div>
-                
-                <div class="bg-[#0f172a]/80 backdrop-blur-xl border border-gray-700/60 rounded-xl p-4 md:p-6 flex-1 min-w-[150px] md:min-w-[180px] shadow-[0_8px_30px_rgb(0,0,0,0.5)] flex flex-col justify-between">
-                    <span class="text-gray-400 text-xs md:text-sm font-black tracking-wider uppercase truncate">DÓLAR MEP</span>
-                    <div class="text-3xl md:text-4xl font-mono font-black text-gray-100 mt-2 flex items-center justify-between gap-1">
-                        $1502.5 <span class="text-[10px] text-rose-500 flex items-center font-bold">▲<span class="opacity-60 text-[8px]">+0.5%</span></span>
-                    </div>
-                    <div class="flex justify-between items-center mt-3 border-t border-gray-800/50 pt-3 gap-2 flex-wrap">
-                        <span class="text-xs md:text-sm text-gray-500 font-mono">C: $1499.3</span>
-                        <div class="text-[12px] md:text-[14px] text-cyan-400 font-mono mt-1 bg-cyan-950/30 rounded border border-cyan-500/30 px-2 py-0.5 w-max">Brecha: 0.5%</div>
-                    </div>
-                </div>
-                
-                <div class="bg-[#0f172a]/80 backdrop-blur-xl border border-gray-700/60 rounded-xl p-4 md:p-6 flex-1 min-w-[150px] md:min-w-[180px] shadow-[0_8px_30px_rgb(0,0,0,0.5)] flex flex-col justify-between">
-                    <span class="text-gray-400 text-xs md:text-sm font-black tracking-wider uppercase truncate">DÓLAR CCL</span>
-                    <div class="text-3xl md:text-4xl font-mono font-black text-gray-100 mt-2 flex items-center justify-between gap-1">
-                        $1541.6 <span class="text-[10px] text-rose-500 flex items-center font-bold">▲<span class="opacity-60 text-[8px]">+0.5%</span></span>
-                    </div>
-                    <div class="flex justify-between items-center mt-3 border-t border-gray-800/50 pt-3 gap-2 flex-wrap">
-                        <span class="text-xs md:text-sm text-gray-500 font-mono">C: $1539.3</span>
-                        <div class="text-[12px] md:text-[14px] text-cyan-400 font-mono mt-1 bg-cyan-950/30 rounded border border-cyan-500/30 px-2 py-0.5 w-max">Brecha: 3.1%</div>
-                    </div>
-                </div>
-                
-            <div class="bg-[#0f172a]/80 backdrop-blur-xl border border-rose-900/40 rounded-xl p-4 md:p-6 flex-1 min-w-[150px] md:min-w-[180px] shadow-[0_8px_30px_rgb(0,0,0,0.5)] flex flex-col justify-between">
-                <span class="text-rose-400 text-xs md:text-sm font-black tracking-wider uppercase truncate">Riesgo País</span>
-                <div class="text-3xl md:text-4xl font-mono font-black text-white mt-2 flex items-center justify-between gap-1">
-                    437 <span class="text-rose-500 text-xs md:text-sm flex items-center font-bold gap-1">▲ 4 (+0.92%)</span>
-                </div>
-                <div class="mt-3 border-t border-gray-800/50 pt-3 flex justify-between items-center">
-                    <span class="text-xs md:text-sm text-gray-500 font-mono">Ayer: 433</span>
-                    <span class="text-xs md:text-sm text-gray-500 font-mono">EMBI</span>
-                </div>
-            </div>
+                        <div class="bg-[#1f2937] border border-gray-700 rounded-xl p-4 flex-1 min-w-[140px] text-center shadow-lg hover:border-emerald-500/50 transition">
+                            <h3 class="text-gray-400 text-xs font-bold tracking-widest mb-1">DÓLAR BLUE</h3>
+                            <div class="text-2xl font-black text-emerald-400">$1515</div>
+                            <div class="text-[10px] text-gray-500 mt-1">Compra: $1495</div>
+                        </div>
+                        
+                        <div class="bg-[#1f2937] border border-gray-700 rounded-xl p-4 flex-1 min-w-[140px] text-center shadow-lg hover:border-emerald-500/50 transition">
+                            <h3 class="text-gray-400 text-xs font-bold tracking-widest mb-1">DÓLAR MEP</h3>
+                            <div class="text-2xl font-black text-emerald-400">$1502.5</div>
+                            <div class="text-[10px] text-gray-500 mt-1">Compra: $1499.3</div>
+                        </div>
+                        
+                        <div class="bg-[#1f2937] border border-gray-700 rounded-xl p-4 flex-1 min-w-[140px] text-center shadow-lg hover:border-emerald-500/50 transition">
+                            <h3 class="text-gray-400 text-xs font-bold tracking-widest mb-1">DÓLAR CCL</h3>
+                            <div class="text-2xl font-black text-emerald-400">$1541.6</div>
+                            <div class="text-[10px] text-gray-500 mt-1">Compra: $1539.3</div>
+                        </div>
+                        
+    <div class="max-w-5xl mx-auto px-4 mb-10">
+        <div class="flex flex-wrap gap-3 justify-center">
             
-            </div>
-        </header>
+        </div>
+    </div>
+    
 
-        <div class="p-6 md:p-12 w-full flex-grow max-w-7xl mx-auto box-border">
-            
-            <div id="separador-hoy" class="flex items-center gap-4 mb-10 mt-2 w-full">
-                <div class="h-px bg-gray-800 flex-grow"></div>
-                <span id="titulo-seccion" class="text-xs font-mono text-cyan-500 border border-cyan-500/30 bg-cyan-900/20 px-6 py-2 rounded-full uppercase tracking-widest whitespace-nowrap shadow-[0_0_15px_#22d3ee]">Últimas Noticias</span>
-                <div class="h-px bg-gray-800 flex-grow"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full" id="contenedor-noticias">
-                
-            </div>
-
-            <div id="loading-spinner" class="hidden justify-center my-20 w-full">
-                <div class="w-12 h-12 border-4 border-cyan-900 border-t-cyan-400 rounded-full animate-spin shadow-[0_0_20px_#22d3ee]"></div>
-            </div>
-            
-            <div class="flex justify-center mt-20 mb-12 w-full">
-                <button id="btn-volver-arriba" class="hidden bg-[#1e293b] hover:bg-cyan-600 hover:text-black border border-gray-700 hover:border-cyan-400 text-gray-300 font-mono text-xs px-10 py-5 rounded-full transition-all duration-300 shadow-[0_10px_25px_rgba(0,0,0,0.6)] gap-2 items-center tracking-widest uppercase font-bold text-center">
-                    ↑ Volver al inicio
-                </button>
-            </div>
+    <div class="max-w-2xl mx-auto px-4 mb-8 mt-4 w-full">
+        <div class="relative">
+            <input type="text" id="buscador" placeholder="Buscar por palabra clave, acción o dólar..." class="w-full bg-[#111827] border border-[#1f2937] rounded-full px-6 py-4 text-white focus:outline-none focus:border-cyan-500 transition shadow-lg pl-14 placeholder-gray-500">
+            <svg class="w-6 h-6 text-gray-500 absolute left-5 top-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
         </div>
     </div>
 
+    <div class="max-w-4xl mx-auto px-4 flex flex-wrap justify-center gap-3 mb-12">
+        <button data-filter="TODAS" class="btn-filtro bg-gradient-to-r from-cyan-400 to-blue-500 text-black px-5 py-2.5 rounded-full font-bold text-sm transition shadow-lg shadow-cyan-500/20">Todas</button>
+        <button data-filter="MERCADOS" class="btn-filtro bg-[#1f2937] text-gray-300 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-gray-700 transition border border-gray-700 hover:border-cyan-500/50">Mercados</button>
+        <button data-filter="ECONOMÍA" class="btn-filtro bg-[#1f2937] text-gray-300 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-gray-700 transition border border-gray-700 hover:border-cyan-500/50">Economía</button>
+        <button data-filter="POLÍTICA" class="btn-filtro bg-[#1f2937] text-gray-300 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-gray-700 transition border border-gray-700 hover:border-cyan-500/50">Política</button>
+        <button data-filter="DEPORTES" class="btn-filtro bg-[#1f2937] text-gray-300 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-gray-700 transition border border-gray-700 hover:border-cyan-500/50">Deportes</button>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20 flex-grow" id="contenedor-noticias">
+        <article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="ECONOMÍA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">YAHOO FINANZAS</span>
+<span class="bg-blue-900/40 text-blue-400 px-2.5 py-1 rounded-md">ECONOMÍA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-26T22:06:23Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://es.finance.yahoo.com/noticias/s-p-confirma-calificaci%C3%B3n-crediticia-220623092.html" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>S&amp;P confirma la calificación crediticia "AA+" de EEUU y destaca su resiliencia</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">S&amp;P Global Ratings ha ratificado la calificación crediticia "AA+" para Estados Unidos, resaltando la robusta resiliencia de su economía ante diversos desafíos. Esta confirmación es crucial para la confianza de los inversores globales y la estabilidad financiera internacional, validando la solidez fiscal y la capacidad de pago del gobierno estadounidense en el mediano y largo plazo.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="ECONOMÍA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">IPROFESIONAL</span>
+<span class="bg-blue-900/40 text-blue-400 px-2.5 py-1 rounded-md">ECONOMÍA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-26T18:29:00-03:00">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.iprofesional.com/economia/458446-caputo-cedio-a-la-presion-de-los-bancos-apago-aspiradora-y-libero-3-billones-pesos-al-mercado" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Caputo cedió a la presión de los bancos, apagó aspiradora de pesos y liberó $3 billones al mercadoEl ministro de Economía cedió a la presión de los bancos y apagó la aspiradora de pesos: expandió la base monetaria en $3 billonesEconomía/ Licitación clavePor Fernando Gutiérrez</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El ministro de Economía, Caputo, cedió ante la presión del sector bancario y desactivó la estrategia de absorción de pesos, inyectando 3 billones de pesos al mercado. Esta medida, una expansión significativa de la base monetaria, busca aliviar la liquidez bancaria y podría tener implicaciones importantes para la inflación y la estabilidad financiera en el corto plazo.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">TN</span>
+<span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-26T20:51:54.259Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://tn.com.ar/politica/2026/06/26/en-el-gobierno-admiten-que-las-declaraciones-de-milei-sobre-adorni-causaron-impacto-y-profundizaron-la-incertidumbre/" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Presunto enriquecimiento ilícitoDespués de las declaraciones de Milei en España, crecen las versiones sobre la salida de Adorni y suenan dos nombres para reemplazarloEn distintos sectores de la Casa Rosada advierten que el escándalo por las investigaciones judiciales al jefe de Gabinete complica las reformas en el Senado. Reconocen que no podrán contener mucho más la ofensiva opositora. Por Ignacio Salerno</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Las recientes declaraciones del Presidente Milei en España han exacerbado las versiones sobre la inminente salida de Manuel Adorni del Gabinete, con dos posibles reemplazos ya en discusión. El escándalo por las investigaciones judiciales contra el jefe de Gabinete complica el avance de las reformas en el Senado, debilitando la posición del oficialismo frente a la ofensiva opositora.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="MERCADOS">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">YAHOO FINANZAS</span>
+<span class="bg-emerald-900/40 text-emerald-400 px-2.5 py-1 rounded-md">MERCADOS</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-26T20:49:00Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://es.finance.yahoo.com/noticias/fan-tokens-mundial-2026-suben-204900137.html" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Fan tokens del Mundial 2026 suben tras fin de la fase de grupos</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El valor de los fan tokens asociados al Mundial 2026 experimentó un alza significativa una vez concluida la fase de grupos. Este incremento refleja el comportamiento volátil del mercado de criptoactivos y el interés especulativo de los inversores ante los hitos de grandes eventos deportivos, impactando directamente en sus cotizaciones. Esto indica una reacción positiva del mercado a los avances del torneo.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">INFOBAE</span>
+<span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-26T20:45:23.751Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.infobae.com/america/mundo/2026/06/26/estados-unidos-bombardeo-instalaciones-militares-iranies-tras-el-ataque-del-regimen-a-un-carguero-en-ormuz/" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Estados Unidos bombardeó instalaciones militares iraníes tras el ataque del régimen a un carguero en Ormuz</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Estados Unidos llevó a cabo bombardeos contra instalaciones militares iraníes en respuesta a un ataque previo del régimen de Irán a un carguero en el estratégico estrecho de Ormuz. Esta escalada de hostilidades profundiza la crisis en la región y aumenta la tensión geopolítica, con potenciales repercusiones para la navegación internacional y la estabilidad global.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">IPROFESIONAL</span>
+<span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-26T17:40:00-03:00">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.iprofesional.com/politica/458440-el-nombre-que-esta-sonando-muy-fuerte-para-reemplazar-a-manuel-adorni" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Bullrich está ganando la pulseada para que se vaya Adorni y suena muy fuerte su posible reemplazoUna salida de Adorni marcaría el triunfo del sector que impulsó una restructuración interna en el Gabinete tras intensas disputas políticasPolítica/ Cambio de último momentoPor Mariano Obarrio</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Patricia Bullrich estaría ganando la pulseada interna para lograr la salida de Manuel Adorni del Gabinete, en medio de intensas disputas políticas. Su eventual reemplazo ya genera especulaciones, evidenciando una restructuración impulsada por un sector del gobierno y una reconfiguración de fuerzas políticas que podría redefinir el equilibrio de poder en el oficialismo.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">LA NACION</span>
+<span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-26T20:20:20.309Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.lanacion.com.ar/el-mundo/israel-y-el-libano-firman-un-acuerdo-clave-pero-ormuz-vuelve-a-encender-la-tension-entre-eeuu-e-iran-nid26062026/" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>“Es una violación estúpida”. EE.UU. vuelve a atacar en Irán después de que Israel y el Líbano firmaran un acuerdo</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Estados Unidos ha lanzado nuevos ataques en Irán, calificando la acción como una "violación estúpida", a pesar de la reciente firma de un acuerdo entre Israel y Líbano. Este incidente reaviva las tensiones en la región del estrecho de Ormuz, complejizando el panorama geopolítico y las relaciones internacionales en Oriente Medio, con posibles repercusiones globales.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">INFOBAE</span>
+<span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-26T19:55:26.749Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.infobae.com/venezuela/2026/06/26/estados-unidos-envio-dos-buques-y-varias-aeronaves-con-ayuda-para-venezuela-tras-los-terremotos/" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Estados Unidos envió dos buques y varias aeronaves con ayuda para Venezuela tras los terremotos</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Estados Unidos ha desplegado dos buques y varias aeronaves cargadas con ayuda humanitaria con destino a Venezuela, tras los devastadores terremotos que azotaron al país. Esta iniciativa de asistencia internacional busca paliar la grave situación de emergencia, aliviando el sufrimiento de los afectados y demostrando un gesto de cooperación en momentos críticos entre ambas naciones.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">TN</span>
+<span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-26T19:24:28.599Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://tn.com.ar/politica/2026/06/26/el-fiscal-mola-pidio-la-detencion-de-martin-insaurralde-en-la-causa-por-presunto-enriquecimiento-ilicito/" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>El fiscal pidió la detención de Martín Insaurralde en la causa por presunto enriquecimiento ilícito</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El fiscal Mola ha solicitado formalmente la detención de Martín Insaurralde en el marco de la investigación por presunto enriquecimiento ilícito. Esta medida judicial intensifica el proceso contra el exfuncionario, marcando un avance significativo en la causa que indaga el origen de sus bienes y activos, generando un fuerte impacto político y mediático en el país.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">LA NACION</span>
+<span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-26T19:08:21.044Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.lanacion.com.ar/politica/el-fastidio-en-la-casa-rosada-y-la-embestida-que-regresa-en-el-congreso-nid26062026/" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>En la cuerda floja. Crecen las versiones en el Gobierno sobre una posible salida de Manuel AdorniEl jefe de Gabinete no logra salir de la escena, pese a los intentos que se hicieron desde el oficialismo; el impacto de las afirmaciones de Milei y las revelaciones sobre sus últimas compras aceleraron los rumoresPolíticaPor Cecilia Devanna</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Crecen intensas versiones sobre la posible salida de Manuel Adorni como jefe de Gabinete, alimentadas por recientes declaraciones presidenciales y revelaciones sobre sus compras. La situación evidencia un creciente malestar interno en el gobierno y un intento por reconfigurar la estructura oficialista, en medio de disputas políticas que complican la gestión gubernamental.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-orange-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="DEPORTES">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">TN</span>
+<span class="bg-orange-900/40 text-orange-400 px-2.5 py-1 rounded-md">DEPORTES</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-26T17:33:18.650Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://tn.com.ar/deportes/formula-1/2026/06/26/la-frustracion-de-colapinto-luego-de-la-segunda-clasificacion-del-gp-de-austria-no-funciono-como-esperabamos/" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>La frustración de Colapinto luego de la segunda clasificación del GP de Austria: "No funcionó como esperábamos"</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">El piloto argentino Franco Colapinto expresó su frustración tras una insatisfactoria segunda clasificación en el Gran Premio de Austria de Fórmula 1. Su rendimiento no cumplió las expectativas, dejándolo en una posición desafiante para la carrera principal. El equipo técnico buscará identificar y corregir los problemas para mejorar su desempeño en futuras competencias.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="MERCADOS">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">IPROFESIONAL</span>
+<span class="bg-emerald-900/40 text-emerald-400 px-2.5 py-1 rounded-md">MERCADOS</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-26T14:25:00-03:00">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.iprofesional.com/finanzas/458317-el-dolar-sigue-siendo-muy-barato-veredicto-de-la-city-tras-la-suba-de-los-ultimos-dias" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>El veredicto de la City tras la suba de los últimos días: el dólar sigue estando muy baratoEl dólar escala hasta 7% en el mes. Para muchos analistas, no solo no se trata de un movimiento preocupante sino que lo ven como positivoFinanzas / Desde el mercadoPor Mariano Jaimovich</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">A pesar de un reciente incremento del 7% en el valor del dólar durante el mes, analistas de la "City" argentina persisten en la visión de que la divisa estadounidense se mantiene "muy barata". Esta perspectiva sugiere que el movimiento actual es visto como una corrección natural y, para muchos, incluso como un factor positivo para la economía local y los mercados financieros.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-blue-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="ECONOMÍA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">IPROFESIONAL</span>
+<span class="bg-blue-900/40 text-blue-400 px-2.5 py-1 rounded-md">ECONOMÍA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-26T12:13:00-03:00">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.iprofesional.com/negocios/458093-hay-un-boom-de-casas-de-empanadas-baratas-cuanto-cuesta-una-franquicia-llave-en-mano" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Hay un boom de casas de empanadas baratas: cuánto cuesta una franquicia llave en manoNegocios / Oportunidad de negocioPor Laura Andahazi Kasnya</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Se registra un notable auge en el mercado de casas de empanadas económicas, atrayendo a numerosos emprendedores interesados en el modelo de franquicias "llave en mano". La nota detalla los costos de inversión y el potencial de rentabilidad de estos negocios, destacando una oportunidad de crecimiento en el sector gastronómico en Argentina, impulsado por la demanda de opciones accesibles.</p>
+</article>
+<article class="tarjeta-noticia bg-[#111827] rounded-xl p-6 flex flex-col border-l-4 border-indigo-500 hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-black/50" data-categoria="POLÍTICA">
+<div class="flex justify-between items-center mb-4 text-xs font-bold tracking-wide">
+<div class="flex gap-2">
+<span class="bg-[#1f2937] text-gray-300 px-2.5 py-1 rounded-md border border-gray-700">INFOBAE</span>
+<span class="bg-indigo-900/40 text-indigo-400 px-2.5 py-1 rounded-md">POLÍTICA</span>
+</div>
+<span class="tiempo-noticia text-gray-500 text-right" data-timestamp="2026-06-26T06:05:20.059Z">Reciente</span>
+</div>
+<a class="group block mb-3" href="https://www.infobae.com/venezuela/2026/06/26/terremotos-en-venezuela-en-vivo/" target="_blank">
+<h2 class="text-xl font-bold text-white leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 flex items-start gap-2">
+<span>Venezuela elevó a 920 la cifra de muertos y 3.360 los heridos por el doble terremoto</span>
+<svg class="w-5 h-5 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed">Venezuela ha actualizado la trágica cifra de víctimas por el doble terremoto, reportando 920 fallecidos y 3.360 heridos. La magnitud del desastre natural ha desbordado los recursos locales, generando una profunda crisis humanitaria. Las autoridades continúan con las labores de rescate y la gestión de la emergencia a nivel nacional, movilizando esfuerzos para asistir a la población.</p>
+</article>
+    </main>
+
+    <footer class="mt-auto border-t border-[#1f2937] pt-12 pb-6">
+        <div class="max-w-md mx-auto px-4 flex justify-center">
+            <a href="https://www.linkedin.com/in/brian-yapura-061522156/" target="_blank" class="bg-[#111827] border border-[#1f2937] hover:border-cyan-500/50 rounded-xl p-4 flex items-center gap-4 transition shadow-lg hover:shadow-cyan-500/10">
+                <div class="bg-cyan-500 text-black px-2 py-1 rounded text-xl font-bold">in</div>
+                <span class="text-white font-semibold">Conectá con Brian Hernan Yapura</span>
+            </a>
+        </div>
+        <p class="text-center text-gray-600 text-xs mt-8">Generado automáticamente. Las noticias pertenecen a sus respectivos autores.</p>
+    </footer>
+
     <script>
-        const articulos = Array.from(document.querySelectorAll('.tarjeta-noticia'));
-        let vistaActual = "principales";
+        const botones = document.querySelectorAll('.btn-filtro');
+        const articulos = document.querySelectorAll('.tarjeta-noticia');
+        const buscador = document.getElementById('buscador');
+        let categoriaActual = 'TODAS';
 
-        function aplicarVistas() {
-            const leidas = JSON.parse(localStorage.getItem('noticias_leidas') || '[]');
+        function filtrarNoticias() {
+            const textoBusqueda = buscador.value.toLowerCase();
+            
             articulos.forEach(art => {
-                const url = art.getAttribute('data-url');
-                const isRead = leidas.includes(url);
+                const categoriaArt = art.getAttribute('data-categoria');
+                const titulo = art.querySelector('h2').textContent.toLowerCase();
+                const resumen = art.querySelector('p').textContent.toLowerCase();
                 
-                if (vistaActual === "principales") {
-                    if (isRead) {
-                        art.style.display = 'none';
-                    } else {
-                        art.style.display = 'flex';
-                        art.classList.remove('tarjeta-leida');
-                    }
+                const coincideCategoria = (categoriaActual === 'TODAS' || categoriaArt === categoriaActual);
+                const coincideTexto = (titulo.includes(textoBusqueda) || resumen.includes(textoBusqueda));
+                
+                if (coincideCategoria && coincideTexto) {
+                    art.style.display = 'flex';
                 } else {
-                    if (isRead) {
-                        art.style.display = 'flex';
-                        art.classList.add('tarjeta-leida');
-                    } else {
-                        art.style.display = 'none';
-                    }
+                    art.style.display = 'none';
                 }
             });
-            actualizarSeparadorAyer();
         }
 
-        // Marcar como leída al hacer clic en cualquier parte de la tarjeta
-        articulos.forEach(art => {
-            art.addEventListener('click', () => {
-                if (vistaActual !== "principales") return;
-                const url = art.getAttribute('data-url');
-                let leidas = JSON.parse(localStorage.getItem('noticias_leidas') || '[]');
-                if (!leidas.includes(url)) {
-                    leidas.push(url);
-                    localStorage.setItem('noticias_leidas', JSON.stringify(leidas));
-                }
+        botones.forEach(boton => {
+            boton.addEventListener('click', () => {
+                botones.forEach(b => b.className = 'btn-filtro bg-[#1f2937] text-gray-300 px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-gray-700 transition border border-gray-700 hover:border-cyan-500/50');
+                boton.className = 'btn-filtro bg-gradient-to-r from-cyan-400 to-blue-500 text-black px-5 py-2.5 rounded-full font-bold text-sm shadow-lg shadow-cyan-500/20 transition';
                 
-                art.style.transition = "all 0.3s ease";
-                art.style.opacity = "0";
-                art.style.transform = "scale(0.95)";
-                setTimeout(() => {
-                    aplicarVistas();
-                    art.style.opacity = "1";
-                    art.style.transform = "scale(1)";
-                }, 300);
+                categoriaActual = boton.getAttribute('data-filter');
+                filtrarNoticias();
             });
         });
 
-        const btnVerLeidas = document.getElementById('btn-ver-leidas');
-        const tituloSeccion = document.getElementById('titulo-seccion');
-
-        btnVerLeidas.addEventListener('click', () => {
-            if (vistaActual === "principales") {
-                vistaActual = "leidas";
-                btnVerLeidas.innerText = "👁️ Ver Principales";
-                tituloSeccion.innerText = "Historial de Noticias Leídas";
-            } else {
-                vistaActual = "principales";
-                btnVerLeidas.innerText = "👁️ Ver Noticias Leídas";
-                tituloSeccion.innerText = "Últimas Noticias";
-            }
-            aplicarVistas();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        document.getElementById('btn-reset-leidas').addEventListener('click', () => {
-            localStorage.removeItem('noticias_leidas');
-            vistaActual = "principales";
-            btnVerLeidas.innerText = "👁️ Ver Noticias Leídas";
-            tituloSeccion.innerText = "Últimas Noticias";
-            aplicarVistas();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        function actualizarReloj() {
-            const ahora = new Date();
-            const opciones = { timeZone: 'America/Argentina/Buenos_Aires', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-            document.getElementById('reloj-digital').textContent = ahora.toLocaleTimeString('es-AR', opciones);
-            
-            const dia = ahora.getDay(); 
-            const hora = ahora.getHours();
-            const estadoEl = document.getElementById('mercado-estado');
-            
-            if (dia >= 1 && dia <= 5 && hora >= 10 && hora < 17) {
-                estadoEl.textContent = "ABIERTO";
-                estadoEl.className = "mt-3 text-xs font-bold px-4 py-1.5 rounded-full inline-block bg-emerald-950/40 text-emerald-400 border border-emerald-500/30 animate-pulse tracking-wider";
-            } else {
-                estadoEl.textContent = "CERRADO";
-                estadoEl.className = "mt-3 text-xs font-bold px-4 py-1.5 rounded-full inline-block bg-rose-950/40 text-rose-400 border border-rose-500/30 tracking-wider";
-            }
-        }
+        buscador.addEventListener('input', filtrarNoticias);
 
         function actualizarTiempos() {
             document.querySelectorAll('.tiempo-noticia').forEach(el => {
@@ -266,46 +366,21 @@
                 if (isNaN(diffMinutos)) return;
 
                 if (diffMinutos < 1) {
-                    el.textContent = "INSTANTES";
-                    el.className = "tiempo-noticia text-cyan-400 text-[10px] font-black font-mono bg-cyan-900/30 border border-cyan-500/50 px-2 py-1 rounded shadow-[0_0_10px_rgba(34,211,238,0.2)]";
+                    el.textContent = "Hace instantes";
                 } else if (diffMinutos < 60) {
-                    el.textContent = `HACE ${diffMinutos}m`;
-                    el.className = "tiempo-noticia text-gray-300 text-[10px] font-mono bg-gray-800 border border-gray-600 px-2 py-1 rounded";
+                    el.textContent = `hace ${diffMinutos} min`;
                 } else if (diffMinutos < 1440) {
                     const diffHoras = Math.floor(diffMinutos / 60);
-                    el.textContent = `HACE ${diffHoras}h`;
-                    el.className = "tiempo-noticia text-gray-400 text-[10px] font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded";
+                    el.textContent = `hace ${diffHoras} h`;
                 } else {
-                    el.textContent = 'AYER';
-                    el.className = "tiempo-noticia text-gray-600 text-[10px] font-mono bg-transparent border border-gray-800 px-2 py-1 rounded";
+                    const diffDias = Math.floor(diffMinutos / 1440);
+                    el.textContent = diffDias === 1 ? 'hace 1 día' : `hace ${diffDias} días`;
                 }
             });
-            actualizarSeparadorAyer();
         }
         
-        function actualizarSeparadorAyer() {
-            const sep = document.getElementById('separador-ayer-dinamico');
-            if(sep) sep.remove();
-
-            const todosVisibles = articulos.filter(art => art.style.display !== 'none');
-            for(let i=0; i<todosVisibles.length; i++) {
-                const tagTiempo = todosVisibles[i].querySelector('.tiempo-noticia').textContent;
-                if(tagTiempo.includes('AYER')) {
-                    const div = document.createElement('div');
-                    div.id = 'separador-ayer-dinamico';
-                    div.className = 'col-span-1 md:col-span-2 xl:col-span-3 flex items-center gap-4 my-8 w-full';
-                    div.innerHTML = '<div class="h-px bg-gray-800/80 flex-grow"></div><span class="text-[10px] font-mono text-gray-500 border border-gray-800 bg-[#020617] px-4 py-1.5 rounded-full uppercase tracking-widest">Jornada Anterior</span><div class="h-px bg-gray-800/80 flex-grow"></div>';
-                    todosVisibles[i].parentNode.insertBefore(div, todosVisibles[i]);
-                    break;
-                }
-            }
-        }
-        
-        aplicarVistas();
         actualizarTiempos();
-        actualizarReloj();
-        setInterval(actualizarTiemmas, 60000);
-        setInterval(actualizarReloj, 1000);
+        setInterval(actualizarTiempos, 60000);
     </script>
 </body>
 </html>
