@@ -1,1 +1,306 @@
-
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-gray-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="POLÍTICA">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-indigo-900/40 text-indigo-400 border border-indigo-500/30 px-2 py-1 rounded-md whitespace-nowrap">POLÍTICA</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">⚪ NEUTRAL</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">LA NACION, TN</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-26T01:47:04.937Z">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://tn.com.ar/internacional/2026/06/24/terremotos-en-venezuela-en-vivo-reportes-de-victimas-y-destrozos-las-tareas-de-rescate-y-las-ultimas-noticias/" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">Terremotos en Venezuela: Cifra de muertos asciende a 235; La Guaira declarada zona de desastre</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• Los terremotos de magnitud <b>7,2</b> y <b>7,5</b> Richter en Venezuela dejan <b>235 muertos</b> y <b>4300 heridos</b>, con <b>138 réplicas</b>.<br/>• El estado de <b>La Guaira</b> fue declarado "zona de desastre", mientras rescatistas continúan la búsqueda de víctimas entre los escombros.<br/>• La presidenta <b>Delcy Rodríguez</b> supervisa los operativos de búsqueda y rescate en las áreas más devastadas.</p>
+<span class="text-[10px] font-bold bg-yellow-500/20 text-yellow-500 px-2 py-0.5 rounded border border-yellow-500/30 mt-2 inline-block">🗞️ Cubierto por 2 medios</span>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#VENEZUELA</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#TERREMOTO</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#DESASTRE HUMANITARIO</span>
+</div>
+</article>
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-rose-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="MERCADOS">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-emerald-900/40 text-emerald-400 border border-emerald-500/30 px-2 py-1 rounded-md whitespace-nowrap">MERCADOS</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">🔴 NEGATIVO</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">ÁMBITO</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-25T22:20:36-03:00">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://www.ambito.com/apple-aumento-33-el-precio-las-mac-y-los-ipad-la-ia-detras-una-suba-historica-n6292996" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">Apple aumenta hasta 33% el precio de Mac y iPad a nivel mundial; la IA detrás de una suba histórica</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• <b>Apple</b> incrementó el precio de sus productos <b>Mac</b> y <b>iPad</b> hasta en un <b>33%</b> a nivel global.<br/>• La compañía atribuye esta "suba histórica" a la inversión y el desarrollo en <b>Inteligencia Artificial (IA)</b>.<br/>• Este movimiento podría sentar un precedente para otras empresas tecnológicas que integran IA en sus productos, afectando el poder adquisitivo de los consumidores.</p>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#APPLE</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#IA</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#PRECIOS</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#TECNOLOGÍA</span>
+</div>
+</article>
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-emerald-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="ECONOMÍA">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-blue-900/40 text-blue-400 border border-blue-500/30 px-2 py-1 rounded-md whitespace-nowrap">ECONOMÍA</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">🟢 POSITIVO</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">ÁMBITO</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-25T22:10:00-03:00">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://www.ambito.com/finanzas/las-pymes-se-financiaron-al-2533-el-mercado-capitales-mayo-la-tasa-casi-15-puntos-un-ano-n6292974" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">Pymes se financiaron al 25,33% en mercado de capitales durante mayo; tasa bajó casi 15 puntos en un año</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• Las <b>Pymes argentinas</b> se financiaron al <b>25,33%</b> en el mercado de capitales durante mayo, según un nuevo índice.<br/>• Esta tasa representa una baja de casi <b>15 puntos porcentuales</b> en un año, reflejando una mejora en las condiciones de financiación.<br/>• La reducción de costos financieros es un factor positivo para el desarrollo y la inversión de las pequeñas y medianas empresas.</p>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#PYMES</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#FINANCIAMIENTO</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#TASAS DE INTERÉS</span>
+</div>
+</article>
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-gray-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="DEPORTES">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-orange-900/40 text-orange-400 border border-orange-500/30 px-2 py-1 rounded-md whitespace-nowrap">DEPORTES</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">⚪ NEUTRAL</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">TN</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-26T00:42:53.440Z">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://tn.com.ar/deportes/mundial/2026/2026/06/25/no-quiero-ni-pensar-en-eso-revelaron-una-frase-intima-de-lionel-messi-sobre-su-retiro-del-futbol/" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">Lionel Messi y una frase íntima sobre su posible retiro del fútbol</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• Se reveló una frase de <b>Lionel Messi</b> en la que expresa su reticencia a pensar en su retiro del fútbol.<br/>• La figura del fútbol mundial sigue generando expectativas sobre su continuidad en el deporte.<br/>• La noticia genera debate entre fanáticos y especialistas sobre el futuro de uno de los jugadores más grandes de la historia.</p>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#LIONEL MESSI</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#FÚTBOL</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#RETIRO</span>
+</div>
+</article>
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-gray-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="MERCADOS">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-emerald-900/40 text-emerald-400 border border-emerald-500/30 px-2 py-1 rounded-md whitespace-nowrap">MERCADOS</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">⚪ NEUTRAL</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">YAHOO FINANZAS</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-26T00:30:00Z">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://es.finance.yahoo.com/noticias/bitgo-recorta-15-personal-centrarse-003000173.html" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">BitGo recorta el 15% de su personal para centrarse en IA y stablecoins</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• La compañía de criptomonedas <b>BitGo</b> anunció un recorte del <b>15%</b> de su plantilla de personal.<br/>• La medida busca una reorientación estratégica hacia áreas clave como la <b>Inteligencia Artificial (IA)</b> y las <b>stablecoins</b>.<br/>• Este ajuste refleja la dinámica del mercado cripto, con un énfasis creciente en la tecnología emergente y la estabilidad de activos.</p>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#BITGO</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#CRIPTOMONEDAS</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#IA</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#STABLECOINS</span>
+</div>
+</article>
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-gray-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="MERCADOS">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-emerald-900/40 text-emerald-400 border border-emerald-500/30 px-2 py-1 rounded-md whitespace-nowrap">MERCADOS</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">⚪ NEUTRAL</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">YAHOO FINANZAS, INFOBAE</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-25T23:43:02Z">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://es.finance.yahoo.com/noticias/starlink-despliega-internet-gratuito-venezuela-234302037.html" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">Starlink despliega internet gratuito en Venezuela tras terremotos; ayuda de EEUU limitada por cierre de aeropuerto</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• <b>Starlink</b> activó internet gratuito en Venezuela en respuesta a los devastadores terremotos, ofreciendo conectividad esencial.<br/>• Venezolanos en <b>Estados Unidos</b> buscan enviar ayuda, pero el aeropuerto de <b>Caracas</b> permanece cerrado, dificultando la logística.<br/>• La iniciativa de <b>Starlink</b> destaca su rol en la respuesta a desastres, con implicaciones potenciales para su expansión en la región.</p>
+<span class="text-[10px] font-bold bg-yellow-500/20 text-yellow-500 px-2 py-0.5 rounded border border-yellow-500/30 mt-2 inline-block">🗞️ Cubierto por 2 medios</span>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#STARLINK</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#VENEZUELA</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#AYUDA</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#TELECOMUNICACIONES</span>
+</div>
+</article>
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-gray-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="MERCADOS">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-emerald-900/40 text-emerald-400 border border-emerald-500/30 px-2 py-1 rounded-md whitespace-nowrap">MERCADOS</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">⚪ NEUTRAL</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">YAHOO FINANZAS</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-25T23:02:00Z">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://es.finance.yahoo.com/noticias/stani-kulechov-aave-niega-venta-230200788.html" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">Stani Kulechov de Aave niega venta de participación en Kraken y confirma recompras de AAVE</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• <b>Stani Kulechov</b>, fundador de <b>Aave</b>, desmintió rumores sobre una venta de participación en <b>Kraken</b>.<br/>• Confirmó, en cambio, la realización de recompras del token <b>AAVE</b>, lo que podría influir positivamente en su valor.<br/>• La aclaración busca calmar la volatilidad en el mercado de criptoactivos y reafirmar la confianza en el proyecto <b>Aave</b>.</p>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#AAVE</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#CRIPTOMONEDAS</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#KRAKEN</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#RECOMPRAS</span>
+</div>
+</article>
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-gray-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="POLÍTICA">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-indigo-900/40 text-indigo-400 border border-indigo-500/30 px-2 py-1 rounded-md whitespace-nowrap">POLÍTICA</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">⚪ NEUTRAL</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">TN</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-25T22:35:10.934Z">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://tn.com.ar/internacional/2026/06/25/el-drama-de-una-argentina-de-79-anos-que-quedo-atrapada-en-el-terremoto-en-venezuela-esta-postrada-y-pide-ayuda-al-gobierno/" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">Drama de argentina de 79 años atrapada en terremotos de Venezuela; pide ayuda para volver</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• Una ciudadana argentina de <b>79 años</b> se encuentra postrada y atrapada en <b>Venezuela</b> tras los terremotos.<br/>• La mujer, sin familia en el país, solicita ayuda al <b>Gobierno argentino</b> para su repatriación.<br/>• El caso resalta la situación de los ciudadanos argentinos afectados por el desastre natural en el exterior.</p>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#ARGENTINA</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#VENEZUELA</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#TERREMOTO</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#REPATRIACIÓN</span>
+</div>
+</article>
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-gray-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="ECONOMÍA">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-blue-900/40 text-blue-400 border border-blue-500/30 px-2 py-1 rounded-md whitespace-nowrap">ECONOMÍA</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">⚪ NEUTRAL</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">ÁMBITO</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-25T18:40:00-03:00">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://www.ambito.com/economia/turismo-mayo-llegaron-mas-extranjeros-y-cayo-la-salida-argentinos-pero-el-saldo-siguio-rojo-n6292891" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">Turismo: Llegada de extranjeros aumentó en mayo y salida de argentinos cayó, pero saldo siguió en rojo</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• En mayo, la llegada de turistas extranjeros a <b>Argentina</b> aumentó, impulsada por el <b>Mundial</b> y la revaluación del <b>real brasileño</b>.<br/>• La salida de argentinos al exterior disminuyó, pero el saldo de la balanza turística se mantuvo en <b>rojo</b>.<br/>• A pesar de la mejora parcial, el sector turístico aún enfrenta desafíos para generar un superávit de divisas.</p>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#TURISMO</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#BALANZA COMERCIAL</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#ARGENTINA</span>
+</div>
+</article>
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-gray-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="POLÍTICA">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-indigo-900/40 text-indigo-400 border border-indigo-500/30 px-2 py-1 rounded-md whitespace-nowrap">POLÍTICA</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">⚪ NEUTRAL</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">TN</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-25T21:27:42.986Z">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://tn.com.ar/politica/2026/06/25/la-onu-le-exigio-al-reino-unido-que-negocie-con-argentina-la-soberania-de-las-islas-malvinas/" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">La ONU exige al Reino Unido que negocie con Argentina la soberanía de las Islas Malvinas</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• La <b>ONU</b> emitió una resolución exigiendo al <b>Reino Unido</b> entablar negociaciones con <b>Argentina</b> sobre la soberanía de las <b>Islas Malvinas</b>.<br/>• Este reclamo reitera la postura histórica de <b>Argentina</b> en el foro internacional.<br/>• El tema de las <b>Malvinas</b> sigue siendo una prioridad en la agenda política exterior argentina, con implicaciones diplomáticas y estratégicas.</p>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#MALVINAS</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#SOBERANÍA</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#ONU</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#DIPLOMACIA</span>
+</div>
+</article>
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-gray-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="POLÍTICA">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-indigo-900/40 text-indigo-400 border border-indigo-500/30 px-2 py-1 rounded-md whitespace-nowrap">POLÍTICA</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">⚪ NEUTRAL</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">TN</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-25T20:15:10.916Z">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://tn.com.ar/politica/2026/06/25/sin-quorum-y-con-acusaciones-cruzadas-como-el-gobierno-freno-la-sesion-en-el-senado-y-evito-el-pedido-de-interpelacion-a-adorni/" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">El Gobierno frenó sesión en el Senado evitando interpelación a Adorni por falta de quórum</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• El <b>Gobierno argentino</b> logró frenar una sesión en el <b>Senado</b>, evitando la interpelación al vocero presidencial <b>Manuel Adorni</b>.<br/>• La sesión fue cancelada por falta de quórum, tras acusaciones cruzadas entre oficialismo y oposición.<br/>• Este episodio destaca la tensión política y las dificultades del gobierno para avanzar su agenda legislativa.</p>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#SENADO</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#POLÍTICA</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#QUÓRUM</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#GOBIERNO</span>
+</div>
+</article>
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-rose-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="POLÍTICA">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-indigo-900/40 text-indigo-400 border border-indigo-500/30 px-2 py-1 rounded-md whitespace-nowrap">POLÍTICA</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">🔴 NEGATIVO</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">LA NACION</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-25T18:21:22.867Z">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://www.lanacion.com.ar/politica/juicio-de-los-cuadernos-las-maniobras-de-los-empresarios-investigados-para-extraer-efectivo-de-la-nid25062026/" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">Caso Cuadernos: Revelan maniobras de empresarios y "castigos" a empleados de AFIP que investigaron</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• El juicio del <b>Caso Cuadernos</b> expone maniobras de empresarios para extraer efectivo y presuntos "castigos" a empleados de la <b>AFIP</b>.<br/>• Supervisores de la agencia de recaudación declararon sobre inconsistencias contables en firmas como <b>Isolux, Iecsa y Esuco</b>.<br/>• El caso continúa revelando la complejidad de la corrupción en <b>Argentina</b>, impactando la confianza en el sistema judicial y empresarial.</p>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#CORRUPCIÓN</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#CUADERNOS</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#AFIP</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#ARGENTINA</span>
+</div>
+</article>
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-gray-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="DEPORTES">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-orange-900/40 text-orange-400 border border-orange-500/30 px-2 py-1 rounded-md whitespace-nowrap">DEPORTES</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">⚪ NEUTRAL</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">INFOBAE</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-25T09:17:41.589Z">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://www.infobae.com/deportes/2026/06/25/paraguay-australia-en-vivo-por-el-mundial-2026-hora-tv-formaciones-y-todo-lo-que-hay-que-saber-clone-clone/" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">Mundial 2026: Paraguay define su paso a 16avos contra Australia en Grupo D</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• <b>Paraguay</b>, dirigido por <b>Alfaro</b>, disputa su paso a <b>16avos de final</b> del <b>Mundial 2026</b> ante <b>Australia</b>.<br/>• El encuentro es decisivo en la última fecha del <b>Grupo D</b> para determinar la clasificación.<br/>• La tensión aumenta a medida que los equipos buscan asegurar su lugar en la siguiente ronda del torneo.</p>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#MUNDIAL 2026</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#FÚTBOL</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#PARAGUAY</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#AUSTRALIA</span>
+</div>
+</article>
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-gray-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="DEPORTES">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-orange-900/40 text-orange-400 border border-orange-500/30 px-2 py-1 rounded-md whitespace-nowrap">DEPORTES</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">⚪ NEUTRAL</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">INFOBAE</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-25T09:13:38.54Z">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://www.infobae.com/deportes/2026/06/25/ecuador-alemania-en-vivo-por-el-mundial-2026-hora-tv-formaciones-y-todo-lo-que-hay-que-saber/" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">Mundial 2026: Ecuador derrota a Alemania y avanza a los 16avos de final</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• La selección de <b>Ecuador</b> sorprendió al derrotar a <b>Alemania</b> en el <b>Mundial 2026</b>.<br/>• Con esta victoria, <b>Ecuador</b> logró avanzar a los <b>16avos de final</b> del torneo.<br/>• Este resultado destaca la competitividad de las selecciones sudamericanas en la copa del mundo.</p>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#MUNDIAL 2026</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#FÚTBOL</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#ECUADOR</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#ALEMANIA</span>
+</div>
+</article>
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-gray-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="DEPORTES">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-orange-900/40 text-orange-400 border border-orange-500/30 px-2 py-1 rounded-md whitespace-nowrap">DEPORTES</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">⚪ NEUTRAL</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">INFOBAE</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-25T09:02:35.391Z">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://www.infobae.com/mexico/2026/06/25/turquia-vs-estados-unidos-en-vivo-detalles-minuto-a-minuto-del-partido-desde-el-estadio-los-angeles/" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">Mundial 2026: Estados Unidos busca primer lugar del Grupo D contra Turquía</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• La selección de <b>Estados Unidos</b> compite contra <b>Turquía</b> por el primer puesto del <b>Grupo D</b> del <b>Mundial 2026</b>.<br/>• El partido es crucial para la posición final en la fase de grupos y la suerte en los próximos encuentros.<br/>• La jornada del <b>Mundial</b> continúa con definiciones importantes en varios grupos.</p>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#MUNDIAL 2026</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#FÚTBOL</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#ESTADOS UNIDOS</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#TURQUÍA</span>
+</div>
+</article>
+<article class="tarjeta-noticia bg-[#0f172a]/70 backdrop-blur-xl rounded-xl p-6 flex flex-col border-t-4 border-t-gray-500 hover:scale-[1.02] transition-transform duration-300 shadow-xl shadow-black/60 border border-gray-800/60 break-words overflow-hidden" data-categoria="DEPORTES">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-2 max-w-[70%]">
+<div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
+<span class="bg-orange-900/40 text-orange-400 border border-orange-500/30 px-2 py-1 rounded-md whitespace-nowrap">DEPORTES</span>
+<span class="bg-gray-800/80 text-gray-300 px-2 py-1 rounded-md border border-gray-700 whitespace-nowrap">⚪ NEUTRAL</span>
+</div>
+<span class="text-[9px] text-gray-500 font-mono uppercase tracking-widest break-all">LA NACION</span>
+</div>
+<span class="tiempo-noticia text-gray-400 text-xs font-mono bg-gray-900/80 border border-gray-700 px-2 py-1 rounded shrink-0" data-timestamp="2026-06-25T05:00:00Z">Reciente</span>
+</div>
+<a class="group block mb-3 overflow-hidden" href="https://www.lanacion.com.ar/deportes/mundial-2026-en-vivo-la-clasificacion-de-brasil-a-16vos-y-la-formacion-que-pondria-scaloni-para-nid25062026/" target="_blank">
+<h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-cyan-400 group-hover:underline transition duration-200 break-words">Mundial 2026: Clasificación de Brasil a 16avos; Scaloni define formación</h2>
+</a>
+<p class="text-gray-400 text-sm flex-grow leading-relaxed mt-2 space-y-1 break-words">• <b>Brasil</b> aseguró su clasificación a los <b>16avos de final</b> del <b>Mundial 2026</b>.<br/>• El director técnico <b>Lionel Scaloni</b> trabaja en la formación que presentará la selección argentina.<br/>• La fase de grupos del <b>Mundial 2026</b> avanza con partidos clave para la definición de los equipos clasificados.</p>
+<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800/50">
+<span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#MUNDIAL 2026</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#FÚTBOL</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#BRASIL</span><span class="text-[10px] font-mono bg-gray-800/80 text-cyan-400 px-2 py-1 rounded border border-gray-700">#ARGENTINA</span>
+</div>
+</article>
