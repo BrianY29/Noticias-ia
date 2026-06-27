@@ -164,6 +164,11 @@ if exito:
             partes = linea.split("|")
             if len(partes) >= 8:
                 diarios = partes[0].strip().upper()
+                
+                # ESCUDO: Si la IA repite la cabecera del prompt, la ignoramos
+                if diarios == "DIARIOS" or "DIARIOS" in diarios:
+                    continue
+                    
                 categoria = partes[1].strip().upper()
                 titulo = partes[2].strip()
                 vinetas = partes[3].strip()
