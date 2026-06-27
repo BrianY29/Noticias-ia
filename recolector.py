@@ -215,31 +215,33 @@ if exito:
                 if not vinetas.startswith('<span'):
                     vinetas = '<span class="text-[#00E5FF] font-bold mr-2">▪</span>' + vinetas
 
+                # SECCIÓN REEMPLAZADA 1: Tarjetas con Glassmorphism, data-impacto y Botón Guardar
                 tarjetas_html += f"""
-                <article data-categoria="{categoria}" data-url="{link}" class="tarjeta-noticia bg-[#121212] rounded-xl p-6 flex flex-col {borde_sent} border-x border-b border-[#2A2A2A] hover:border-gray-500 transition-all duration-300 shadow-xl h-[380px] overflow-hidden cursor-pointer group relative">
+                <article data-categoria="{categoria}" data-impacto="{impacto}" data-url="{link}" class="tarjeta-noticia bg-[#0f172a]/60 backdrop-blur-xl border border-white/10 hover:border-[#00E5FF]/50 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.3)] rounded-xl p-6 flex flex-col {borde_sent} h-[380px] overflow-hidden group relative">
                     <div class="flex justify-between items-start mb-3 shrink-0 select-none">
                         <div class="flex flex-col gap-2 max-w-[70%]">
                             <div class="flex flex-wrap gap-2 text-[11px] font-bold tracking-wide">
                                 <span class="{pill} px-2 py-1 rounded-md whitespace-nowrap">{categoria}</span>
-                                <span class="bg-[#1A1A1A] text-gray-300 px-2 py-1 rounded-md border border-[#2A2A2A] whitespace-nowrap">{icono_sent} {sentimiento}</span>
+                                <span class="bg-[#1A1A1A]/80 text-gray-300 px-2 py-1 rounded-md border border-[#2A2A2A] whitespace-nowrap">{icono_sent} {sentimiento}</span>
                             </div>
-                            <span class="text-xs md:text-sm text-[#00E5FF] font-black font-mono tracking-wide uppercase break-all">{diarios}</span>
+                            <span class="text-sm text-[#00E5FF] font-black font-mono tracking-wide uppercase break-words">{diarios}</span>
                         </div>
-                        <div class="flex flex-col items-end gap-1 shrink-0">
-                            <span class="tiempo-noticia text-gray-400 text-xs font-mono bg-[#1A1A1A] border border-[#2A2A2A] px-2 py-1 rounded" data-timestamp="{timestamp_iso}">Reciente</span>
+                        <div class="flex flex-col items-end gap-2 shrink-0 z-10">
+                            <button class="btn-guardar text-xl opacity-50 hover:opacity-100 hover:scale-110 transition-all" data-url="{link}" title="Guardar noticia">🔖</button>
+                            <span class="tiempo-noticia text-gray-400 text-[10px] font-mono bg-[#1A1A1A]/80 border border-[#2A2A2A] px-2 py-1 rounded" data-timestamp="{timestamp_iso}">Reciente</span>
                             <span class="badge-leida hidden text-[9px] font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30 px-1.5 py-0.5 rounded tracking-widest uppercase">LEÍDA</span>
                         </div>
                     </div>
                     
-                    <a href="{link}" target="_blank" class="ln-link block mb-2 shrink-0 overflow-hidden mt-1">
-                        <h2 class="text-lg md:text-xl font-bold text-gray-100 leading-tight group-hover:text-[#00E5FF] transition duration-200 line-clamp-3 break-words">{titulo}</h2>
+                    <a href="{link}" target="_blank" class="ln-link block mb-2 shrink-0 overflow-hidden mt-1 z-0 cursor-pointer">
+                        <h2 class="text-lg font-bold text-gray-100 leading-tight group-hover:text-[#00E5FF] transition duration-200 line-clamp-3 break-words">{titulo}</h2>
                     </a>
                     
-                    <div class="text-gray-400 text-sm flex-grow overflow-y-auto no-scrollbar pr-1 mt-2 space-y-2 break-words select-text">
+                    <div class="text-gray-300 text-sm flex-grow overflow-y-auto no-scrollbar pr-1 mt-2 space-y-2 break-words select-text">
                         {vinetas}
                     </div>
                     
-                    <div class="shrink-0 mt-3 pt-3 border-t border-[#2A2A2A] flex flex-wrap items-center justify-between gap-2 select-none">
+                    <div class="shrink-0 mt-3 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 select-none">
                         <div class="flex flex-wrap gap-1.5">
                             {tags_html}
                         </div>
@@ -412,174 +414,276 @@ if not noticias_urgentes_ticker:
     noticias_urgentes_ticker = ["El mercado financiero opera con normalidad. Monitoreo activado."]
 ticker_items = "".join([f'<span class="mx-10 flex items-center gap-2 text-base md:text-lg"><span class="text-[#00E5FF] animate-pulse">⚡</span> {tit}</span>' for tit in noticias_urgentes_ticker])
 
-# --- 5. PLANTILLA HTML DEFINITIVA (Sintaxis Blindada) ---
+# --- 5. PLANTILLA HTML DEFINITIVA (Sintaxis Blindada con llaves dobles {{ }}) ---
 html_completo = f"""<!DOCTYPE html>
 <html lang="es" class="w-full h-full m-0 p-0 overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terminal | Mercados & Actualidad</title>
-    <meta name="description" content="Terminal de mercados y actualidad analizada por IA.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
-        body {{ background-color: #050505; font-family: 'Inter', sans-serif; scroll-behavior: smooth; color: #f8fafc; overflow-x: hidden; width: 100%; }}
+        body {{ background-color: #020617; font-family: 'Inter', sans-serif; scroll-behavior: smooth; color: #f8fafc; overflow-x: hidden; width: 100%; padding-bottom: 80px; md:padding-bottom: 0; }}
         .font-mono {{ font-family: 'JetBrains Mono', monospace; }}
         @keyframes ticker {{ 0% {{ transform: translateX(100vw); }} 100% {{ transform: translateX(-100%); }} }}
         .animate-ticker {{ display: inline-flex; white-space: nowrap; animation: ticker 35s linear infinite; }}
         .animate-ticker:hover {{ animation-play-state: paused; }}
         article b {{ color: #00E5FF; font-weight: 800; background: rgba(0, 229, 255, 0.12); padding: 0 4px; border-radius: 4px; border: 1px solid rgba(0, 229, 255, 0.2);}}
         ::-webkit-scrollbar {{ width: 6px; }}
-        ::-webkit-scrollbar-track {{ background: #050505; }}
-        ::-webkit-scrollbar-thumb {{ background: #2A2A2A; border-radius: 4px; }}
-        ::-webkit-scrollbar-thumb:hover {{ background: #475569; }}
+        ::-webkit-scrollbar-track {{ background: transparent; }}
+        ::-webkit-scrollbar-thumb {{ background: #334155; border-radius: 4px; }}
         .no-scrollbar::-webkit-scrollbar {{ display: none; }}
         .no-scrollbar {{ -ms-overflow-style: none; scrollbar-width: none; }}
-        .break-words {{ overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; }}
         .line-clamp-3 {{ display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }}
-        .tarjeta-leida {{ opacity: 0.35 !important; filter: grayscale(80%); border-color: #2A2A2A !important; transition: all 0.3s ease; }}
+        .tarjeta-leida {{ opacity: 0.35 !important; filter: grayscale(80%); border-color: #1e293b !important; transition: all 0.3s ease; }}
+        
+        /* Glassmorphism utility */
+        .glass-panel {{ background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }}
     </style>
 </head>
-<body class="flex w-full min-h-screen m-0 p-0 select-none">
+<body class="flex w-full min-h-screen m-0 p-0 select-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
 
     <div id="progressBar" class="fixed top-0 left-0 h-1 bg-[#00E5FF] z-[100] transition-all duration-150 shadow-[0_0_10px_#00E5FF]" style="width: 0%;"></div>
 
-    <aside class="fixed w-64 h-screen bg-[#0A0A0A] border-r border-[#2A2A2A] flex flex-col z-40 hidden md:flex shrink-0">
-        <div class="p-6 border-b border-[#2A2A2A] bg-[#111111]">
+    <aside class="fixed w-64 h-screen glass-panel flex flex-col z-40 hidden md:flex shrink-0 border-r">
+        <div class="p-6 border-b border-white/5 bg-[#0f172a]/50">
             <h1 class="text-2xl font-black text-white tracking-tight uppercase">RADAR <span class="text-[#00E5FF]">FINANCIERO</span></h1>
-            <p class="text-[10px] text-gray-500 mt-1 font-mono tracking-widest">MONITOR DE ACTUALIDAD</p>
+            <p class="text-[10px] text-gray-400 mt-1 font-mono tracking-widest">MONITOR DE ACTUALIDAD</p>
         </div>
         
         <div class="p-6 flex-grow overflow-y-auto flex flex-col gap-6">
-            <div class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl p-4 text-center shadow-lg">
-                <p class="text-[9px] text-gray-400 font-bold tracking-widest uppercase mb-2">Hora Argentina. Mercado desde 10:30hs a 17hs</p>
-                <div id="reloj-digital" class="text-4xl font-mono font-black text-white tracking-wider">00:00:00</div>
-                <div id="mercado-estado" class="mt-3 text-xs font-bold px-4 py-1 rounded-full inline-block tracking-wider">--</div>
+            <div class="glass-panel rounded-xl p-4 text-center shadow-lg">
+                <p id="fecha-actual" class="text-[10px] text-[#00E5FF] font-bold tracking-widest uppercase mb-1">Cargando...</p>
+                <div id="reloj-digital" class="text-3xl font-mono font-black text-white tracking-wider">00:00:00</div>
+                <div id="mercado-estado" class="mt-2 text-[10px] font-bold px-3 py-1 rounded-full inline-block tracking-wider">--</div>
             </div>
 
-            <div class="mt-4">
-                <button id="btn-ver-leidas" class="w-full bg-[#111111] hover:bg-[#1A1A1A] text-[#00E5FF] border border-[#00E5FF]/30 rounded-xl py-4 text-xs font-bold transition mb-4 tracking-wider uppercase cursor-pointer shadow-lg">👁️ Ver Noticias Leídas</button>
-                <button id="btn-reset-leidas" class="w-full bg-rose-950/20 hover:bg-rose-950/40 text-rose-400 border border-rose-500/30 rounded-xl py-4 text-xs font-bold transition tracking-wider uppercase cursor-pointer shadow-lg">🗑️ Resetear Historial</button>
+            <div class="space-y-3 mt-2">
+                <button id="btn-ver-principales" class="nav-btn w-full glass-panel hover:bg-white/10 text-white rounded-xl py-3.5 text-xs font-bold transition tracking-wider shadow-lg flex items-center justify-between px-4 ring-1 ring-[#00E5FF]/50 text-[#00E5FF]">
+                    <span class="flex items-center gap-2">🏠 Feed</span>
+                </button>
+                <button id="btn-ver-guardadas" class="nav-btn w-full glass-panel hover:bg-white/10 text-gray-300 rounded-xl py-3.5 text-xs font-bold transition tracking-wider shadow-lg flex items-center justify-between px-4">
+                    <span class="flex items-center gap-2">🔖 Guardadas</span>
+                    <span id="cont-guardadas" class="bg-gray-800 text-[10px] px-2 py-0.5 rounded-full">0</span>
+                </button>
+                <button id="btn-ver-leidas" class="nav-btn w-full glass-panel hover:bg-white/10 text-gray-300 rounded-xl py-3.5 text-xs font-bold transition tracking-wider shadow-lg flex items-center justify-between px-4">
+                    <span class="flex items-center gap-2">👁️ Leídas</span>
+                    <span id="cont-leidas" class="bg-gray-800 text-[10px] px-2 py-0.5 rounded-full">0</span>
+                </button>
+                <button id="btn-reset-leidas" class="w-full bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/20 rounded-xl py-3.5 text-xs font-bold transition tracking-wider shadow-lg flex items-center justify-center gap-2 mt-6">
+                    🗑️ Resetear Datos
+                </button>
             </div>
-        </div>
-
-        <div class="p-6 border-t border-[#2A2A2A] bg-[#111111]">
-            <a href="https://www.linkedin.com/in/brian-yapura-061522156/" target="_blank" class="w-full bg-[#1A1A1A] hover:bg-[#2A2A2A] border border-[#333333] rounded-xl p-3 flex justify-center items-center gap-3 transition shadow-lg">
-                <div class="bg-[#00E5FF] text-black px-2 py-0.5 rounded text-sm font-bold">in</div>
-                <span class="text-white font-semibold text-xs tracking-wide">Perfil Profesional</span>
-            </a>
         </div>
     </aside>
 
-    <div class="md:ml-64 w-full md:w-[calc(100vw-16rem)] flex flex-col min-h-screen overflow-x-hidden">
+    <nav class="md:hidden fixed bottom-0 left-0 w-full glass-panel z-50 flex justify-around items-center p-3 pb-safe border-t shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+        <button id="m-btn-feed" class="nav-btn-mobile flex flex-col items-center gap-1 text-[#00E5FF]">
+            <span class="text-xl">🏠</span>
+            <span class="text-[9px] font-bold tracking-wider">FEED</span>
+        </button>
+        <button id="m-btn-guardadas" class="nav-btn-mobile flex flex-col items-center gap-1 text-gray-500 relative">
+            <span class="text-xl">🔖</span>
+            <span id="m-cont-guardadas" class="absolute -top-1 -right-2 bg-rose-500 text-white text-[8px] font-bold px-1.5 rounded-full">0</span>
+            <span class="text-[9px] font-bold tracking-wider">SAVED</span>
+        </button>
+        <button id="m-btn-leidas" class="nav-btn-mobile flex flex-col items-center gap-1 text-gray-500 relative">
+            <span class="text-xl">👁️</span>
+            <span id="m-cont-leidas" class="absolute -top-1 -right-2 bg-gray-700 text-white text-[8px] font-bold px-1.5 rounded-full">0</span>
+            <span class="text-[9px] font-bold tracking-wider">LEÍDAS</span>
+        </button>
+    </nav>
+
+    <div class="md:ml-64 w-full md:w-[calc(100vw-16rem)] flex flex-col min-h-screen">
         
-        <header class="sticky top-0 z-30 w-full bg-[#050505]/90 backdrop-blur-2xl border-b border-[#2A2A2A] shadow-xl">
-            <div class="w-full bg-[#0A0A0A] border-b border-[#2A2A2A] text-gray-300 text-base py-2 overflow-hidden font-mono tracking-wide">
+        <header class="w-full bg-[#020617] border-b border-white/5 shadow-xl">
+            <div class="w-full bg-[#0A0A0A] border-b border-rose-900/50 text-gray-400 text-sm py-2 overflow-hidden font-mono tracking-wide">
                 <div class="animate-ticker w-full">
                     {ticker_items}
                 </div>
             </div>
-
-            <div class="w-full p-6 flex flex-wrap gap-4 justify-between items-center max-w-7xl mx-auto">
+            <div class="w-full p-4 md:p-6 flex flex-wrap gap-4 justify-between items-center max-w-7xl mx-auto">
                 {widgets_html}
             </div>
         </header>
 
-        <div class="p-6 md:p-10 w-full flex-grow max-w-7xl box-border">
+        <div class="sticky top-0 z-30 w-full glass-panel border-b py-3 px-4 md:px-8 shadow-xl transition-all">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 items-center justify-between">
+                <div class="relative w-full md:w-1/2">
+                    <input type="text" id="buscador" placeholder="Buscar Boca, YPF, inflación..." class="w-full bg-black/40 border border-white/10 rounded-full px-5 py-2.5 text-sm text-white focus:outline-none focus:border-[#00E5FF]/50 transition shadow-inner pl-10 placeholder-gray-500 font-mono">
+                    <span class="absolute left-3.5 top-2.5 text-gray-500">🔍</span>
+                </div>
+                <div class="flex w-full md:w-auto items-center justify-between gap-4">
+                    <span id="titulo-seccion" class="text-[10px] md:text-xs font-mono text-[#00E5FF] border border-[#00E5FF]/30 bg-[#00E5FF]/10 px-4 py-1.5 rounded-full uppercase tracking-widest shadow-[0_0_10px_rgba(0,229,255,0.1)]">ÚLTIMAS NOTICIAS</span>
+                    <button id="btn-sort" class="bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold font-mono hover:bg-indigo-500/40 transition flex items-center gap-1.5 uppercase tracking-widest">
+                        ↕️ Por Impacto
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-4 md:p-8 w-full flex-grow max-w-7xl mx-auto box-border">
             
-            <div class="w-full bg-cyan-950/20 border border-cyan-500/20 rounded-xl p-4 mb-6 text-xs text-cyan-400 font-medium flex items-center gap-2.5 shadow-md">
-                <span>💡</span>
-                <p><b>Info:</b> Las noticias que leas o en las que hagas clic desaparecerán de este feed principal. Podrás consultarlas o recuperarlas en cualquier momento usando el menú lateral izquierdo.</p>
-            </div>
-
-            <div id="separador-hoy" class="flex items-center gap-4 mb-8 w-full">
-                <div class="h-px bg-[#2A2A2A] flex-grow"></div>
-                <span id="titulo-seccion" class="text-[10px] font-mono text-[#00E5FF] border border-[#00E5FF]/30 bg-[#00E5FF]/10 px-6 py-2 rounded-full uppercase tracking-widest whitespace-nowrap shadow-[0_0_15px_rgba(0,229,255,0.15)]">Últimas Noticias</span>
-                <div class="h-px bg-[#2A2A2A] flex-grow"></div>
-            </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 w-full animate-fadeIn" id="contenedor-noticias">
                 {historial_recortado}
             </div>
 
             <div id="loading-spinner" class="hidden justify-center my-16 w-full">
-                <div class="w-10 h-10 border-4 border-[#1A1A1A] border-t-[#00E5FF] rounded-full animate-spin shadow-[0_0_15px_#00E5FF]"></div>
+                <div class="w-10 h-10 border-4 border-transparent border-t-[#00E5FF] rounded-full animate-spin shadow-[0_0_15px_#00E5FF]"></div>
             </div>
             
-            <div class="flex justify-center mt-16 mb-8 w-full">
-                <button id="btn-volver-arriba" class="hidden bg-[#1A1A1A] hover:bg-[#00E5FF] hover:text-black border border-[#2A2A2A] text-gray-300 font-mono text-xs px-8 py-4 rounded-full transition-all duration-300 shadow-xl gap-2 items-center tracking-widest uppercase font-bold text-center cursor-pointer">
-                    ↑ Ocultar noticias extras y volver al inicio
+            <div class="flex justify-center mt-16 mb-20 md:mb-12 w-full">
+                <button id="btn-volver-arriba" class="hidden glass-panel hover:bg-[#00E5FF] hover:text-black border border-white/10 text-gray-300 font-mono text-xs px-8 py-4 rounded-full transition-all duration-300 shadow-xl gap-2 items-center tracking-widest uppercase font-bold text-center cursor-pointer">
+                    ↑ Ocultar extras y volver
                 </button>
             </div>
         </div>
     </div>
 
     <script>
-        const articulos = Array.from(document.querySelectorAll('.tarjeta-noticia'));
-        let vistaActual = "principales";
+        const contenedor = document.getElementById('contenedor-noticias');
+        const articulosBase = Array.from(document.querySelectorAll('.tarjeta-noticia'));
+        let vistaActual = "principales"; // principales, leidas, guardadas
         let limitNoticias = 12;
+        let sortByImpacto = false;
 
-        function aplicarVistas() {{
-            const leidas = JSON.parse(localStorage.getItem('noticias_leidas') || '[]');
+        function cargarAlmacenamiento() {{
+            return {{
+                leidas: JSON.parse(localStorage.getItem('noticias_leidas') || '[]'),
+                guardadas: JSON.parse(localStorage.getItem('noticias_guardadas') || '[]')
+            }};
+        }}
+
+        function actualizarContadores() {{
+            const data = cargarAlmacenamiento();
+            document.getElementById('cont-leidas').innerText = data.leidas.length;
+            document.getElementById('cont-guardadas').innerText = data.guardadas.length;
+            document.getElementById('m-cont-leidas').innerText = data.leidas.length;
+            document.getElementById('m-cont-guardadas').innerText = data.guardadas.length;
+        }}
+
+        function aplicarFiltrosYVistas() {{
+            const data = cargarAlmacenamiento();
+            const textoBusqueda = document.getElementById('buscador').value.toLowerCase();
             
-            const universo = articulos.filter(art => {{
+            let universo = articulosBase.filter(art => {{
                 const url = art.getAttribute('data-url');
-                const isRead = leidas.includes(url);
-                return vistaActual === "principales" ? !isRead : isRead;
+                const isLeida = data.leidas.includes(url);
+                const isGuardada = data.guardadas.includes(url);
+                
+                // Filtro de Vista
+                let pasaVista = false;
+                if (vistaActual === "principales") pasaVista = !isLeida && !isGuardada;
+                else if (vistaActual === "leidas") pasaVista = isLeida && !isGuardada;
+                else if (vistaActual === "guardadas") pasaVista = isGuardada;
+
+                // Filtro Buscador
+                const textContent = art.textContent.toLowerCase();
+                const pasaBuscador = textContent.includes(textoBusqueda);
+
+                return pasaVista && pasaBuscador;
             }});
 
-            articulos.forEach(art => art.style.display = 'none');
+            // Ordenamiento por impacto
+            if (sortByImpacto) {{
+                universo.sort((a, b) => parseInt(b.dataset.impacto || 0) - parseInt(a.dataset.impacto || 0));
+            }} else {{
+                // Restaurar orden cronológico (DOM order original)
+                universo.sort((a, b) => articulosBase.indexOf(a) - articulosBase.indexOf(b));
+            }}
 
+            // Limpiar grilla y volcar elementos
+            contenedor.innerHTML = "";
             universo.forEach((art, index) => {{
                 if (index < limitNoticias) {{
                     art.style.display = 'flex';
-                    if (vistaActual === "leidas") {{
-                        art.classList.add('tarjeta-leida');
-                        const bRead = art.querySelector('.badge-leida');
-                        if (bRead) bRead.classList.remove('hidden');
+                    contenedor.appendChild(art);
+                }}
+            }});
+
+            // Manejo del botón Mostrar Más/Volver
+            const btnVolver = document.getElementById('btn-volver-arriba');
+            if (limitNoticias >= universo.length && universo.length > 12) {{
+                btnVolver.classList.remove('hidden'); btnVolver.classList.add('flex');
+            }} else {{
+                btnVolver.classList.add('hidden'); btnVolver.classList.remove('flex');
+            }}
+
+            // Estados visuales de tarjetas (Iconos)
+            articulosBase.forEach(art => {{
+                const url = art.getAttribute('data-url');
+                const btnG = art.querySelector('.btn-guardar');
+                if(btnG) btnG.innerText = data.guardadas.includes(url) ? "★" : "🔖";
+                
+                if (data.leidas.includes(url) && vistaActual === "leidas") {{
+                    art.classList.add('tarjeta-leida');
+                    art.querySelector('.badge-leida')?.classList.remove('hidden');
+                }} else {{
+                    art.classList.remove('tarjeta-leida');
+                    art.querySelector('.badge-leida')?.classList.add('hidden');
+                }}
+            }});
+
+            actualizarContadores();
+        }}
+
+        // Interacciones en la tarjeta (Marcar Leída / Guardar)
+        articulosBase.forEach(art => {{
+            art.addEventListener('click', (e) => {{
+                const url = art.getAttribute('data-url');
+                let data = cargarAlmacenamiento();
+
+                // Lógica Botón Guardar
+                if (e.target.closest('.btn-guardar')) {{
+                    if (data.guardadas.includes(url)) {{
+                        data.guardadas = data.guardadas.filter(u => u !== url);
                     }} else {{
-                        art.classList.remove('tarjeta-leida');
-                        const bRead = art.querySelector('.badge-leida');
-                        if (bRead) bRead.classList.add('hidden');
+                        data.guardadas.push(url);
+                        // Si se guarda, ya no es solo "leída"
+                        data.leidas = data.leidas.filter(u => u !== url);
+                    }}
+                    localStorage.setItem('noticias_guardadas', JSON.stringify(data.guardadas));
+                    localStorage.setItem('noticias_leidas', JSON.stringify(data.leidas));
+                    
+                    if(vistaActual === "guardadas" || vistaActual === "principales") {{
+                        art.style.opacity = "0"; art.style.transform = "scale(0.95)";
+                        setTimeout(() => {{ aplicarFiltrosYVistas(); art.style.opacity="1"; art.style.transform="scale(1)"; }}, 300);
+                    }} else {{ aplicarFiltrosYVistas(); }}
+                    return;
+                }}
+                
+                // Evitamos conflictos en enlaces
+                if (e.target.closest('a') || e.target.closest('button')) return;
+
+                // Lógica de Leída (Solo en principales)
+                if (vistaActual === "principales") {{
+                    if (!data.leidas.includes(url)) {{
+                        data.leidas.push(url);
+                        localStorage.setItem('noticias_leidas', JSON.stringify(data.leidas));
+                        art.style.opacity = "0"; art.style.transform = "scale(0.95)";
+                        setTimeout(() => {{ aplicarFiltrosYVistas(); art.style.opacity="1"; art.style.transform="scale(1)"; }}, 300);
                     }}
                 }}
             }});
-
-            const btnVolver = document.getElementById('btn-volver-arriba');
-            if (limitNoticias >= universo.length && universo.length > 12) {{
-                btnVolver.classList.remove('hidden');
-                btnVolver.classList.add('flex');
-            }} else {{
-                btnVolver.classList.add('hidden');
-                btnVolver.classList.remove('flex');
-            }}
-
-            actualizarSeparadorAyer();
-        }}
-
-        articulos.forEach(art => {{
-            art.addEventListener('click', (e) => {{
-                if (vistaActual !== "principales") return;
-                if (e.target.closest('a')) return;
-
-                const url = art.getAttribute('data-url');
-                let leidas = JSON.parse(localStorage.getItem('noticias_leidas') || '[]');
-                if (!leidas.includes(url)) {{
-                    leidas.push(url);
-                    localStorage.setItem('noticias_leidas', JSON.stringify(leidas));
-                }}
-                
-                art.style.transition = "all 0.3s ease";
-                art.style.opacity = "0";
-                art.style.transform = "scale(0.95)";
-                setTimeout(() => {{
-                    aplicarVistas();
-                    art.style.opacity = "1";
-                    art.style.transform = "scale(1)";
-                }}, 300);
-            }});
         }});
 
+        // Buscador
+        document.getElementById('buscador').addEventListener('input', () => {{
+            limitNoticias = 12;
+            aplicarFiltrosYVistas();
+        }});
+
+        // Botón Sort
+        document.getElementById('btn-sort').addEventListener('click', (e) => {{
+            sortByImpacto = !sortByImpacto;
+            e.currentTarget.classList.toggle('bg-indigo-500/40');
+            e.currentTarget.classList.toggle('ring-1');
+            e.currentTarget.classList.toggle('ring-indigo-300');
+            aplicarFiltrosYVistas();
+        }});
+
+        // Scroll Infinito
         window.addEventListener('scroll', () => {{
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -587,62 +691,88 @@ html_completo = f"""<!DOCTYPE html>
             document.getElementById("progressBar").style.width = scrolled + "%";
 
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 600) {{
-                const leidas = JSON.parse(localStorage.getItem('noticias_leidas') || '[]');
-                const universo = articulos.filter(art => vistaActual === "principales" ? !leidas.includes(art.getAttribute('data-url')) : leidas.includes(art.getAttribute('data-url')));
+                const data = cargarAlmacenamiento();
+                const textoBusqueda = document.getElementById('buscador').value.toLowerCase();
+                const universo = articulosBase.filter(art => {{
+                    const url = art.getAttribute('data-url');
+                    const isLeida = data.leidas.includes(url);
+                    const isGuardada = data.guardadas.includes(url);
+                    let pasaVista = (vistaActual === "principales" && !isLeida && !isGuardada) || 
+                                    (vistaActual === "leidas" && isLeida && !isGuardada) || 
+                                    (vistaActual === "guardadas" && isGuardada);
+                    return pasaVista && art.textContent.toLowerCase().includes(textoBusqueda);
+                }});
                 
                 if (limitNoticias < universo.length) {{
                     const spinner = document.getElementById('loading-spinner');
-                    spinner.classList.remove('hidden');
-                    spinner.classList.add('flex');
-                    
+                    spinner.classList.remove('hidden'); spinner.classList.add('flex');
                     setTimeout(() => {{
                         limitNoticias += 12;
-                        aplicarVistas();
-                        spinner.classList.add('hidden');
-                        spinner.classList.remove('flex');
-                    }}, 500);
+                        aplicarFiltrosYVistas();
+                        spinner.classList.add('hidden'); spinner.classList.remove('flex');
+                    }}, 400);
                 }}
             }}
         }});
 
+        // Botón Ocultar
         document.getElementById('btn-volver-arriba').addEventListener('click', () => {{
             limitNoticias = 12;
             window.scrollTo({{ top: 0, behavior: 'smooth' }});
-            setTimeout(() => aplicarVistas(), 400);
+            setTimeout(() => aplicarFiltrosYVistas(), 400);
         }});
 
-        const btnVerLeidas = document.getElementById('btn-ver-leidas');
-        const tituloSeccion = document.getElementById('titulo-seccion');
-
-        btnVerLeidas.addEventListener('click', () => {{
-            if (vistaActual === "principales") {{
-                vistaActual = "leidas";
-                btnVerLeidas.innerText = "👁️ Ver Principales";
-                tituloSeccion.innerText = "Historial de Noticias Leídas";
-            }} else {{
-                vistaActual = "principales";
-                btnVerLeidas.innerText = "👁️ Ver Noticias Leídas";
-                tituloSeccion.innerText = "Últimas Noticias";
-            }}
+        // Navegación (Desktop y Mobile)
+        function cambiarVista(vista, titulo) {{
+            vistaActual = vista;
+            document.getElementById('titulo-seccion').innerText = titulo;
             limitNoticias = 12;
-            aplicarVistas();
+            document.getElementById('buscador').value = ""; // Limpiar buscador al cambiar
+            
+            // Actualizar UI Desktop
+            document.querySelectorAll('.nav-btn').forEach(b => {{
+                b.classList.remove('ring-1', 'ring-[#00E5FF]/50', 'text-[#00E5FF]');
+                b.classList.add('text-gray-300');
+            }});
+            const btnDesk = document.getElementById(`btn-ver-${{vista}}`);
+            if(btnDesk) {{ btnDesk.classList.add('ring-1', 'ring-[#00E5FF]/50', 'text-[#00E5FF]'); btnDesk.classList.remove('text-gray-300'); }}
+
+            // Actualizar UI Mobile
+            document.querySelectorAll('.nav-btn-mobile').forEach(b => {{
+                b.classList.remove('text-[#00E5FF]');
+                b.classList.add('text-gray-500');
+            }});
+            const btnMob = document.getElementById(`m-btn-${{vista === 'principales' ? 'feed' : vista}}`);
+            if(btnMob) {{ btnMob.classList.add('text-[#00E5FF]'); btnMob.classList.remove('text-gray-500'); }}
+
+            aplicarFiltrosYVistas();
             window.scrollTo({{ top: 0, behavior: 'smooth' }});
-        }});
+        }}
+
+        document.getElementById('btn-ver-principales').addEventListener('click', () => cambiarVista('principales', 'ÚLTIMAS NOTICIAS'));
+        document.getElementById('btn-ver-leidas').addEventListener('click', () => cambiarVista('leidas', 'HISTORIAL LEÍDAS'));
+        document.getElementById('btn-ver-guardadas').addEventListener('click', () => cambiarVista('guardadas', 'NOTICIAS GUARDADAS'));
+        
+        document.getElementById('m-btn-feed').addEventListener('click', () => cambiarVista('principales', 'ÚLTIMAS NOTICIAS'));
+        document.getElementById('m-btn-leidas').addEventListener('click', () => cambiarVista('leidas', 'HISTORIAL LEÍDAS'));
+        document.getElementById('m-btn-guardadas').addEventListener('click', () => cambiarVista('guardadas', 'NOTICIAS GUARDADAS'));
 
         document.getElementById('btn-reset-leidas').addEventListener('click', () => {{
-            localStorage.removeItem('noticias_leidas');
-            vistaActual = "principales";
-            btnVerLeidas.innerText = "👁️ Ver Noticias Leídas";
-            tituloSeccion.innerText = "Últimas Noticias";
-            limitNoticias = 12;
-            aplicarVistas();
-            window.scrollTo({{ top: 0, behavior: 'smooth' }});
+            if(confirm("¿Seguro que querés resetear tu historial local y guardados?")) {{
+                localStorage.removeItem('noticias_leidas');
+                localStorage.removeItem('noticias_guardadas');
+                cambiarVista('principales', 'ÚLTIMAS NOTICIAS');
+            }}
         }});
 
+        // Reloj y Tiempos
         function actualizarReloj() {{
             const ahora = new Date();
-            const opciones = {{ timeZone: 'America/Argentina/Buenos_Aires', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }};
-            document.getElementById('reloj-digital').textContent = ahora.toLocaleTimeString('es-AR', opciones);
+            const opcionesHora = {{ timeZone: 'America/Argentina/Buenos_Aires', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }};
+            const opcionesFecha = {{ timeZone: 'America/Argentina/Buenos_Aires', weekday: 'long', day: 'numeric', month: 'long' }};
+            
+            document.getElementById('reloj-digital').textContent = ahora.toLocaleTimeString('es-AR', opcionesHora);
+            document.getElementById('fecha-actual').textContent = ahora.toLocaleDateString('es-AR', opcionesFecha);
             
             const dia = ahora.getDay(); 
             const hora = ahora.getHours();
@@ -653,62 +783,25 @@ html_completo = f"""<!DOCTYPE html>
             const abierto = dia >= 1 && dia <= 5 && enHorario;
 
             if (abierto) {{
-                estadoEl.textContent = "ABIERTO";
-                estadoEl.className = "mt-3 text-xs font-bold px-4 py-1.5 rounded-full inline-block bg-emerald-950/40 text-emerald-400 border border-emerald-500/30 animate-pulse tracking-wider";
+                estadoEl.textContent = "MERCADO ABIERTO";
+                estadoEl.className = "mt-1 text-[10px] font-bold px-3 py-1 rounded-full inline-block bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 animate-pulse tracking-widest";
             }} else {{
-                estadoEl.textContent = "CERRADO";
-                estadoEl.className = "mt-3 text-xs font-bold px-4 py-1.5 rounded-full inline-block bg-rose-950/40 text-rose-400 border border-rose-500/30 tracking-wider";
+                estadoEl.textContent = "MERCADO CERRADO";
+                estadoEl.className = "mt-1 text-[10px] font-bold px-3 py-1 rounded-full inline-block bg-rose-500/10 text-rose-500 border border-rose-500/20 tracking-widest";
             }}
         }}
 
         function actualizarTiempos() {{
             document.querySelectorAll('.tiempo-noticia').forEach(el => {{
-                const timestampStr = el.getAttribute('data-timestamp');
-                if(!timestampStr) return; 
-                
-                const fechaNoticia = new Date(timestampStr);
-                const ahora = new Date();
-                const diffMinutos = Math.floor((ahora - fechaNoticia) / 60000);
-                
-                if (isNaN(diffMinutos)) return;
-
-                if (diffMinutos < 1) {{
-                    el.textContent = "INSTANTES";
-                    el.className = "tiempo-noticia text-[#00E5FF] text-[10px] font-black font-mono bg-[#00E5FF]/10 border border-[#00E5FF]/30 px-2 py-1 rounded shadow-[0_0_10px_rgba(0,229,255,0.2)]";
-                }} else if (diffMinutos < 60) {{
-                    el.textContent = `HACE ${{diffMinutos}}m`;
-                    el.className = "tiempo-noticia text-gray-300 text-[10px] font-mono bg-[#1A1A1A] border border-[#2A2A2A] px-2 py-1 rounded";
-                }} else if (diffMinutos < 1440) {{
-                    const diffHoras = Math.floor(diffMinutos / 60);
-                    el.textContent = `HACE ${{diffHoras}}h`;
-                    el.className = "tiempo-noticia text-gray-400 text-[10px] font-mono bg-[#111111] border border-[#2A2A2A] px-2 py-1 rounded";
-                }} else {{
-                    el.textContent = 'AYER';
-                    el.className = "tiempo-noticia text-gray-600 text-[10px] font-mono bg-transparent border border-[#2A2A2A] px-2 py-1 rounded";
-                }}
+                const ts = el.getAttribute('data-timestamp');
+                if(!ts) return; 
+                const n = new Date(ts), diff = Math.floor((new Date() - n) / 60000);
+                if (isNaN(diff)) return;
+                el.textContent = diff < 1 ? "INSTANTES" : (diff < 60 ? `HACE ${{diff}}m` : (diff < 1440 ? `HACE ${{Math.floor(diff/60)}}h` : "AYER"));
             }});
-            actualizarSeparadorAyer();
         }}
         
-        function actualizarSeparadorAyer() {{
-            const sep = document.getElementById('separador-ayer-dinamico');
-            if(sep) sep.remove();
-
-            const todosVisibles = articulos.filter(art => art.style.display !== 'none');
-            for(let i=0; i<todosVisibles.length; i++) {{
-                const tagTiempo = todosVisibles[i].querySelector('.tiempo-noticia').textContent;
-                if(tagTiempo.includes('AYER')) {{
-                    const div = document.createElement('div');
-                    div.id = 'separador-ayer-dinamico';
-                    div.className = 'col-span-1 md:col-span-2 xl:col-span-3 flex items-center gap-4 my-8 w-full';
-                    div.innerHTML = '<div class="h-px bg-[#2A2A2A] flex-grow"></div><span class="text-[10px] font-mono text-gray-500 border border-[#2A2A2A] bg-[#050505] px-4 py-1.5 rounded-full uppercase tracking-widest">Noticias del día anterior</span><div class="h-px bg-[#2A2A2A] flex-grow"></div>';
-                    todosVisibles[i].parentNode.insertBefore(div, todosVisibles[i]);
-                    break;
-                }}
-            }}
-        }}
-        
-        aplicarVistas();
+        aplicarFiltrosYVistas();
         actualizarTiempos();
         actualizarReloj();
         setInterval(actualizarTiempos, 60000);
@@ -720,4 +813,4 @@ html_completo = f"""<!DOCTYPE html>
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_completo)
 
-print("✅ Archivo index.html generado con éxito.")
+print("✅ Archivo index.html generado con éxito y diseño Glassmorphism implementado.")
