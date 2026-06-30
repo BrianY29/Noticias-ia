@@ -52,7 +52,6 @@ for fuente in fuentes:
                     if any(prohibido in link.lower() for prohibido in palabras_prohibidas):
                         continue
 
-                    # Blindaje de URLs relativas
                     if not link.startswith('http'):
                         if not link.startswith('/'):
                             link = '/' + link
@@ -62,7 +61,7 @@ for fuente in fuentes:
                         urls_vistas_ronda_actual.add(link)
                         noticias_extraidas.append({"fuente": fuente["nombre"], "titulo": texto_limpio, "link": link})
                         contador += 1
-                        if contador >= 8: 
+                        if contador >= 12: 
                             break
     except Exception:
         pass
@@ -124,7 +123,7 @@ TAREAS ESTRICTAS:
 1. ELIMINAR CLONES: Si varias noticias hablan de exactamente lo mismo, agrúpalas en una sola. En el campo 'DIARIOS', pon el nombre de todos los medios separados por coma (Ej: INFOBAE, TN).
 2. CATEGORÍA: Solo DEPORTES, POLÍTICA, ECONOMÍA o MERCADOS.
 3. VIÑETAS & LECTURA ACTIVA: Escribe el resumen en exactamente 3 viñetas cortas, separadas por la etiqueta <br><span class="text-[#00E5FF] font-bold mr-2">▪</span>. Usa la etiqueta HTML <b>texto</b> para resaltar los datos duros más importantes (cifras, nombres).
-4. CONTEXTO DE IMPACTO: En la tercera y última viñeta, argumenta de forma obligatoria el porqué de la calificación de impacto asignada.
+4. CONTEXTO DE IMPACTO: En la tercera y última viñeta, argumenta de forma obligatoria el porqué de la calificación de impacto asignada (ej. "Impacto negativo porque afecta la inflación local...").
 5. TAGS: 2 o 3 palabras clave separadas por coma.
 6. SENTIMIENTO: Evalúa la noticia para el inversor argentino. Responde solo con: POSITIVO, NEGATIVO o NEUTRAL.
 7. IMPACTO: Del 1 al 5.
@@ -166,7 +165,6 @@ if exito:
             if len(partes) >= 8:
                 diarios = partes[0].strip().upper()
                 
-                # ESCUDO ANTI-FANTASMAS
                 if diarios == "DIARIOS" or "DIARIOS|" in linea or "DIARIO" in diarios:
                     continue
                     
@@ -218,7 +216,6 @@ if exito:
 
                 tags_html = "".join([f'<span class="text-[10px] font-mono bg-gray-800/80 text-[#00E5FF] px-2 py-1 rounded border border-gray-700">#{t.strip().upper()}</span>' for t in tags_raw.split(",") if t.strip()])
 
-                # Limpieza de viñetas para evitar doble guion (- ▪)
                 vinetas = vinetas.replace('- <span', '<span').replace('- ▪', '▪').replace('• <span', '<span')
                 if not vinetas.startswith('<span'):
                     vinetas = '<span class="text-[#00E5FF] font-bold mr-2">▪</span>' + vinetas
@@ -308,7 +305,7 @@ articulos_unicos = []
 
 for articulo in articulos_ordenados:
     enlace = articulo.find('a', class_='ln-link')
-    if enlace and 'href' in enlace.attrs:
+    if flee := (enlace and 'href' in enlace.attrs):
         link_articulo = enlace['href']
         if link_articulo not in urls_historial:
             urls_historial.add(link_articulo)
@@ -316,7 +313,7 @@ for articulo in articulos_ordenados:
     else:
         articulos_unicos.append(articulo)
 
-max_noticias = 80
+max_noticias = 100
 articulos_finales = articulos_unicos[:max_noticias]
 historial_recortado = "\n".join([str(art) for art in articulos_finales])
 
@@ -328,6 +325,7 @@ print("Obteniendo cotizaciones del mercado...")
 widgets_html = ""
 oficial_venta = 1 
 
+# 4.1 Dólares
 try:
     req_dolar = requests.get("https://dolarapi.com/v1/dolares", timeout=10)
     if req_dolar.status_code == 200:
@@ -372,6 +370,7 @@ try:
 except Exception:
     pass
 
+# 4.2 Riesgo País Dinámico
 try:
     req_rp = requests.get("https://api.argentinadatos.com/v1/finanzas/indices/riesgo-pais", timeout=10)
     if req_rp.status_code == 200:
@@ -414,7 +413,7 @@ try:
 except Exception:
     pass
 
-# Promiedos
+# 4.3 Partidos de Deportes en Vivo (Promiedos)
 partidos_html = ""
 try:
     headers_promiedos = {"User-Agent": "Mozilla/5.0"}
@@ -471,7 +470,7 @@ if not noticias_urgentes_ticker:
     noticias_urgentes_ticker = ["El mercado financiero opera con normalidad. Monitoreo activado."]
 ticker_items = "".join([f'<span class="mx-10 flex items-center gap-2 text-base md:text-lg"><span class="text-[#00E5FF] animate-pulse">⚡</span> {tit}</span>' for tit in noticias_urgentes_ticker])
 
-# --- 5. PLANTILLA HTML DEFINITIVA (Sintaxis Blindada) ---
+# --- 5. PLANTILLA HTML DEFINITIVA (Sintaxis Blindada con llaves dobles {{ }}) ---
 html_completo = f"""<!DOCTYPE html>
 <html lang="es" class="w-full h-full m-0 p-0 overflow-x-hidden">
 <head>
@@ -546,12 +545,12 @@ html_completo = f"""<!DOCTYPE html>
         </button>
         <button id="m-btn-guardadas" class="nav-btn-mobile flex flex-col items-center gap-1 text-gray-500 relative">
             <span class="text-xl">🔖</span>
-            <span id="m-cont-guardadas" class="absolute -top-1 -right-2 bg-rose-500 text-white text-[8px] font-bold px-1.5 rounded-full">0</span>
+            <span id="m-cont-guardadas" class="absolute -top-1 -right-2 bg-rose-500 text-white text-[8px] font-bold px-1.5 rounded-full border border-black font-mono">0</span>
             <span class="text-[9px] font-bold tracking-wider">SAVED</span>
         </button>
         <button id="m-btn-leidas" class="nav-btn-mobile flex flex-col items-center gap-1 text-gray-500 relative">
             <span class="text-xl">👁️</span>
-            <span id="m-cont-leidas" class="absolute -top-1 -right-2 bg-gray-700 text-white text-[8px] font-bold px-1.5 rounded-full">0</span>
+            <span id="m-cont-leidas" class="absolute -top-1 -right-2 bg-gray-700 text-white text-[8px] font-bold px-1.5 rounded-full border border-black font-mono">0</span>
             <span class="text-[9px] font-bold tracking-wider">LEÍDAS</span>
         </button>
     </nav>
@@ -579,7 +578,7 @@ html_completo = f"""<!DOCTYPE html>
                     <span class="absolute left-3.5 top-2.5 text-gray-500">🔍</span>
                 </div>
                 <div class="flex w-full md:w-auto items-center justify-between gap-4">
-                    <span id="titulo-seccion" class="text-[10px] md:text-xs font-mono text-[#00E5FF] border border-[#00E5FF]/30 bg-[#00E5FF]/10 px-4 py-1.5 rounded-full uppercase tracking-widest shadow-[0_0_10px_rgba(0,229,255,0.1)]">ÚLTIMAS NOTICIAS</span>
+                    <span id="titulo-seccion" class="text-[10px] md:text-xs font-mono text-[#00E5FF] border border-[#00E5FF]/30 bg-[#00E5FF]/10 px-4 py-1.5 rounded-full uppercase tracking-widest whitespace-nowrap shadow-[0_0_10px_rgba(0,229,255,0.1)]">ÚLTIMAS NOTICIAS</span>
                     <button id="btn-sort" class="bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold font-mono hover:bg-indigo-500/40 transition flex items-center gap-1.5 uppercase tracking-widest cursor-pointer">
                         ↕️ Por Impacto
                     </button>
@@ -604,7 +603,7 @@ html_completo = f"""<!DOCTYPE html>
             
             <div class="flex justify-center mt-16 mb-20 md:mb-12 w-full">
                 <button id="btn-volver-arriba" class="hidden glass-panel hover:bg-[#00E5FF] hover:text-black border border-white/10 text-gray-300 font-mono text-xs px-8 py-4 rounded-full transition-all duration-300 shadow-xl gap-2 items-center tracking-widest uppercase font-bold text-center cursor-pointer">
-                    ↑ Ocultar extras y volver al inicio
+                    ↑ Ocultar noticias extras y volver
                 </button>
             </div>
         </div>
@@ -689,10 +688,7 @@ html_completo = f"""<!DOCTYPE html>
             actualizarSeparadorAyer();
         }}
 
-        // Interacciones exclusivas en Botón Guardar y Enlace Principal
         articulosBase.forEach(art => {{
-            
-            // Botón Guardar
             const btnG = art.querySelector('.btn-guardar');
             if (btnG) {{
                 btnG.addEventListener('click', (e) => {{
@@ -716,7 +712,6 @@ html_completo = f"""<!DOCTYPE html>
                 }});
             }}
 
-            // Clic en Enlace -> Marcar Leída y desaparecer
             const enlaceTag = art.querySelector('a.ln-link');
             if(enlaceTag) {{
                 enlaceTag.addEventListener('click', () => {{
@@ -739,11 +734,7 @@ html_completo = f"""<!DOCTYPE html>
             }}
         }});
 
-        // Buscador y Sort
-        document.getElementById('buscador').addEventListener('input', () => {{
-            limitNoticias = 12;
-            aplicarFiltrosYVistas();
-        }});
+        document.getElementById('buscador').addEventListener('input', () => {{ limitNoticias = 12; aplicarFiltrosYVistas(); }});
         document.getElementById('btn-sort').addEventListener('click', (e) => {{
             sortByImpacto = !sortByImpacto;
             e.currentTarget.classList.toggle('bg-indigo-500/40');
@@ -752,7 +743,6 @@ html_completo = f"""<!DOCTYPE html>
             aplicarFiltrosYVistas();
         }});
 
-        // Scroll Infinito
         window.addEventListener('scroll', () => {{
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -790,7 +780,6 @@ html_completo = f"""<!DOCTYPE html>
             setTimeout(() => aplicarFiltrosYVistas(), 400);
         }});
 
-        // Navegación
         function cambiarVista(vista, titulo) {{
             vistaActual = vista;
             document.getElementById('titulo-seccion').innerText = titulo;
@@ -816,11 +805,11 @@ html_completo = f"""<!DOCTYPE html>
         }}
 
         document.getElementById('btn-ver-principales').addEventListener('click', () => cambiarVista('principales', 'ÚLTIMAS NOTICIAS'));
-        document.getElementById('btn-ver-leidas').addEventListener('click', () => cambiarVista('leidas', 'HISTORIAL LEÍDAS'));
+        document.getElementById('btn-ver-leidas').addEventListener('click', () => cambiarVista('leidas', 'HISTORIAL DE LEÍDAS'));
         document.getElementById('btn-ver-guardadas').addEventListener('click', () => cambiarVista('guardadas', 'NOTICIAS GUARDADAS'));
         
         document.getElementById('m-btn-feed').addEventListener('click', () => cambiarVista('principales', 'ÚLTIMAS NOTICIAS'));
-        document.getElementById('m-btn-leidas').addEventListener('click', () => cambiarVista('leidas', 'HISTORIAL LEÍDAS'));
+        document.getElementById('m-btn-leidas').addEventListener('click', () => cambiarVista('leidas', 'HISTORIAL DE LEÍDAS'));
         document.getElementById('m-btn-guardadas').addEventListener('click', () => cambiarVista('guardadas', 'NOTICIAS GUARDADAS'));
 
         document.getElementById('btn-reset-leidas').addEventListener('click', () => {{
@@ -831,7 +820,6 @@ html_completo = f"""<!DOCTYPE html>
             }}
         }});
 
-        // Reloj y Fechas
         function actualizarReloj() {{
             const ahora = new Date();
             const opcionesHora = {{ timeZone: 'America/Argentina/Buenos_Aires', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }};
@@ -884,15 +872,15 @@ html_completo = f"""<!DOCTYPE html>
 
             if (vistaActual !== "principales") return; 
 
-            const vis = articulos.filter(a => a.style.display !== 'none');
+            const vis = articulosBase.filter(a => a.style.display !== 'none');
             for(let i=0; i<vis.length; i++) {{
                 const t = vis[i].querySelector('.tiempo-noticia').textContent;
                 if(t.includes('AYER')) {{
-                    const d = document.createElement('div');
-                    d.id = 'separador-ayer-dinamico';
-                    d.className = 'col-span-1 md:col-span-2 xl:col-span-3 flex items-center gap-4 my-10 w-full';
-                    d.innerHTML = '<div class="h-px bg-rose-900/40 flex-grow"></div><span class="text-[10px] font-mono text-rose-500 border border-rose-500/30 bg-rose-950/20 px-6 py-2 rounded-full uppercase tracking-widest shadow-[0_0_15px_rgba(244,63,94,0.15)]">NOTICIAS DEL DÍA ANTERIOR</span><div class="h-px bg-rose-900/40 flex-grow"></div>';
-                    vis[i].parentNode.insertBefore(d, vis[i]);
+                    const div = document.createElement('div');
+                    div.id = 'separador-ayer-dinamico';
+                    div.className = 'col-span-1 md:col-span-2 xl:col-span-3 flex items-center gap-4 my-10 w-full';
+                    div.innerHTML = '<div class="h-px bg-rose-900/40 flex-grow"></div><span class="text-[10px] font-mono text-rose-500 border border-rose-500/30 bg-rose-950/20 px-6 py-2 rounded-full uppercase tracking-widest shadow-[0_0_15px_rgba(244,63,94,0.15)]">NOTICIAS DEL DÍA ANTERIOR</span><div class="h-px bg-rose-900/40 flex-grow"></div>';
+                    vis[i].parentNode.insertBefore(div, vis[i]);
                     break;
                 }}
             }}
