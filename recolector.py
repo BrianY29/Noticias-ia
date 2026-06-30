@@ -321,18 +321,27 @@ with open("historial.txt", "w", encoding="utf-8") as f:
     f.write(historial_recortado)
 
 # --- 4. EXTRACCIÓN DEL MERCADO BURSÁTIL Y DEPORTES ---
-print("Obteniendo cotizaciones del mercado...")
+print("Obteniendo cotizaciones y deportes en tiempo real...")
 widgets_html = ""
 oficial_venta = 1.0
+oficial_ayer = 1.0
+timestamp_actual = int(time.time()) # Rompe-caché para forzar actualización
 
-# Consultas externas unificadas seguras (Evitamos Throttling de Red)
+# 4.1 Dólares (Fuentes enormes, anti-desborde y forzado de actualización)
 try:
-    req_dolar = requests.get("https://dolarapi.com/v1/dolares", timeout=10)
+    req_dolar = requests.get(f"https://dolarapi.com/v1/dolares?v={timestamp_actual}", timeout=10)
+    req_hist = requests.get(f"https://api.argentinadatos.com/v1/finanzas/dolares/oficial?v={timestamp_actual}", timeout=10)
+    
     if req_dolar.status_code == 200:
         dolares = req_dolar.json()
         d_oficial = next((d for d in dolares if d["casa"] == "oficial"), None)
         if d_oficial:
             oficial_venta = d_oficial["venta"]
+            
+        if req_hist.status_code == 200:
+            hist_data = req_hist.json()
+            if len(hist_data) > 1:
+                oficial_ayer = hist_data[-2]["venta"]
 
         casas_clave = {"oficial": "OFICIAL", "blue": "BLUE", "bolsa": "MEP", "contadoconliqui": "CCL"}
         for casa, nombre in casas_clave.items():
@@ -341,37 +350,53 @@ try:
                 venta = d_info["venta"]
                 compra = d_info.get("compra", venta)
                 
-                # Simulamos fluctuación de mercado abierto diaria real de forma segura
-                variacion = 0.25 if casa != "oficial" else 0.05
-                simbolo = "▲" if variacion >= 0 else "▼"
-                color_var = "text-rose-500" if variacion >= 0 else "text-[#00E5FF]"
-                
+                if casa == "oficial" and oficial_ayer > 0:
+                    var_pct = ((venta / oficial_ayer) - 1) * 100
+                elif casa != "oficial":
+                    hist_casa = requests.get(f"https://api.argentinadatos.com/v1/finanzas/dolares/{casa}?v={timestamp_actual}", timeout=5)
+                    if hist_casa.status_code == 200 and len(h_data := hist_casa.json()) > 1:
+                        var_pct = ((venta / h_data[-2]["venta"]) - 1) * 100
+                    else:
+                        var_pct = 0.00
+                else:
+                    var_pct = 0.00
+
+                if var_pct > 0:
+                    color_var = "text-rose-500 font-black"
+                    simbolo = "▲"
+                elif var_pct < 0:
+                    color_var = "text-[#00E5FF] font-black"
+                    simbolo = "▼"
+                else:
+                    color_var = "text-gray-500 font-semibold"
+                    simbolo = ""
+
                 brecha_txt = f"Brecha {((venta / oficial_venta) - 1) * 100:.1f}%" if casa != "oficial" else "Oficial Base"
 
                 widgets_html += f"""
-                <div class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl p-6 flex flex-col justify-center min-w-[220px] flex-1 shadow-[0_8px_30px_rgb(0,0,0,0.5)]">
+                <div class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl p-5 flex flex-col justify-center min-w-[220px] flex-1 shadow-[0_8px_30px_rgb(0,0,0,0.5)] overflow-hidden">
                     <div class="flex items-center justify-between mb-1">
                         <div class="flex items-center gap-2">
-                            <span class="text-xs text-gray-400 font-bold tracking-wider uppercase">DÓLAR {nombre}</span>
+                            <span class="text-xs text-gray-400 font-bold tracking-widest uppercase truncate">DÓLAR {nombre}</span>
                             <span class="text-gray-500 text-xs">🇦🇷</span>
                         </div>
                     </div>
-                    <div class="flex items-baseline justify-between w-full mt-2">
-                        <span class="text-3xl md:text-5xl font-mono font-black text-white">${int(venta) if venta % 1 == 0 else venta}</span>
-                        <span class="{color_var} text-xs md:text-sm font-mono font-black flex items-center gap-0.5">{simbolo} {abs(variacion):.2f}%</span>
+                    <div class="flex items-baseline justify-between w-full mt-2 gap-2">
+                        <span class="text-4xl md:text-5xl font-mono font-black text-white tracking-tighter">${int(venta) if venta % 1 == 0 else venta}</span>
+                        <span class="{color_var} text-xs md:text-sm font-mono flex items-center gap-0.5">{simbolo}{abs(var_pct):.2f}%</span>
                     </div>
-                    <div class="mt-3 border-t border-[#232323] pt-2 flex justify-between text-[11px] text-gray-500 font-mono uppercase font-bold tracking-wide">
-                        <span>C: ${int(compra)}</span>
-                        <span>{brecha_txt}</span>
+                    <div class="mt-4 border-t border-[#232323] pt-2 flex flex-wrap justify-between gap-1 text-[10px] text-gray-500 font-mono uppercase font-bold tracking-wide">
+                        <span class="truncate">C: ${int(compra)}</span>
+                        <span class="whitespace-nowrap">{brecha_txt}</span>
                     </div>
                 </div>
                 """
 except Exception:
     pass
 
-# 4.2 Riesgo País Dinámico
+# 4.2 Riesgo País Dinámico (Forzado a actualizar)
 try:
-    req_rp = requests.get("https://api.argentinadatos.com/v1/finanzas/indices/riesgo-pais", timeout=10)
+    req_rp = requests.get(f"https://api.argentinadatos.com/v1/finanzas/indices/riesgo-pais?v={timestamp_actual}", timeout=10)
     if req_rp.status_code == 200:
         datos_rp = req_rp.json()
         if datos_rp and len(datos_rp) > 1:
@@ -394,72 +419,70 @@ try:
                 signo = ""
                 
             widgets_html += f"""
-            <div class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl p-6 flex flex-col justify-center min-w-[220px] flex-1 shadow-[0_8px_30px_rgb(0,0,0,0.5)]">
+            <div class="bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl p-5 flex flex-col justify-center min-w-[220px] flex-1 shadow-[0_8px_30px_rgb(0,0,0,0.5)] overflow-hidden">
                 <div class="flex items-center gap-2 mb-1">
-                    <span class="text-xs text-rose-400 font-bold tracking-wider uppercase">RIESGO PAÍS</span>
+                    <span class="text-xs text-rose-400 font-bold tracking-widest uppercase truncate">RIESGO PAÍS</span>
                     <span class="text-gray-500 text-xs">🇦🇷</span>
                 </div>
-                <div class="flex items-baseline justify-between w-full mt-2">
-                    <span class="text-3xl md:text-5xl font-mono font-black text-white">{int(ultimo_rp)}</span>
+                <div class="flex items-baseline justify-between w-full mt-2 gap-2">
+                    <span class="text-4xl md:text-5xl font-mono font-black text-white tracking-tighter">{int(ultimo_rp)}</span>
                     <span class="{color_var} text-xs md:text-sm font-mono flex items-center gap-0.5">{simbolo}{abs(dif_puntos)} ({signo}{pct_var:.2f}%)</span>
                 </div>
-                <div class="mt-3 border-t border-[#232323] pt-2 flex justify-between text-[11px] text-gray-500 font-mono uppercase font-bold tracking-wide">
-                    <span>CIERRE ANTERIOR</span>
-                    <span>Ayer: {int(rp_ayer)}</span>
+                <div class="mt-4 border-t border-[#232323] pt-2 flex flex-wrap justify-between gap-1 text-[10px] text-gray-500 font-mono uppercase font-bold tracking-wide">
+                    <span class="truncate">ANTERIOR</span>
+                    <span class="whitespace-nowrap">Ayer: {int(rp_ayer)}</span>
                 </div>
             </div>
             """
 except Exception:
     pass
 
-# 4.3 Partidos de Deportes Estructura Real (Promiedos Fijo)
+# 4.3 Partidos de Deportes (Reemplazado por API de ESPN: Indestructible y sin bloqueos)
 partidos_html = ""
 try:
-    headers_p = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-    req_p = requests.get("https://www.promiedos.com.ar/", headers=headers_p, timeout=10)
-    if req_p.status_code == 200:
-        soup_p = BeautifulSoup(req_p.text, 'html.parser')
+    url_espn = f"https://site.api.espn.com/apis/site/v2/sports/soccer/all/scoreboard?v={timestamp_actual}"
+    req_espn = requests.get(url_espn, timeout=10)
+    
+    if req_espn.status_code == 200:
+        data_espn = req_espn.json()
+        eventos = data_espn.get('events', [])
         partidos_extraidos = []
         
-        # Buscamos todas las tablas de partidos de la portada de Promiedos
-        tablas_fixture = soup_p.find_all('table', class_='borde_tab')
-        for tabla in tablas_fixture:
-            filas = tabla.find_all('tr')
-            for f in filas:
-                td_izq = f.find('td', class_='clase_izq') or f.find('td', align='right')
-                td_der = f.find('td', class_='clase_der') or f.find('td', align='left')
-                if not td_izq or not td_der: continue
-                
-                td_mid = f.find('td', class_='clase_mid') or f.find('td', class_='game-time') or f.find('td', align='center')
-                if not td_mid: continue
-                
-                txt_izq = " ".join(td_izq.text.split())
-                txt_der = " ".join(td_der.text.split())
-                txt_mid = " ".join(td_mid.text.split())
-                
-                if not txt_izq or not txt_der or len(txt_izq) > 25: continue
-                
-                color_res = "text-[#00E5FF]" if any(x in txt_mid for x in ["'", "PT", "ST", "Pen"]) else "text-white"
-                
-                partidos_extraidos.append(f"""
+        for evento in eventos[:10]: # Filtramos los 10 partidos más importantes
+            competicion = evento['competitions'][0]
+            estado = evento['status']['type']['shortDetail'] # Ej: "FT", "HT", "85'"
+            
+            t1 = competicion['competitors'][0]
+            t2 = competicion['competitors'][1]
+            
+            # ESPN invierte el orden (Local/Visitante), extraemos nombres y puntajes
+            nombre_t1 = t1['team'].get('shortDisplayName', t1['team'].get('name', 'Equipo 1'))
+            nombre_t2 = t2['team'].get('shortDisplayName', t2['team'].get('name', 'Equipo 2'))
+            res1 = t1.get('score', '-')
+            res2 = t2.get('score', '-')
+            
+            # Detectar si está en vivo por el estado (Ej: "EN JUEGO", minutos, etc)
+            txt_estado_upper = evento['status']['type']['state'].upper()
+            is_vivo = txt_estado_upper == "IN" or "'" in estado or "PT" in estado or "ST" in estado
+            color_res = "text-[#00E5FF] animate-pulse" if is_vivo else "text-white"
+            
+            partidos_extraidos.append(f"""
                 <div class='flex flex-col text-center border-l border-[#2A2A2A] pl-5 pr-2 min-w-max select-none'>
-                    <span class='text-[9px] text-gray-500 font-mono tracking-wider uppercase'>Fixture Hoy</span>
+                    <span class='text-[9px] text-gray-500 font-mono tracking-wider uppercase'>{estado}</span>
                     <div class='text-sm font-bold text-gray-200 mt-1 flex gap-3 items-center justify-center'>
-                        <span class="truncate max-w-[90px] text-right font-medium">{txt_izq}</span> 
-                        <span class='{color_res} text-sm px-2.5 py-0.5 bg-[#111] rounded border border-[#222] shadow-inner font-mono font-bold'>{txt_mid}</span> 
-                        <span class="truncate max-w-[90px] text-left font-medium">{txt_der}</span>
+                        <span class="truncate max-w-[90px] text-right font-medium">{nombre_t1}</span> 
+                        <span class='{color_res} text-sm px-2.5 py-0.5 bg-[#111] rounded border border-[#222] shadow-inner font-mono font-bold'>{res1} - {res2}</span> 
+                        <span class="truncate max-w-[90px] text-left font-medium">{nombre_t2}</span>
                     </div>
                 </div>
-                """)
-                if len(partidos_extraidos) >= 8: break
-            if len(partidos_extraidos) >= 8: break
-
+            """)
+        
         if partidos_extraidos:
             partidos_html = f"""
             <div class='w-full bg-[#1A1A1A] border border-[#2A2A2A] rounded-xl p-4 mt-6 flex items-center shadow-lg overflow-x-auto no-scrollbar gap-5 max-w-7xl mx-auto'>
                 <div class='flex flex-col items-center gap-1 shrink-0 pr-4 border-r border-white/5 select-none'>
-                    <span class='text-2xl animate-pulse'>⚽</span>
-                    <span class='text-[8px] text-gray-400 font-bold uppercase tracking-widest font-mono'>PARTIDOS</span>
+                    <span class='text-2xl animate-bounce'>⚽</span>
+                    <span class='text-[8px] text-gray-400 font-bold uppercase tracking-widest font-mono'>EN VIVO</span>
                 </div>
                 {''.join(partidos_extraidos)}
             </div>
@@ -470,7 +493,6 @@ except Exception:
 if not noticias_urgentes_ticker:
     noticias_urgentes_ticker = ["El mercado financiero opera con normalidad. Monitoreo activado."]
 ticker_items = "".join([f'<span class="mx-10 flex items-center gap-2 text-base md:text-lg"><span class="text-[#00E5FF] animate-pulse">⚡</span> {tit}</span>' for tit in noticias_urgentes_ticker])
-
 # --- 5. PLANTILLA HTML DEFINITIVA (Sintaxis Blindada) ---
 html_completo = f"""<!DOCTYPE html>
 <html lang="es" class="w-full h-full m-0 p-0 overflow-x-hidden">
